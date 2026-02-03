@@ -110,11 +110,11 @@ public class DancingMinigameManager : MonoBehaviour
             {
                 if (_Player1CurrentIndex + 1 >= currentLevel) SetButtonsInteractable(1, false);
                 _Player1CurrentIndex++;
-                Debug.Log("Bon chiffre 1");
             }
             else
             {
-                Debug.Log("Perdu");
+                displayText.fontSize = 300;
+                displayText.text = "Player 1 lose...";
             }
         }
 
@@ -126,34 +126,45 @@ public class DancingMinigameManager : MonoBehaviour
             {
                 if (_Player2CurrentIndex + 1 >= currentLevel) SetButtonsInteractable(2, false);
                 _Player2CurrentIndex++;
-                Debug.Log("bon chiffre 2");
             }
             else
             {
-                Debug.Log("Perdu");
+                displayText.fontSize = 300;
+                displayText.text = "Player 2 lose...";
             }
         }
 
+        CheckEndOfMinigame();
+    }
+
+    private void CheckEndOfMinigame()
+    {
         if (_Player1CurrentIndex >= currentLevel && _Player2CurrentIndex >= currentLevel)
         {
             _Player1CurrentIndex = 0;
             _Player2CurrentIndex = 0;
             _Player1Inputs.Clear();
             _Player2Inputs.Clear();
+
             _IsPlayersTurn = false;
             currentLevel++;
+            Debug.Log(currentLevel);
 
             if (_DisplaySequenceCoroutine != null)
             {
-                StopCoroutine( _DisplaySequenceCoroutine );
+                StopCoroutine(_DisplaySequenceCoroutine);
                 _DisplaySequenceCoroutine = null;
             }
 
-            _DisplaySequenceCoroutine = StartCoroutine(DisplaySequence());
+            if (currentLevel > numberOfLevel)
+            {
+                displayText.text = "COOL !";
+            }
+            else _DisplaySequenceCoroutine = StartCoroutine(DisplaySequence());
         }
     }
 
-    void SetButtonsInteractable(int pPlayer,bool pInteractable)
+    private void SetButtonsInteractable(int pPlayer,bool pInteractable)
     {
         if (pPlayer == 1)
         {
