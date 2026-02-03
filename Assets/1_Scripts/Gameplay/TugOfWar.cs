@@ -1,52 +1,60 @@
-using UnityEngine;
-using UnityEngine.InputSystem;
-
+using UnityEngine;using UnityEngine;
+using UnityEngine.InputSystem.EnhancedTouch;
+using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
+using TouchPhase = UnityEngine.InputSystem.TouchPhase;
 public class TugOfWar : MonoBehaviour
 {
-    [SerializeField] private InputAction _PlayerInput;
-    [SerializeField] private Transform _PlayerLeft;
-    [SerializeField] private Transform _PlayerRight;
+    [Header("Players")]
+    [SerializeField] private Transform _playerLeft;
+    [SerializeField] private Transform _playerRight;
 
-    [SerializeField] private float _PullForce = 0.02f;
+    [Header("Forces")]
+    [SerializeField] private float _pullForce = 0.02f;
+    [SerializeField] private float _verticalBonus = 1.5f;
 
-    private Vector2 _leftSwipe;
-    private Vector2 _rightSwipe;
-    private float _SwipeTolerance;
+/// <summary>
+///  testing
+/// </summary>
+    [SerializeField] private float moveSpeed = 5f; // vitesse du déplacement
+    [SerializeField] private float minSwipeDistancePercent = 0.05f; // % de l'écran pour considérer un swipe
 
-    public void OnLeftSwipe(InputAction.CallbackContext context)
+    private Vector2? startPos = null;
+
+    void Update()
     {
-        _leftSwipe = context.ReadValue<Vector2>();
-        if (_leftSwipe.x < -_SwipeTolerance)
-            PullLeft();
-        else if (_leftSwipe.x > _SwipeTolerance)
-            ReverseLeft();
+        foreach (var touch in Touch.activeTouches)
+        {
+            if (touch.phase == TouchPhase.Began)
+            {
+                startPos = touch.screenPosition;
+            }
+            else if (touch.phase == TouchPhase.Ended && startPos.HasValue)
+            {
+                Vector2 delta = touch.screenPosition - startPos.Value;
+                float minDistance = Screen.width * minSwipeDistancePercent;
+
+                if (Mathf.Abs(delta.x) >= minDistance)
+                {
+                    if (delta.x > 0)
+                        MoveRight();
+                    else
+                        MoveLeft();
+                }
+
+                startPos = null;
+            }
+        }
     }
 
-    public void OnRightSwipe(InputAction.CallbackContext context)
+    private void MoveRight()
     {
-        _rightSwipe = context.ReadValue<Vector2>();
-        if (_rightSwipe.x > _SwipeTolerance)
-            PullRight();
-        else if (_rightSwipe.x < -_SwipeTolerance)
-            ReverseRight();
+        transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+        Debug.Log("Déplacement droite");
     }
 
-    void PullLeft()
+    private void MoveLeft()
     {
-        _PlayerLeft.position += Vector3.left * _PullForce;
-        _PlayerRight.position += Vector3.left * _PullForce;
-    }
-    void PullRight()
-    {
-        _PlayerRight.position += Vector3.left * _PullForce;
-        _PlayerRight.position += Vector3.left * _PullForce;
-    }
-    void ReverseLeft()
-    {
-        
-    }
-    void ReverseRight()
-    {
-        
+        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+        Debug.Log("Déplacement gauche");
     }
 }

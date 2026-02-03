@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "InputSystem_Actions",
     "maps": [
         {
@@ -986,6 +987,54 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Touch",
+            "id": "e1b3d1f3-9019-4fa1-a9ed-849029a1d3d3",
+            "actions": [
+                {
+                    "name": "Primary contact",
+                    "type": "PassThrough",
+                    "id": "ec850e6d-4398-43aa-809b-95c609862343",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pimary position",
+                    "type": "PassThrough",
+                    "id": "adecc82f-56d1-48d5-ae91-46fafdda0a22",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fbf94bdd-dbf3-4048-b5b1-005636019088",
+                    "path": "<Touchscreen>/primaryTouch/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Primary contact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "02105684-0f79-4c1b-9a75-219b53c7bcfb",
+                    "path": "<Touchscreen>/primaryTouch/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pimary position",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
