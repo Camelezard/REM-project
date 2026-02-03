@@ -108,8 +108,8 @@ public class DancingMinigameManager : MonoBehaviour
 
             if (_Player1Inputs[_Player1CurrentIndex] == _NumberSequence[_Player1CurrentIndex])
             {
-                _Player1CurrentIndex++;
                 if (_Player1CurrentIndex + 1 >= currentLevel) SetButtonsInteractable(1, false);
+                _Player1CurrentIndex++;
                 Debug.Log("Bon chiffre 1");
             }
             else
@@ -120,12 +120,12 @@ public class DancingMinigameManager : MonoBehaviour
 
         if (pPlayer == 2)
         {
-            _Player1Inputs.Add(pButtonValue);
+            _Player2Inputs.Add(pButtonValue);
 
             if (_Player2Inputs[_Player2CurrentIndex] == _NumberSequence[_Player2CurrentIndex])
             {
-                _Player2CurrentIndex++;
                 if (_Player2CurrentIndex + 1 >= currentLevel) SetButtonsInteractable(2, false);
+                _Player2CurrentIndex++;
                 Debug.Log("bon chiffre 2");
             }
             else
@@ -134,12 +134,15 @@ public class DancingMinigameManager : MonoBehaviour
             }
         }
 
-        if (_Player1CurrentIndex + 1 >= currentLevel && _Player2CurrentIndex + 1 >= currentLevel)
+        if (_Player1CurrentIndex >= currentLevel && _Player2CurrentIndex >= currentLevel)
         {
             _Player1CurrentIndex = 0;
             _Player2CurrentIndex = 0;
+            _Player1Inputs.Clear();
+            _Player2Inputs.Clear();
             _IsPlayersTurn = false;
             currentLevel++;
+
             if (_DisplaySequenceCoroutine != null)
             {
                 StopCoroutine( _DisplaySequenceCoroutine );
