@@ -23,18 +23,22 @@ public class DancingMinigameManager : MonoBehaviour
     private Coroutine _DisplaySequenceCoroutine;
 
     public TextMeshProUGUI displayText;
+
+    public float numberDisplayTime = 1;
+    public float timeBetweenNumber = 0.5f;
+    public float readyTime = 3f;
+
+    public int player1Id = 1;
+    public int player2Id = 2;
+
+    public float numberFontSize = 450f;
+    public float losingFontSize = 300f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         SetupButtons();
         InitGame();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void InitGame()
@@ -51,13 +55,13 @@ public class DancingMinigameManager : MonoBehaviour
         for (int i = 0; i < _Player1Buttons.Count; i++)
         {
             int lButtonValue = i + 1;
-            _Player1Buttons[i].onClick.AddListener(() => OnButtonPress(1, lButtonValue));
+            _Player1Buttons[i].onClick.AddListener(() => OnButtonPress(player1Id, lButtonValue));
         }
 
         for (int i = 0; i < _Player2Buttons.Count; i++)
         {
             int lButtonValue = i + 1;
-            _Player2Buttons[i].onClick.AddListener(() => OnButtonPress(2, lButtonValue));
+            _Player2Buttons[i].onClick.AddListener(() => OnButtonPress(player2Id, lButtonValue));
         }
     }
 
@@ -75,25 +79,25 @@ public class DancingMinigameManager : MonoBehaviour
     {
         _IsDisplayingSequence = true;
         _IsPlayersTurn = false;
-        SetButtonsInteractable(1, false);
-        SetButtonsInteractable(2, false);
+        SetButtonsInteractable(player1Id, false);
+        SetButtonsInteractable(player2Id, false);
 
         displayText.text = "Ready ?";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(readyTime);
 
         for (int i = 0; i < currentLevel; i++)
         {
             displayText.text = _NumberSequence[i].ToString();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(numberDisplayTime);
 
             displayText.text = "";
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(timeBetweenNumber);
         }
 
         _IsDisplayingSequence = false;
         _IsPlayersTurn = true;
-        SetButtonsInteractable(1, true);
-        SetButtonsInteractable(2, true);
+        SetButtonsInteractable(player1Id, true);
+        SetButtonsInteractable(player2Id, true);
 
         StopCoroutine(_DisplaySequenceCoroutine);
     }
@@ -102,34 +106,34 @@ public class DancingMinigameManager : MonoBehaviour
     {
         if (!_IsPlayersTurn) return;
 
-        if (pPlayer == 1)
+        if (pPlayer == player1Id)
         {
             _Player1Inputs.Add(pButtonValue);
 
             if (_Player1Inputs[_Player1CurrentIndex] == _NumberSequence[_Player1CurrentIndex])
             {
-                if (_Player1CurrentIndex + 1 >= currentLevel) SetButtonsInteractable(1, false);
+                if (_Player1CurrentIndex + 1 >= currentLevel) SetButtonsInteractable(player1Id, false);
                 _Player1CurrentIndex++;
             }
             else
             {
-                displayText.fontSize = 300;
+                displayText.fontSize = losingFontSize;
                 displayText.text = "Player 1 lose...";
             }
         }
 
-        if (pPlayer == 2)
+        if (pPlayer == player2Id)
         {
             _Player2Inputs.Add(pButtonValue);
 
             if (_Player2Inputs[_Player2CurrentIndex] == _NumberSequence[_Player2CurrentIndex])
             {
-                if (_Player2CurrentIndex + 1 >= currentLevel) SetButtonsInteractable(2, false);
+                if (_Player2CurrentIndex + 1 >= currentLevel) SetButtonsInteractable(player2Id, false);
                 _Player2CurrentIndex++;
             }
             else
             {
-                displayText.fontSize = 300;
+                displayText.fontSize = losingFontSize;
                 displayText.text = "Player 2 lose...";
             }
         }
@@ -166,7 +170,7 @@ public class DancingMinigameManager : MonoBehaviour
 
     private void SetButtonsInteractable(int pPlayer,bool pInteractable)
     {
-        if (pPlayer == 1)
+        if (pPlayer == player1Id)
         {
             foreach (Button button in _Player1Buttons)
             {
@@ -174,7 +178,7 @@ public class DancingMinigameManager : MonoBehaviour
             }
         }
         
-        if (pPlayer == 2)
+        if (pPlayer == player2Id)
         {
             foreach (Button button in _Player2Buttons)
             {
