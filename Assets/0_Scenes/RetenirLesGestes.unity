@@ -1058,6 +1058,14 @@ MonoBehaviour:
   - {fileID: 1813944989}
   currentLevel: 1
   numberOfLevel: 5
+  displayText: {fileID: 1024742701}
+  numberDisplayTime: 1
+  timeBetweenNumber: 0.5
+  readyTime: 3
+  player1Id: 1
+  player2Id: 2
+  numberFontSize: 450
+  losingFontSize: 300
 --- !u!4 &730371428
 Transform:
   m_ObjectHideFlags: 0
@@ -1380,7 +1388,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 306.3606, y: 262.7214}
+  m_SizeDelta: {x: 2232, y: 262.7214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024742701
 MonoBehaviour:
@@ -1402,7 +1410,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: '?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
