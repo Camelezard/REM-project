@@ -5,7 +5,15 @@ public class SingJumping : MonoBehaviour
     public float velocityY = 0f;
     public float gravity = 9.81f;
 
-    [HideInInspector] public bool isFalling = true;
+    public float minJumpForce = 0f;
+    public float maxJumpForce = 100f;
+    public AudioLoudnessDetection detector;
+
+    public float loudnessSensibilty = 100;
+    public float threshold = 0.1f;
+
+    [HideInInspector] public bool isFalling = false;
+    [HideInInspector] public bool isInAir = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +25,8 @@ public class SingJumping : MonoBehaviour
     void Update()
     {
         Gravity();
+        JumpByLoudness();
+        transform.position += Vector3.up * velocityY * Time.deltaTime;
     }
 
     private void Gravity()
@@ -24,11 +34,20 @@ public class SingJumping : MonoBehaviour
         if (!isFalling) return;
 
         velocityY -= Time.deltaTime * gravity;
-        if (velocityY >= gravity)
+        if (velocityY <= -gravity)
         {
             velocityY = gravity;
         }
 
-        transform.position += Vector3.up * velocityY * Time.deltaTime;
+        
+    }
+
+    private void JumpByLoudness()
+    {
+        float lLoudness = detector.GetLoudnessFromMicrophone() * loudnessSensibilty;
+        if (lLoudness < threshold) lLoudness = 0;
+
+        if (!isInAir)
+        velocityY += Mathf.Lerp(minJumpForce, maxJumpForce, lLoudness);
     }
 }

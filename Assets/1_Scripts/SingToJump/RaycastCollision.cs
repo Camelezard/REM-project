@@ -33,10 +33,12 @@ public class RaycastCollision : MonoBehaviour
             transform.position = new Vector2(transform.position.x, _GroundHit.point.y);
             singJumping.velocityY = 0;
             singJumping.isFalling = false;
+            singJumping.isInAir = false;
         }
         else
         {
             singJumping.isFalling= true;
+            singJumping.isInAir = true;
         }
     }
 
