@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SingJumping : MonoBehaviour
@@ -14,6 +15,8 @@ public class SingJumping : MonoBehaviour
 
     [HideInInspector] public bool isFalling = false;
     [HideInInspector] public bool isInAir = false;
+
+    public RaycastCollision collision;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,7 +44,8 @@ public class SingJumping : MonoBehaviour
             velocityY = -gravity;
         }
 
-        
+        if (velocityY <= 0) collision.isDeactivated = false;
+        else collision.isDeactivated = true;
     }
 
     private void JumpByLoudness()
@@ -49,9 +53,14 @@ public class SingJumping : MonoBehaviour
         float lLoudness = detector.GetLoudnessFromMicrophone() * loudnessSensibilty;
         if (lLoudness < threshold) lLoudness = 0;
 
+        
         lLoudness = Mathf.Clamp(lLoudness, minJumpForce, maxJumpForce);
         Debug.Log(lLoudness);
         if (!isInAir)
+        {
+            velocityY = 0;
             velocityY += lLoudness;
+        }
+        
     }
 }
