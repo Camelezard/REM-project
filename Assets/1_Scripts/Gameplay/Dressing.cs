@@ -4,19 +4,17 @@ using UnityEngine;
 public class Dressing : MonoBehaviour
 {
     [Header("Closes")]
-    [SerializeField] private List<GameObject> _Pants;
-    [SerializeField] private List<GameObject> _Choses;
-    [SerializeField] private List<GameObject> _DressTop;
+    [SerializeField] private List<Sprite> _Pants;
+    [SerializeField] private List<Sprite> _Choses;
+    [SerializeField] private List<Sprite> _DressTop;
 
+    public List<Sprite> pants => _Pants;
+    public List<Sprite> choses => _Choses;
+    public List<Sprite> dressTop => _DressTop;
 
-
-    void Start()
+    public void GetRandomListOfCloth()
     {
         
     }
 
-    void Update()
-    {
-        
-    }
 }
