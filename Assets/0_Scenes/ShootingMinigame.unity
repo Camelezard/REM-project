@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fce2592b93a12428fadbf101e8669a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_movementActionPath: ShootingPlayer1/Movement
 --- !u!61 &787019185
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -414,6 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b6b74609ba20c45a95c724315885a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_movementActionPath: 
 --- !u!4 &1463547073
 Transform:
   m_ObjectHideFlags: 0
