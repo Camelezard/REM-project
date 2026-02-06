@@ -21,32 +21,39 @@ public class Pawn : MonoBehaviour
         StartCoroutine(MoveToTile(0));
     }
 
-
+    // la coroutine va nous permetre de depalcer le pion jusque a la case voulu
     private IEnumerator MoveToTile(int pTargetTileIndex)
     {
-        int lDirection = pTargetTileIndex > _CurrentTile ? 1 : -1;
+        int lDirection = pTargetTileIndex > _CurrentTile ? 1 : -1; // pour savoir si on avance ou si on recule
 
         while (_CurrentTile != pTargetTileIndex)
         {
             int lNextTile = _CurrentTile + lDirection;
 
+            // transition entre deux tile
             yield return StartCoroutine(MoveBetweenTwoTiles(_CurrentTile, lNextTile));
+
+            // le personnage stop un instant sur les cases pour donner un effet de jeu de plateau
             yield return new WaitForSeconds(_TimePerMove);
 
             _CurrentTile = lNextTile;
         }
     }
 
+    // Trasitione entre deux tiles ou qu'elle soit. 
     private IEnumerator MoveBetweenTwoTiles(int pOriinTileIndex, int pFinalTileIndex)
     {
         float lElapsedTime = 0f;
         float lDistanceOnSpline;
+
+        // determie la place en pourcent sur le spline
         float lStartDistanceOnSpline = TilePlacer.Instance.spawnedTiles[pOriinTileIndex].distanceOnPath;
         float lEndDistanceOnSpline = TilePlacer.Instance.spawnedTiles[pFinalTileIndex].distanceOnPath;
 
         while (lElapsedTime < _MoveDuration)
         {
             lElapsedTime += Time.deltaTime;
+            
             lDistanceOnSpline = Mathf.Lerp(lStartDistanceOnSpline, lEndDistanceOnSpline, lElapsedTime / _MoveDuration);
 
             transform.position = _SplineContainer.EvaluatePosition(lDistanceOnSpline);

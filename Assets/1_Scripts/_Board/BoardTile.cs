@@ -4,9 +4,21 @@ using UnityEngine.Splines;
 public class BoardTile : MonoBehaviour
 {
 
+    private enum TileType
+    {
+        StartTile,
+        GameTile,
+        RandoGameTile,
+        EffectTile,
+        EndTile
+    }
+
     public SplineContainer _TileSplineContainer;
-    public Spline spline;
+    private TileType tileType;
+
+    [Header("Til Caracteistique")]
     [Range(0f, 1f)] public float distanceOnPath;
+    [SerializeField] public Spline spline;
 
 
 
@@ -15,6 +27,10 @@ public class BoardTile : MonoBehaviour
         AdjustOnSline();
     }
 
+    /// <summary>
+    /// 
+    /// permet d'ajuster la position de la tile pour les raprocher ou les ecarter
+    /// <summary>
     public void AdjustOnSline()
     {
         if (_TileSplineContainer == null)
