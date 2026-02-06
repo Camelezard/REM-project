@@ -12,9 +12,4 @@ public class Dressing : MonoBehaviour
     public List<Sprite> choses => _Choses;
     public List<Sprite> dressTop => _DressTop;
 
-    public void GetRandomListOfCloth()
-    {
-        
-    }
-
 }
