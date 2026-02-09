@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerCloth : MonoBehaviour
+public class BoddyCloth : MonoBehaviour
 {
     [SerializeField] private Dressing _Dressing;
 
@@ -47,10 +47,5 @@ public class PlayerCloth : MonoBehaviour
     {
         lBoddyPartToSet.sprite = null;
         lBoddyPartToSet.color = _ShowColor;
-    }
-
-    private void RandomCloths()
-    {
-        
     }
 }
