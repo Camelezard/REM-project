@@ -23,6 +23,7 @@ public class Spinner : MonoBehaviour
     public float startingSpinDuration;
     public float endingSpinDuration;
 
+    private float[] angles;
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class Spinner : MonoBehaviour
 
     private void GenerateNumberOnWheel()
     {
+        angles = new float[maxMovementPoint];
         GameObject lNumberObject;
         TextMeshProUGUI lNumberText;
         RectTransform lNumberRectTransform;
@@ -58,6 +60,7 @@ public class Spinner : MonoBehaviour
             lNumberObject.transform.SetParent(wheel, false);
 
             lAngle = (90f - (i * 360f / maxMovementPoint)) * Mathf.Deg2Rad;
+            angles[i] = -(lAngle * Mathf.Rad2Deg - 90f);
 
             lNumberRectTransform.sizeDelta = Vector2.one * numberFontSize * 1.5f;
 
@@ -72,13 +75,15 @@ public class Spinner : MonoBehaviour
     public void SpinWheel()
     {
         int lRandomMovementPoint = Random.Range(minMovementPoint, maxMovementPoint);
-        StartCoroutine(WheelAnimation());
+        Debug.Log(angles[lRandomMovementPoint - 1] + "  --  " + lRandomMovementPoint);
+        StartCoroutine(WheelAnimation(lRandomMovementPoint));
     }
 
-    private IEnumerator WheelAnimation()
+    private IEnumerator WheelAnimation(int pValueToStopAt)
     {
         float lRatio = 0;
         float lElaspedTime = 0;
+        float lCurrentZ = 0;
 
         //Quaternion lStartRot = wheel.rotation;
         //Quaternion lEndRot = wheel.rotation * Quaternion.Euler(0, 0, 360f * 6f);
@@ -93,7 +98,7 @@ public class Spinner : MonoBehaviour
 
             //wheel.rotation = Quaternion.Slerp(lStartRot, lEndRot, spinAnimCurveStart.Evaluate(lRatio));
 
-            float lCurrentZ = Mathf.Lerp(lStartRot, lEndRot, spinAnimCurveStart.Evaluate(lRatio));
+            lCurrentZ = Mathf.Lerp(lStartRot, lEndRot, spinAnimCurveStart.Evaluate(lRatio));
             wheel.localEulerAngles = new Vector3(0, 0, lCurrentZ);
 
             yield return null;
@@ -108,7 +113,7 @@ public class Spinner : MonoBehaviour
 
         while (!lStopWheelRequested)
         {
-            if (Mouse.current.leftButton.wasPressedThisFrame)
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 lStopWheelRequested = true;
                 break;
@@ -120,7 +125,25 @@ public class Spinner : MonoBehaviour
             yield return null;
         }
 
+        lElaspedTime = 0;
+        lRatio = 0;
+        lCurrentZ = 0;
 
+        lStartRot = wheel.localEulerAngles.z;
+        lEndRot = angles[pValueToStopAt - 1] + 360f * 6f;
+
+        while (lElaspedTime < endingSpinDuration)
+        {
+            lElaspedTime += Time.deltaTime;
+            lRatio = lElaspedTime / endingSpinDuration;
+
+            lCurrentZ = Mathf.Lerp(lStartRot, lEndRot, spinAnimCurveEnd.Evaluate(lRatio));
+            wheel.localEulerAngles = new Vector3(0,0, lCurrentZ);
+
+            yield return null;
+        }
+
+        wheel.localEulerAngles = new Vector3(0, 0, lEndRot);
         yield return null;
     }
 }
