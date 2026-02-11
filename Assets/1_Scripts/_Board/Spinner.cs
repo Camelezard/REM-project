@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Spinner : MonoBehaviour
 {
@@ -78,19 +80,46 @@ public class Spinner : MonoBehaviour
         float lRatio = 0;
         float lElaspedTime = 0;
 
-        Quaternion lStartRot = wheel.localRotation;
-        Quaternion lEndRot = wheel.localRotation * Quaternion.Euler(0, 0, 360f * 6f);
+        //Quaternion lStartRot = wheel.rotation;
+        //Quaternion lEndRot = wheel.rotation * Quaternion.Euler(0, 0, 360f * 6f);
+
+        float lStartRot = wheel.localEulerAngles.z;
+        float lEndRot = lStartRot + (360f * 6f);
 
         while (lElaspedTime < startingSpinDuration)
         {
             lElaspedTime += Time.deltaTime;
             lRatio = lElaspedTime / startingSpinDuration;
 
-            wheel.localRotation = Quaternion.Slerp(lStartRot, lEndRot, spinAnimCurveStart.Evaluate(lRatio));
+            //wheel.rotation = Quaternion.Slerp(lStartRot, lEndRot, spinAnimCurveStart.Evaluate(lRatio));
+
+            float lCurrentZ = Mathf.Lerp(lStartRot, lEndRot, spinAnimCurveStart.Evaluate(lRatio));
+            wheel.localEulerAngles = new Vector3(0, 0, lCurrentZ);
+
             yield return null;
         }
 
-        wheel.localRotation = lEndRot;
+        //wheel.rotation = lEndRot;
+        wheel.localEulerAngles = new Vector3(0, 0, lEndRot);
+
+        float lRotationSpeed = (360f * 6f) / startingSpinDuration;
+        float lCurrentRotation = lEndRot;
+        bool lStopWheelRequested = false;
+
+        while (!lStopWheelRequested)
+        {
+            if (Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                lStopWheelRequested = true;
+                break;
+            }
+
+            lCurrentRotation += lRotationSpeed * Time.deltaTime;
+            wheel.localEulerAngles = new Vector3 (0, 0, lCurrentRotation);
+
+            yield return null;
+        }
+
 
         yield return null;
     }
