@@ -12,13 +12,13 @@ public class Pawn : MonoBehaviour
     [SerializeField] private float _TimePerMove = 1f;
     [SerializeField] private float _TransitionTimeOnTile = .1f;
 
-    private int _CurrentTile = 10;
+    private int _CurrentTile = 0;
 
     void Start()
     {
         transform.position = TilePlacer.Instance.spawnedTiles[_CurrentTile].transform.position;
 
-        StartCoroutine(MoveToTile(0));
+        //StartCoroutine(MoveToTile(0));
     }
 
     // la coroutine va nous permetre de depalcer le pion jusque a la case voulu

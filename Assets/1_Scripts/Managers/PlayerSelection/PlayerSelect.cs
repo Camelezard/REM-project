@@ -7,6 +7,11 @@ public class PlayerSelect : MonoBehaviour
     private bool _IsReady = false;
 
 
+    void Start()
+    {
+        _SelfPlayer = new Player();
+    }
+
     public void OnRedyClick()
     {
         if (!_PlayerManager)

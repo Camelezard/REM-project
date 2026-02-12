@@ -3,15 +3,16 @@ using UnityEngine;
 
 public class PlayerSelectManger : MonoBehaviour
 {
-    private List<Player> _PlayersRedy;
+    private List<Player> _PlayersRedy = new List<Player>();
     void Start()
     {
-        
+
     }
 
     public void StartGame()
     {
         GameManager.GetInstance().CreatePlayers(_PlayersRedy);
+        GameManager.GetInstance().GoBackToMainBoardForFirstTime();
     }
 
     public void AddPlayer(Player lPlayer)
@@ -32,5 +33,10 @@ public class PlayerSelectManger : MonoBehaviour
         _PlayersRedy.Remove(lPlayer);
 
         Debug.Log("player remove");
+    }
+
+    private void SceneTransition()
+    {
+        
     }
 }
