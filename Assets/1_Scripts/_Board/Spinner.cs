@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Spinner : MonoBehaviour
 {
+    public event Action<int> OnSpinnerStopAtNumber;
+
     [Header("Gameplay Related")]
     public int minMovementPoint = 1;
     public int maxMovementPoint = 4;
@@ -28,7 +32,7 @@ public class Spinner : MonoBehaviour
     void Start()
     {
         GenerateNumberOnWheel();
-        SpinWheel();
+        //SpinWheel();
     }
 
     // Update is called once per frame
@@ -72,11 +76,18 @@ public class Spinner : MonoBehaviour
         }
     }
 
-    public void SpinWheel()
+    public int SpinWheel()
     {
         int lRandomMovementPoint = Random.Range(minMovementPoint, maxMovementPoint);
         Debug.Log(angles[lRandomMovementPoint - 1] + "  --  " + lRandomMovementPoint);
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(true);
+        }
+
         StartCoroutine(WheelAnimation(lRandomMovementPoint));
+        return lRandomMovementPoint;
     }
 
     private IEnumerator WheelAnimation(int pValueToStopAt)
@@ -144,6 +155,14 @@ public class Spinner : MonoBehaviour
         }
 
         wheel.localEulerAngles = new Vector3(0, 0, lEndRot);
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        OnSpinnerStopAtNumber?.Invoke(pValueToStopAt);
+
         yield return null;
     }
 }

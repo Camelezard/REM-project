@@ -7,6 +7,7 @@ public class Pawn : MonoBehaviour
 {
     // codex
 
+    [SerializeField] private Spinner _Spinner;
     [SerializeField] private SplineContainer _SplineContainer;
     [SerializeField] private float _MoveDuration = 1f;
     [SerializeField] private float _TimePerMove = 1f;
@@ -16,9 +17,11 @@ public class Pawn : MonoBehaviour
 
     void Start()
     {
+        _Spinner.OnSpinnerStopAtNumber += MoveAfterSpinner;
         transform.position = TilePlacer.Instance.spawnedTiles[_CurrentTile].transform.position;
 
-        StartCoroutine(MoveToTile(0));
+        _Spinner.SpinWheel();
+        //StartCoroutine(MoveToTile(0));
     }
 
     // la coroutine va nous permetre de depalcer le pion jusque a la case voulu
@@ -62,5 +65,10 @@ public class Pawn : MonoBehaviour
         }
 
         transform.position = _SplineContainer.EvaluatePosition(lEndDistanceOnSpline);
+    }
+
+    private void MoveAfterSpinner(int pValue)
+    {
+        StartCoroutine(MoveToTile(_CurrentTile + pValue));
     }
 }

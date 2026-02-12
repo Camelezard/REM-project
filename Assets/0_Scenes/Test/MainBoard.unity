@@ -3633,6 +3633,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   startingSpinDuration: 2
   endingSpinDuration: 5
+  spinnerChildren:
+  - {fileID: 1721901965}
+  - {fileID: 363173127}
 --- !u!1 &1564372660
 GameObject:
   m_ObjectHideFlags: 0
