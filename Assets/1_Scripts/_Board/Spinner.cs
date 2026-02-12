@@ -1,10 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Spinner : MonoBehaviour
 {
+    public event Action<int> OnSpinnerStopAtNumber;
+
     [Header("Gameplay Related")]
     public int minMovementPoint = 1;
     public int maxMovementPoint = 4;
@@ -21,11 +27,12 @@ public class Spinner : MonoBehaviour
     public float startingSpinDuration;
     public float endingSpinDuration;
 
+    private float[] angles;
 
     void Start()
     {
         GenerateNumberOnWheel();
-        SpinWheel();
+        //SpinWheel();
     }
 
     // Update is called once per frame
@@ -36,6 +43,7 @@ public class Spinner : MonoBehaviour
 
     private void GenerateNumberOnWheel()
     {
+        angles = new float[maxMovementPoint];
         GameObject lNumberObject;
         TextMeshProUGUI lNumberText;
         RectTransform lNumberRectTransform;
@@ -56,6 +64,7 @@ public class Spinner : MonoBehaviour
             lNumberObject.transform.SetParent(wheel, false);
 
             lAngle = (90f - (i * 360f / maxMovementPoint)) * Mathf.Deg2Rad;
+            angles[i] = -(lAngle * Mathf.Rad2Deg - 90f);
 
             lNumberRectTransform.sizeDelta = Vector2.one * numberFontSize * 1.5f;
 
@@ -67,30 +76,92 @@ public class Spinner : MonoBehaviour
         }
     }
 
-    public void SpinWheel()
+    public int SpinWheel()
     {
         int lRandomMovementPoint = Random.Range(minMovementPoint, maxMovementPoint);
-        StartCoroutine(WheelAnimation());
+        Debug.Log(angles[lRandomMovementPoint - 1] + "  --  " + lRandomMovementPoint);
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(true);
+        }
+
+        StartCoroutine(WheelAnimation(lRandomMovementPoint));
+        return lRandomMovementPoint;
     }
 
-    private IEnumerator WheelAnimation()
+    private IEnumerator WheelAnimation(int pValueToStopAt)
     {
         float lRatio = 0;
         float lElaspedTime = 0;
+        float lCurrentZ = 0;
 
-        Quaternion lStartRot = wheel.localRotation;
-        Quaternion lEndRot = wheel.localRotation * Quaternion.Euler(0, 0, 360f * 6f);
+        //Quaternion lStartRot = wheel.rotation;
+        //Quaternion lEndRot = wheel.rotation * Quaternion.Euler(0, 0, 360f * 6f);
+
+        float lStartRot = wheel.localEulerAngles.z;
+        float lEndRot = lStartRot + (360f * 6f);
 
         while (lElaspedTime < startingSpinDuration)
         {
             lElaspedTime += Time.deltaTime;
             lRatio = lElaspedTime / startingSpinDuration;
 
-            wheel.localRotation = Quaternion.Slerp(lStartRot, lEndRot, spinAnimCurveStart.Evaluate(lRatio));
+            //wheel.rotation = Quaternion.Slerp(lStartRot, lEndRot, spinAnimCurveStart.Evaluate(lRatio));
+
+            lCurrentZ = Mathf.Lerp(lStartRot, lEndRot, spinAnimCurveStart.Evaluate(lRatio));
+            wheel.localEulerAngles = new Vector3(0, 0, lCurrentZ);
+
             yield return null;
         }
 
-        wheel.localRotation = lEndRot;
+        //wheel.rotation = lEndRot;
+        wheel.localEulerAngles = new Vector3(0, 0, lEndRot);
+
+        float lRotationSpeed = (360f * 6f) / startingSpinDuration;
+        float lCurrentRotation = lEndRot;
+        bool lStopWheelRequested = false;
+
+        while (!lStopWheelRequested)
+        {
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                lStopWheelRequested = true;
+                break;
+            }
+
+            lCurrentRotation += lRotationSpeed * Time.deltaTime;
+            wheel.localEulerAngles = new Vector3 (0, 0, lCurrentRotation);
+
+            yield return null;
+        }
+
+        lElaspedTime = 0;
+        lRatio = 0;
+        lCurrentZ = 0;
+
+        lStartRot = wheel.localEulerAngles.z;
+        lEndRot = angles[pValueToStopAt - 1] + 360f * 6f/* + Random.Range(-20f, 20f)*/;
+
+        while (lElaspedTime < endingSpinDuration)
+        {
+            lElaspedTime += Time.deltaTime;
+            lRatio = lElaspedTime / endingSpinDuration;
+
+            lCurrentZ = Mathf.Lerp(lStartRot, lEndRot, spinAnimCurveEnd.Evaluate(lRatio));
+            wheel.localEulerAngles = new Vector3(0,0, lCurrentZ);
+
+            yield return null;
+        }
+
+        wheel.localEulerAngles = new Vector3(0, 0, lEndRot);
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        OnSpinnerStopAtNumber?.Invoke(pValueToStopAt);
 
         yield return null;
     }
