@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: -8056546079826708689}
   - component: {fileID: 131890258673870634}
   - component: {fileID: 604829978924161798}
-  m_Layer: 0
+  - component: {fileID: 1792829078328943520}
+  m_Layer: 6
   m_Name: BasicTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _TileSplineContainer: {fileID: 0}
+  distanceOnPath: 0
   spline:
     m_EditModeType: 1
     m_Knots: []
@@ -60,7 +62,6 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
-  distanceOnPath: 0
 --- !u!33 &131890258673870634
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -114,3 +115,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1792829078328943520
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4650812735557039576}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

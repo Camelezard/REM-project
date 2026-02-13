@@ -12,39 +12,43 @@ public class Pawn : MonoBehaviour
     [SerializeField] private float _MoveDuration = 1f;
     [SerializeField] private float _TimePerMove = 1f;
     [SerializeField] private float _TransitionTimeOnTile = .1f;
+    [SerializeField] private LayerMask _TileLayermask;
 
-    private int _CurrentTile = 10;
+    public int currentTile = 10;
+
 
     void Start()
     {
         _Spinner.OnSpinnerStopAtNumber += MoveAfterSpinner;
-        transform.position = TilePlacer.Instance.spawnedTiles[_CurrentTile].transform.position;
+        transform.position = TilePlacer.Instance.spawnedTiles[currentTile].transform.position;
 
-        _Spinner.SpinWheel();
-        //StartCoroutine(MoveToTile(0));
+        //_Spinner.SpinWheel();
+        StartCoroutine(MoveToTile(currentTile + 3));
     }
 
     // la coroutine va nous permetre de depalcer le pion jusque a la case voulu
-    private IEnumerator MoveToTile(int pTargetTileIndex)
+    public IEnumerator MoveToTile(int pTargetTileIndex)
     {
-        int lDirection = pTargetTileIndex > _CurrentTile ? 1 : -1; // pour savoir si on avance ou si on recule
+        int lDirection = pTargetTileIndex > currentTile ? 1 : -1; // pour savoir si on avance ou si on recule
 
-        while (_CurrentTile != pTargetTileIndex)
+        while (currentTile != pTargetTileIndex)
         {
-            int lNextTile = _CurrentTile + lDirection;
+            int lNextTile = currentTile + lDirection;
 
             // transition entre deux tile
-            yield return StartCoroutine(MoveBetweenTwoTiles(_CurrentTile, lNextTile));
+            yield return StartCoroutine(MoveBetweenTwoTiles(currentTile, lNextTile));
 
             // le personnage stop un instant sur les cases pour donner un effet de jeu de plateau
             yield return new WaitForSeconds(_TimePerMove);
 
-            _CurrentTile = lNextTile;
+            currentTile = lNextTile;
         }
+
+        CheckTile();
     }
 
     // Trasitione entre deux tiles ou qu'elle soit. 
-    private IEnumerator MoveBetweenTwoTiles(int pOriinTileIndex, int pFinalTileIndex)
+    public IEnumerator MoveBetweenTwoTiles(int pOriinTileIndex, int pFinalTileIndex)
     {
         float lElapsedTime = 0f;
         float lDistanceOnSpline;
@@ -65,10 +69,24 @@ public class Pawn : MonoBehaviour
         }
 
         transform.position = _SplineContainer.EvaluatePosition(lEndDistanceOnSpline);
+        //CheckTile();
     }
 
     private void MoveAfterSpinner(int pValue)
     {
-        StartCoroutine(MoveToTile(_CurrentTile + pValue));
+        StartCoroutine(MoveToTile(currentTile + pValue));
+    }
+
+    private void CheckTile()
+    {
+        Debug.Log("checking tile...");
+        RaycastHit lHit;
+        BoardTile lTile;
+        if (Physics.Raycast(transform.position + new Vector3(0,1,0), Vector3.down, out lHit, 5f, _TileLayermask))
+        {
+            Debug.Log("Tile checked !");
+            lTile = lHit.collider.gameObject.GetComponent<BoardTile>();
+            lTile.ExecuteEffect(this);
+        }
     }
 }

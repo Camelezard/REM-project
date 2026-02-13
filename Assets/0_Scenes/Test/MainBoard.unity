@@ -1120,7 +1120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &363173128
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3633,9 +3633,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   startingSpinDuration: 2
   endingSpinDuration: 5
-  spinnerChildren:
-  - {fileID: 1721901965}
-  - {fileID: 363173127}
 --- !u!1 &1564372660
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,7 +3796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1721901966
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5043,6 +5040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e84016e3d4ef54bbf82fe9078c06c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Spinner: {fileID: 1535065183}
   _SplineContainer: {fileID: 1824261402}
   _MoveDuration: 0.2
   _TimePerMove: 1
