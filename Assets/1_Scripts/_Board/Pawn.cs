@@ -69,7 +69,6 @@ public class Pawn : MonoBehaviour
         }
 
         transform.position = _SplineContainer.EvaluatePosition(lEndDistanceOnSpline);
-        //CheckTile();
     }
 
     private void MoveAfterSpinner(int pValue)
@@ -79,12 +78,10 @@ public class Pawn : MonoBehaviour
 
     private void CheckTile()
     {
-        Debug.Log("checking tile...");
         RaycastHit lHit;
         BoardTile lTile;
         if (Physics.Raycast(transform.position + new Vector3(0,1,0), Vector3.down, out lHit, 5f, _TileLayermask))
         {
-            Debug.Log("Tile checked !");
             lTile = lHit.collider.gameObject.GetComponent<BoardTile>();
             lTile.ExecuteEffect(this);
         }
