@@ -8,15 +8,19 @@ public class Pawn : MonoBehaviour
     // codex
 
     [SerializeField] private Spinner _Spinner;
-    [SerializeField] private SplineContainer _SplineContainer;
     [SerializeField] private float _MoveDuration = 1f;
     [SerializeField] private float _TimePerMove = 1f;
     [SerializeField] private float _TransitionTimeOnTile = .1f;
+    
+    public SplineContainer _SplineContainer;
 
     private int _CurrentTile = 0;
 
     void Start()
     {
+        if(_Spinner == null) _Spinner = Spinner.instance;
+
+
         _Spinner.OnSpinnerStopAtNumber += MoveAfterSpinner;
         transform.position = TilePlacer.Instance.spawnedTiles[_CurrentTile].transform.position;
 

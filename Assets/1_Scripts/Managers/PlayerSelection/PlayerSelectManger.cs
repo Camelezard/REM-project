@@ -12,7 +12,7 @@ public class PlayerSelectManger : MonoBehaviour
     public void StartGame()
     {
         GameManager.GetInstance().CreatePlayers(_PlayersRedy);
-        GameManager.GetInstance().GoBackToMainBoardForFirstTime();
+        GameManager.GetInstance().LoadMainBoardFirstTime();
     }
 
     public void AddPlayer(Player lPlayer)

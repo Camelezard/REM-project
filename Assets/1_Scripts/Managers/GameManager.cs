@@ -2,15 +2,19 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     private const string MAIN_BOARD_SCENE_NAME = "MainBoard";
     private const string MAIN_BOARD_SCENE_NAME_TEST = "MainBoardTest";
+    private const string MINIGAME_TEST = "MainBoardTest";
 
     public static GameManager instance { get; private set; }
-    public List<Player> _PlayersList {get; private set; }
+    public List<Player> _PlayersList { get; private set; }
+    public List<Pawn> _PawnList;
 
+    private int CurrentPlayer = 0;
     private const int MAX_PLAYER = 2;
 
 
@@ -43,56 +47,47 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Start
-    void Start()
-    {
-        //CreatePlayers();
-    }
 
-    // fonctions utiles
     public void CreatePlayers(List<Player> lPlayerNumber)
     {
         _PlayersList = new List<Player>(lPlayerNumber);
-        Player lPlayer;
-        // for (int i = 0; i < lPlayerNumber; i++)
-        // {
-        //     lPlayer = new Player();
-
-        //     _PlayersList.Add(lPlayer);
-
-        //     lPlayer.playerId = i + 1;
-
-        //     print ($"New player has been created id = {lPlayer.playerId}");
-        // }
     }
 
 
+
+    //Tunr Management
+    public Player CurrentPlayerTurn() => _PlayersList[CurrentPlayer];
+
+    public void NexTurn()
+    {
+        CurrentPlayer ++;
+        if (CurrentPlayer >= _PlayersList.Count) CurrentPlayer = 0;
+    }
+
+
+
+
+    // Scene Management
+    public void LoadMainBoardFirstTime()
+    {
+        SceneTransitionanager.instance.SwitchOverlay("MainMenuTest", MAIN_BOARD_SCENE_NAME_TEST);
+    }
+
+    public void StartMinigame()
+    {
+        SceneTransitionanager.instance.LoadSingle(MINIGAME_TEST);
+    }
 
     public void WinGame()
     {
-        GoBackToMainBoard();
+        SceneTransitionanager.instance.LoadAdditive(MINIGAME_TEST);
     }
 
-
-    //Scene Management
-
-    public void GoBackToMainBoardForFirstTime()
+    private void ResetGameState()
     {
-        StartCoroutine(RsetMainBoard());
-    }
+        _PlayersList = new List<Player>();
 
-
-
-
-    public void GoBackToMainBoard()
-    {
-        SceneManager.LoadScene(MAIN_BOARD_SCENE_NAME_TEST, LoadSceneMode.Additive);
-    }
-
-    private IEnumerator RsetMainBoard()
-    {
-        yield return SceneManager.UnloadSceneAsync(MAIN_BOARD_SCENE_NAME_TEST);
-        yield return SceneManager.LoadSceneAsync(MAIN_BOARD_SCENE_NAME_TEST, LoadSceneMode.Additive);
+        Debug.Log("Game state reset.");
     }
 
 }
