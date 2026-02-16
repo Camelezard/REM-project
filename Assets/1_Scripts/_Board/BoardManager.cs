@@ -1,45 +1,67 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Splines;
+using System;
 
 public class BoardManager : MonoBehaviour
 {
+    public static Action OnPlayerWin;
+    public static Action OnNextTurn;
+    public static Action OnFinishPawnsSpawn;
+    public static Action OnpLplayerFinshTun;
+
     [SerializeField] private Pawn _PawnFactory;
     [SerializeField] public SplineContainer _SplineContainer;
+    [SerializeField] private float _SpawnTime = 1.5f;
+    [SerializeField] private float _PlayerTransitionTime = 2f;
 
     private List<Pawn> _PawnList;
 
 
     void Start()
     {
-        SceneTransitionanager.OnSceneReady += OnStartTransition;
+        // ne pas oublier les deux listes pointe au meme endroit. si l'une est modifier, l'autre aussis
         _PawnList = GameManager.GetInstance()._PawnList;
+        OnFinishPawnsSpawn += LunchSpawnPlayerFocusTransition;
+        OnNextTurn += LunchSpawnPlayerFocusTransition;
     }
 
-    public void OnStartTransition()
-    {
-        SpawnPawns();
 
-        Debug.Log("StartTransition");
+
+    //------------- Events  ---------------------
+    void OnEnable()
+    {
+        SceneTransitionanager.OnSceneReadyFirstTime += OnFirstLoadStartTransition;
 
     }
 
     private void OnDisable()
     {
-        SceneTransitionanager.OnSceneReady -= OnStartTransition;
+        SceneTransitionanager.OnSceneReadyFirstTime -= OnFirstLoadStartTransition;
     }
 
-    public void SpawnPawns()
+
+
+
+    //---------------   PawnsCreation   ---------------
+    public IEnumerator SpawnPawns()
     {
         ClearPawns();
         Pawn lPawn;
+        List<Player> lPlayers = GameManager.GetInstance()._PlayersList;
+        float lWaitTime = _SpawnTime / lPlayers.Count;
 
         foreach (Player pPlayer in GameManager.GetInstance()._PlayersList)
         {
             CreateAPawn(out lPawn);
             lPawn._SplineContainer = _SplineContainer;
             _PawnList.Add(lPawn);
+
+            yield return new WaitForSeconds(lWaitTime);
         }
+
+        OnFinishPawnsSpawn?.Invoke();
     }
 
 
@@ -73,5 +95,38 @@ public class BoardManager : MonoBehaviour
 
         Debug.Log("PawnCrated");
 
-    } 
+    }
+
+
+
+    //---------------   Transition   ---------------
+    public void LunchSpawnPlayerFocusTransition()
+    {
+        StartCoroutine(FocusPlayer());
+    }
+
+    private IEnumerator FocusPlayer()
+    {
+        float lElaps = 0f;
+
+        while (lElaps < _PlayerTransitionTime )
+        {
+            lElaps += Time.deltaTime;
+
+
+
+            yield return null;
+        }
+
+        Pawn lPawn = GameManager.GetInstance().GetCurrentPlayerTurnPawn();
+        lPawn.StartTurn();
+    }
+
+    public void OnFirstLoadStartTransition()
+    {
+        StartCoroutine(SpawnPawns());
+
+        Debug.Log("StartTransition");
+
+    }
 }

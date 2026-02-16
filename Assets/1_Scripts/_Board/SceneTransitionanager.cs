@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneTransitionanager : MonoBehaviour
 {
     public static Action OnSceneReady;
+    public static Action OnSceneReadyFirstTime;
 
     public static SceneTransitionanager instance;
 
@@ -130,7 +131,7 @@ public class SceneTransitionanager : MonoBehaviour
 
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(loadScene));
 
-        OnSceneReady?.Invoke();
+        OnSceneReadyFirstTime?.Invoke();
         _IsTransitioning = false;
     }
 }

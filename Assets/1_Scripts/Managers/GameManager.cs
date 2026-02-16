@@ -6,7 +6,8 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    private const string MAIN_BOARD_SCENE_NAME = "MainBoard";
+
+    //private const string MAIN_BOARD_SCENE_NAME = "MainBoard";
     private const string MAIN_BOARD_SCENE_NAME_TEST = "MainBoardTest";
     private const string MINIGAME_TEST = "MainBoardTest";
 
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
     public List<Pawn> _PawnList;
 
     private int CurrentPlayer = 0;
-    private const int MAX_PLAYER = 2;
+    //private const int MAX_PLAYER = 2;
 
 
     // Get Instance
@@ -47,24 +48,27 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-
     public void CreatePlayers(List<Player> lPlayerNumber)
     {
         _PlayersList = new List<Player>(lPlayerNumber);
     }
 
 
+    //Tunrn Management
+    public Player GetCurrentPlayerTurn() => _PlayersList[CurrentPlayer];
+    public Pawn GetCurrentPlayerTurnPawn() => _PawnList[CurrentPlayer];
 
-    //Tunr Management
-    public Player CurrentPlayerTurn() => _PlayersList[CurrentPlayer];
-
-    public void NexTurn()
+    public void NextPlayerTurn()
     {
-        CurrentPlayer ++;
-        if (CurrentPlayer >= _PlayersList.Count) CurrentPlayer = 0;
+        SetNextPlayerTurnIndex();
+        BoardManager.OnNextTurn.Invoke();
     }
 
-
+    public void SetNextPlayerTurnIndex()
+    {
+        CurrentPlayer++;
+        if (CurrentPlayer >= _PlayersList.Count) CurrentPlayer = 0;
+    }
 
 
     // Scene Management
@@ -83,11 +87,11 @@ public class GameManager : MonoBehaviour
         SceneTransitionanager.instance.LoadAdditive(MINIGAME_TEST);
     }
 
-    private void ResetGameState()
-    {
-        _PlayersList = new List<Player>();
+    // private void ResetGameState()
+    // {
+    //     _PlayersList = new List<Player>();
 
-        Debug.Log("Game state reset.");
-    }
+    //     Debug.Log("Game state reset.");
+    // }
 
 }
