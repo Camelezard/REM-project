@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -16,15 +17,29 @@ public class BoardTile : MonoBehaviour
     public SplineContainer _TileSplineContainer;
     private TileType tileType;
 
-    [Header("Til Caracteistique")]
+    [Header("Tile Specifications")]
     [Range(0f, 1f)] public float distanceOnPath;
     [SerializeField] public Spline spline;
 
+    private List<TileEffect> _Effects = new List<TileEffect>();
 
+    private void Awake()
+    {
+        _Effects.AddRange(GetComponents<TileEffect>());
+    }
 
     void OnValidate()
     {
         AdjustOnSline();
+
+        _Effects.Clear();
+        _Effects.AddRange(GetComponents<TileEffect>());
+
+        string lDescription;
+        foreach (TileEffect lEffect in _Effects)
+        {
+            lDescription = "- " + lEffect.GetDescription() + "\n";
+        }
     }
 
     /// <summary>
@@ -40,5 +55,14 @@ public class BoardTile : MonoBehaviour
         }
 
         transform.position = _TileSplineContainer.EvaluatePosition(distanceOnPath);
+    }
+
+    public void ExecuteEffect(Pawn pPawn)
+    {
+        if (_Effects.Count == 0) return;
+        foreach (TileEffect lEffect in _Effects)
+        {
+            lEffect.Execute(pPawn);
+        }
     }
 }
