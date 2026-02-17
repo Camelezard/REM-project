@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 1753180}
   - component: {fileID: 1753179}
   - component: {fileID: 1753178}
+  - component: {fileID: 1753181}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -233,6 +234,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1753181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &101566091
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +259,7 @@ GameObject:
   - component: {fileID: 101566095}
   - component: {fileID: 101566094}
   - component: {fileID: 101566093}
+  - component: {fileID: 101566096}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -347,6 +362,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &101566096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101566091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &184456687
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,6 +496,7 @@ GameObject:
   - component: {fileID: 242384446}
   - component: {fileID: 242384445}
   - component: {fileID: 242384444}
+  - component: {fileID: 242384447}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -570,6 +599,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &242384447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242384442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &244864199
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +699,7 @@ GameObject:
   - component: {fileID: 261854234}
   - component: {fileID: 261854233}
   - component: {fileID: 261854232}
+  - component: {fileID: 261854235}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -759,6 +802,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &261854235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261854230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &307046031
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +906,7 @@ GameObject:
   - component: {fileID: 367072941}
   - component: {fileID: 367072940}
   - component: {fileID: 367072939}
+  - component: {fileID: 367072942}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -952,6 +1009,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &367072942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367072937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &406631519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,6 +1141,7 @@ GameObject:
   - component: {fileID: 509722728}
   - component: {fileID: 509722727}
   - component: {fileID: 509722726}
+  - component: {fileID: 509722729}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -1173,6 +1244,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &509722729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509722724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &563126926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,6 +1269,7 @@ GameObject:
   - component: {fileID: 563126930}
   - component: {fileID: 563126929}
   - component: {fileID: 563126928}
+  - component: {fileID: 563126931}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -1287,6 +1372,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &563126931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563126926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &647153251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,6 +1397,7 @@ GameObject:
   - component: {fileID: 647153255}
   - component: {fileID: 647153254}
   - component: {fileID: 647153253}
+  - component: {fileID: 647153256}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -1401,6 +1500,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &647153256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647153251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &665990204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,6 +1525,7 @@ GameObject:
   - component: {fileID: 665990208}
   - component: {fileID: 665990207}
   - component: {fileID: 665990206}
+  - component: {fileID: 665990209}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -1515,6 +1628,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &665990209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665990204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &751346753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,6 +1759,7 @@ GameObject:
   - component: {fileID: 752762791}
   - component: {fileID: 752762790}
   - component: {fileID: 752762789}
+  - component: {fileID: 752762792}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -1735,6 +1862,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &752762792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752762787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &940514681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,6 +1887,7 @@ GameObject:
   - component: {fileID: 940514685}
   - component: {fileID: 940514684}
   - component: {fileID: 940514683}
+  - component: {fileID: 940514686}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -1849,6 +1990,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &940514686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940514681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &985761268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,6 +2015,7 @@ GameObject:
   - component: {fileID: 985761272}
   - component: {fileID: 985761271}
   - component: {fileID: 985761270}
+  - component: {fileID: 985761273}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -1963,6 +2118,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &985761273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985761268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1056570148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,6 +2143,7 @@ GameObject:
   - component: {fileID: 1056570152}
   - component: {fileID: 1056570151}
   - component: {fileID: 1056570150}
+  - component: {fileID: 1056570153}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -2077,6 +2246,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1056570153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056570148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1057684056
 GameObject:
   m_ObjectHideFlags: 0
@@ -2089,6 +2271,7 @@ GameObject:
   - component: {fileID: 1057684060}
   - component: {fileID: 1057684059}
   - component: {fileID: 1057684058}
+  - component: {fileID: 1057684061}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -2191,6 +2374,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1057684061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057684056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1066373305
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,6 +2399,7 @@ GameObject:
   - component: {fileID: 1066373309}
   - component: {fileID: 1066373308}
   - component: {fileID: 1066373307}
+  - component: {fileID: 1066373310}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -2305,6 +2502,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1066373310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066373305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1085709874
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,6 +2527,7 @@ GameObject:
   - component: {fileID: 1085709878}
   - component: {fileID: 1085709877}
   - component: {fileID: 1085709876}
+  - component: {fileID: 1085709879}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -2419,6 +2630,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1085709879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085709874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1110086424
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,6 +2687,7 @@ GameObject:
   - component: {fileID: 1155635486}
   - component: {fileID: 1155635485}
   - component: {fileID: 1155635484}
+  - component: {fileID: 1155635487}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -2565,6 +2790,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1155635487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155635482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1241058258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2721,6 +2959,7 @@ GameObject:
   - component: {fileID: 1346458493}
   - component: {fileID: 1346458492}
   - component: {fileID: 1346458491}
+  - component: {fileID: 1346458494}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -2823,6 +3062,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1346458494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346458489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1377010477
 GameObject:
   m_ObjectHideFlags: 0
@@ -3127,6 +3379,7 @@ GameObject:
   - component: {fileID: 1400030472}
   - component: {fileID: 1400030471}
   - component: {fileID: 1400030470}
+  - component: {fileID: 1400030473}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -3229,6 +3482,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1400030473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400030468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1504217304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3241,6 +3507,7 @@ GameObject:
   - component: {fileID: 1504217308}
   - component: {fileID: 1504217307}
   - component: {fileID: 1504217306}
+  - component: {fileID: 1504217309}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -3343,6 +3610,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1504217309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504217304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1534317262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,6 +3635,7 @@ GameObject:
   - component: {fileID: 1534317266}
   - component: {fileID: 1534317265}
   - component: {fileID: 1534317264}
+  - component: {fileID: 1534317267}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -3457,6 +3738,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1534317267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534317262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1589601901
 GameObject:
   m_ObjectHideFlags: 0
@@ -3830,6 +4124,7 @@ GameObject:
   - component: {fileID: 1723261729}
   - component: {fileID: 1723261728}
   - component: {fileID: 1723261727}
+  - component: {fileID: 1723261730}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -3932,6 +4227,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1723261730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723261725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1729112645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,6 +4252,7 @@ GameObject:
   - component: {fileID: 1729112649}
   - component: {fileID: 1729112648}
   - component: {fileID: 1729112647}
+  - component: {fileID: 1729112650}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -4046,6 +4355,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1729112650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729112645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1747595833
 GameObject:
   m_ObjectHideFlags: 0
@@ -4058,6 +4380,7 @@ GameObject:
   - component: {fileID: 1747595837}
   - component: {fileID: 1747595836}
   - component: {fileID: 1747595835}
+  - component: {fileID: 1747595838}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -4160,6 +4483,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1747595838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747595833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1774294489
 GameObject:
   m_ObjectHideFlags: 0
@@ -4172,6 +4508,7 @@ GameObject:
   - component: {fileID: 1774294493}
   - component: {fileID: 1774294492}
   - component: {fileID: 1774294491}
+  - component: {fileID: 1774294494}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -4274,6 +4611,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1774294494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774294489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1853180079
 GameObject:
   m_ObjectHideFlags: 0
@@ -4286,6 +4636,7 @@ GameObject:
   - component: {fileID: 1853180083}
   - component: {fileID: 1853180082}
   - component: {fileID: 1853180081}
+  - component: {fileID: 1853180084}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -4388,6 +4739,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1853180084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853180079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1867731097
 GameObject:
   m_ObjectHideFlags: 0
@@ -4400,6 +4764,7 @@ GameObject:
   - component: {fileID: 1867731101}
   - component: {fileID: 1867731100}
   - component: {fileID: 1867731099}
+  - component: {fileID: 1867731102}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -4502,6 +4867,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1867731102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867731097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &1870638831
 GameObject:
   m_ObjectHideFlags: 0
@@ -4663,7 +5041,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _PawnFactory: {fileID: 2717181093180914661, guid: aa2d798d413e9184096a50d8ffec651e, type: 3}
   _SplineContainer: {fileID: 1377010478}
-  _PawnList: []
+  _SpawnTime: 1.5
+  _PlayerTransitionTime: 2
 --- !u!1 &2074657375
 GameObject:
   m_ObjectHideFlags: 0
@@ -4676,6 +5055,7 @@ GameObject:
   - component: {fileID: 2074657379}
   - component: {fileID: 2074657378}
   - component: {fileID: 2074657377}
+  - component: {fileID: 2074657380}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -4778,6 +5158,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &2074657380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074657375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &2100342298
 GameObject:
   m_ObjectHideFlags: 0
@@ -4790,6 +5183,7 @@ GameObject:
   - component: {fileID: 2100342302}
   - component: {fileID: 2100342301}
   - component: {fileID: 2100342300}
+  - component: {fileID: 2100342303}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -4892,6 +5286,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &2100342303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100342298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1 &2136790277
 GameObject:
   m_ObjectHideFlags: 0
@@ -4935,6 +5342,7 @@ GameObject:
   - component: {fileID: 2141310971}
   - component: {fileID: 2141310970}
   - component: {fileID: 2141310969}
+  - component: {fileID: 2141310972}
   m_Layer: 0
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -5037,6 +5445,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &2141310972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141310967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SelectedMinigame: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

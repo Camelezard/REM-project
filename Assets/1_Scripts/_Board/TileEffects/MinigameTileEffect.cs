@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class MinigameTileEffect : TileEffect
 {
-    [SerializeField] private int _TileIndex = 10;
+    [SerializeField] private TypOfMinigame _SelectedMinigame = TypOfMinigame.Random;
 
     public override void Execute(Pawn pPawn)
     {
-        //StartCoroutine(pPawn.MoveBetweenTwoTiles(pPawn._CurrentTile, _TileIndex));
+        GameManager.GetInstance().StartMinigame(_SelectedMinigame);
     }
 
     public override string GetDescription()
     {
-        return $"G : {_TileIndex}";
+        return $"Request to lunch a minigame : {_SelectedMinigame}";
     }
+    
     
 }
