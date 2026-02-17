@@ -10,7 +10,7 @@ public class Pawn : MonoBehaviour
 
     [SerializeField] private Spinner _Spinner;
     [SerializeField] private float _MoveDuration = 1f;
-    [SerializeField] private float _TimePerMove = 1f;
+    [SerializeField] private float _TimePerMove = 0.5f;
     [SerializeField] private float _TransitionTimeOnTile = .1f;
     [SerializeField] private LayerMask _TileLayermask;
 
