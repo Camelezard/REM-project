@@ -71,7 +71,8 @@ public class Pawn : MonoBehaviour
         }
 
         //CheckTile();    // comenter pour test le flow je sais pas ou indique la fin du tour
-        EndTurn();
+        if (!CheckTile()) EndTurn();
+
     }
 
     // Trasitione entre deux tiles ou qu'elle soit. 
@@ -103,14 +104,17 @@ public class Pawn : MonoBehaviour
         StartCoroutine(MoveToTile(_CurrentTile + pValue));
     }
 
-    private void CheckTile()
+    private bool CheckTile()
     {
         RaycastHit lHit;
         BoardTile lTile;
+        bool lTileHasEffect = false;
         if (Physics.Raycast(transform.position + new Vector3(0, 1, 0), Vector3.down, out lHit, 5f, _TileLayermask))
         {
             lTile = lHit.collider.gameObject.GetComponent<BoardTile>();
-            lTile.ExecuteEffect(this);
+            lTileHasEffect = lTile.ExecuteEffect(this);
         }
+        Debug.Log(lTileHasEffect);
+        return lTileHasEffect;
     }
 }
