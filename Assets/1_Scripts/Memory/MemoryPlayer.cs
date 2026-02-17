@@ -27,7 +27,8 @@ public class MemoryPlayer : MonoBehaviour
 };
 
 
-    public void UpdateScore(int pScore)
+
+    public void UpdateScor(int pScore)
     {
         score += pScore;
         _ScoreText.text = score.ToString();

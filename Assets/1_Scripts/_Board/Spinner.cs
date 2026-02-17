@@ -9,7 +9,9 @@ using Random = UnityEngine.Random;
 
 public class Spinner : MonoBehaviour
 {
-    public event Action<int> OnSpinnerStopAtNumber;
+    public static Spinner instance;
+    public static event Action<int> OnSpinnerStopAtNumber;
+
 
     [Header("Gameplay Related")]
     public int minMovementPoint = 1;
@@ -31,6 +33,7 @@ public class Spinner : MonoBehaviour
 
     void Start()
     {
+        instance = this;
         GenerateNumberOnWheel();
         //SpinWheel();
     }

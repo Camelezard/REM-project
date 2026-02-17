@@ -1,0 +1,132 @@
+using System.Collections.Generic;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Splines;
+using System;
+
+public class BoardManager : MonoBehaviour
+{
+    public static Action OnPlayerWin;
+    public static Action OnNextTurn;
+    public static Action OnFinishPawnsSpawn;
+    public static Action OnpLplayerFinshTun;
+
+    [SerializeField] private Pawn _PawnFactory;
+    [SerializeField] public SplineContainer _SplineContainer;
+    [SerializeField] private float _SpawnTime = 1.5f;
+    [SerializeField] private float _PlayerTransitionTime = 2f;
+
+    private List<Pawn> _PawnList;
+
+
+    void Start()
+    {
+        // ne pas oublier les deux listes pointe au meme endroit. si l'une est modifier, l'autre aussis
+        _PawnList = GameManager.GetInstance()._PawnList;
+        OnFinishPawnsSpawn += LunchSpawnPlayerFocusTransition;
+        OnNextTurn += LunchSpawnPlayerFocusTransition;
+    }
+
+
+
+    //------------- Events  ---------------------
+    void OnEnable()
+    {
+        SceneTransitionanager.OnSceneReadyFirstTime += OnFirstLoadStartTransition;
+
+    }
+
+    private void OnDisable()
+    {
+        SceneTransitionanager.OnSceneReadyFirstTime -= OnFirstLoadStartTransition;
+    }
+
+
+
+
+    //---------------   PawnsCreation   ---------------
+    public IEnumerator SpawnPawns()
+    {
+        ClearPawns();
+        Pawn lPawn;
+        List<Player> lPlayers = GameManager.GetInstance()._PlayersList;
+        float lWaitTime = _SpawnTime / lPlayers.Count;
+
+        foreach (Player pPlayer in GameManager.GetInstance()._PlayersList)
+        {
+            CreateAPawn(out lPawn);
+            lPawn._SplineContainer = _SplineContainer;
+            _PawnList.Add(lPawn);
+
+            yield return new WaitForSeconds(lWaitTime);
+        }
+
+        OnFinishPawnsSpawn?.Invoke();
+    }
+
+
+    private void ClearPawns()
+    {
+        if (_PawnList == null || _PawnList.Count <= 0)
+        {
+            return;
+        }
+
+        foreach (Pawn lPawn in _PawnList)
+        {
+            Destroy(lPawn.gameObject);
+        }
+
+        _PawnList.Clear();
+
+    }
+
+    private void CreateAPawn(out Pawn lPawn)
+    {
+        lPawn = null;
+
+        if (_PawnFactory == null)
+        {
+            Debug.LogError("No PawnFactory assigned");
+            return;
+        }
+
+        lPawn = Instantiate(_PawnFactory);
+
+        Debug.Log("PawnCrated");
+
+    }
+
+
+
+    //---------------   Transition   ---------------
+    public void LunchSpawnPlayerFocusTransition()
+    {
+        StartCoroutine(FocusPlayer());
+    }
+
+    private IEnumerator FocusPlayer()
+    {
+        float lElaps = 0f;
+
+        while (lElaps < _PlayerTransitionTime )
+        {
+            lElaps += Time.deltaTime;
+
+
+
+            yield return null;
+        }
+
+        Pawn lPawn = GameManager.GetInstance().GetCurrentPlayerTurnPawn();
+        lPawn.StartTurn();
+    }
+
+    public void OnFirstLoadStartTransition()
+    {
+        StartCoroutine(SpawnPawns());
+
+        Debug.Log("StartTransition");
+
+    }
+}

@@ -6,7 +6,7 @@ public class MoveToSpecificTIleEffect : TileEffect
 
     public override void Execute(Pawn pPawn)
     {
-        StartCoroutine(pPawn.MoveBetweenTwoTiles(pPawn.currentTile, _TileIndex));
+        StartCoroutine(pPawn.MoveBetweenTwoTiles(pPawn._CurrentTile, _TileIndex));
     }
 
     public override string GetDescription()

@@ -54,8 +54,8 @@ public class Memeory : MonoBehaviour
 
     private void StartGame()
     {
-        GetCurrentPlayer().UpdateScore(0);
-        GetWaitingPlayer().UpdateScore(0);
+        GetCurrentPlayer().UpdateScor(0);
+        GetWaitingPlayer().UpdateScor(0);
 
         ChooseAPlayer();
         GetCurrentPlayer().StartTurn();
@@ -159,8 +159,7 @@ public class Memeory : MonoBehaviour
         _SecondShowCard = null;
 
         GetCurrentPlayer().StartTurn();
-
-        GetCurrentPlayer().UpdateScore(2);
+        GetCurrentPlayer().UpdateScor(2);
     }
 
     private void PassTurn()
@@ -184,7 +183,7 @@ public class Memeory : MonoBehaviour
         _SecondShowCard = null;
     }
     
-    private void EndGame()
+    private void WinGame()
     {
         
     }
