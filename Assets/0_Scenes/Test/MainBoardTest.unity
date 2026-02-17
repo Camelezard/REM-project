@@ -587,7 +587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &244864200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -969,7 +969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &406631520
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1568,6 +1568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMovementPoint: 1
   maxMovementPoint: 6
+  generateNumbers: 0
   wheel: {fileID: 406631520}
   numberFontSize: 30
   numberFontColor: {r: 0, g: 0, b: 0, a: 1}
@@ -1753,7 +1754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &846920346
 RectTransform:
   m_ObjectHideFlags: 0

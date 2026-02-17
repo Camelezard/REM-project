@@ -18,6 +18,7 @@ public class Spinner : MonoBehaviour
     public int maxMovementPoint = 4;
 
     [Header("Number Related")]
+    public bool generateNumbers = false;
     public RectTransform wheel;
     public int numberFontSize = 100;
     public Color numberFontColor = Color.black;
@@ -47,6 +48,7 @@ public class Spinner : MonoBehaviour
     private void GenerateNumberOnWheel()
     {
         angles = new float[maxMovementPoint];
+        
         GameObject lNumberObject;
         TextMeshProUGUI lNumberText;
         RectTransform lNumberRectTransform;
@@ -55,27 +57,31 @@ public class Spinner : MonoBehaviour
 
         for (int i = 0; i < maxMovementPoint; i++)
         {
-            lNumberObject = new GameObject("Number " + i.ToString());
-            lNumberText = lNumberObject.AddComponent<TextMeshProUGUI>();
-            lNumberRectTransform = lNumberObject.GetComponent<RectTransform>();
-
-            lNumberText.text = (i + 1).ToString();
-            lNumberText.fontSize = numberFontSize;
-            lNumberText.color = numberFontColor;
-            lNumberText.alignment = TextAlignmentOptions.Center;
-
-            lNumberObject.transform.SetParent(wheel, false);
-
             lAngle = (90f - (i * 360f / maxMovementPoint)) * Mathf.Deg2Rad;
             angles[i] = -(lAngle * Mathf.Rad2Deg - 90f);
 
-            lNumberRectTransform.sizeDelta = Vector2.one * numberFontSize * 1.5f;
+            if (generateNumbers)
+            {
+                lNumberObject = new GameObject("Number " + i.ToString());
+                lNumberText = lNumberObject.AddComponent<TextMeshProUGUI>();
+                lNumberRectTransform = lNumberObject.GetComponent<RectTransform>();
 
-            lNumberRectTransform.anchoredPosition = new Vector3(
-                Mathf.Cos(lAngle) * numberWheelRadius,
-                Mathf.Sin(lAngle) * numberWheelRadius, 0);
+                lNumberText.text = (i + 1).ToString();
+                lNumberText.fontSize = numberFontSize;
+                lNumberText.color = numberFontColor;
+                lNumberText.alignment = TextAlignmentOptions.Center;
 
-            lNumberRectTransform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * lAngle) - 90f);
+                lNumberObject.transform.SetParent(wheel, false);
+
+                lNumberRectTransform.sizeDelta = Vector2.one * numberFontSize * 1.5f;
+
+                lNumberRectTransform.anchoredPosition = new Vector3(
+                    Mathf.Cos(lAngle) * numberWheelRadius,
+                    Mathf.Sin(lAngle) * numberWheelRadius, 0);
+
+                lNumberRectTransform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * lAngle) - 90f);
+            }
+            
         }
     }
 
@@ -99,9 +105,6 @@ public class Spinner : MonoBehaviour
         float lElaspedTime = 0;
         float lCurrentZ = 0;
 
-        //Quaternion lStartRot = wheel.rotation;
-        //Quaternion lEndRot = wheel.rotation * Quaternion.Euler(0, 0, 360f * 6f);
-
         float lStartRot = wheel.localEulerAngles.z;
         float lEndRot = lStartRot + (360f * 6f);
 
@@ -109,8 +112,6 @@ public class Spinner : MonoBehaviour
         {
             lElaspedTime += Time.deltaTime;
             lRatio = lElaspedTime / startingSpinDuration;
-
-            //wheel.rotation = Quaternion.Slerp(lStartRot, lEndRot, spinAnimCurveStart.Evaluate(lRatio));
 
             lCurrentZ = Mathf.Lerp(lStartRot, lEndRot, spinAnimCurveStart.Evaluate(lRatio));
             wheel.localEulerAngles = new Vector3(0, 0, lCurrentZ);
@@ -158,6 +159,8 @@ public class Spinner : MonoBehaviour
         }
 
         wheel.localEulerAngles = new Vector3(0, 0, lEndRot);
+
+        yield return new WaitForSeconds(0.5f);
 
         for (int i = 0; i < transform.childCount; i++)
         {
