@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class MoveByStepEffect : TileEffect
 {
-    [SerializeField] private int _BonusStep = 3;
+    [SerializeField] private TypOfMinigame _SelectedMinigame = TypOfMinigame.Random;
 
     public override void Execute(Pawn pPawn)
     {
-        StartCoroutine(pPawn.MoveToTile(pPawn._CurrentTile + _BonusStep));
+        GameManager.GetInstance().StartMinigame(_SelectedMinigame);
     }
 
     public override string GetDescription()
     {
-        return $"Move the pawn by number of steps. Negative Number make it go backward. Number of steps : {_BonusStep}";
+        return $"Request to lunch a minigame : {_SelectedMinigame}";
     }
     
 }
