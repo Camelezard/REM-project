@@ -21,11 +21,12 @@ public class BoardManager : MonoBehaviour
 
     void Start()
     {
-        // ne pas oublier les deux listes pointe au meme endroit. si l'une est modifier, l'autre aussis
-        _PawnList = GameManager.GetInstance()._PawnList;
+
     }
 
 
+    public Pawn GetCurrentPawn(int index) => _PawnList[index];
+    public Pawn GetCurrentPawn() => _PawnList[GameManager.GetInstance().GetCurrentPlayerIndex()];
 
     //------------- Events  ---------------------
     void OnEnable()
@@ -121,7 +122,7 @@ public class BoardManager : MonoBehaviour
             yield return null;
         }
 
-        Pawn lPawn = GameManager.GetInstance().GetCurrentPlayerTurnPawn();
+        Pawn lPawn = GetCurrentPawn();
         lPawn.StartTurn();
     }
 

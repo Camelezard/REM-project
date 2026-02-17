@@ -13,14 +13,14 @@ public class Pawn : MonoBehaviour
     [SerializeField] private float _TimePerMove = 1f;
     [SerializeField] private float _TransitionTimeOnTile = .1f;
     [SerializeField] private LayerMask _TileLayermask;
-    
-    public SplineContainer _SplineContainer ;
 
-    public int _CurrentTile { get; private set;} = 0;
+    public SplineContainer _SplineContainer;
+
+    public int _CurrentTile { get; private set; } = 0;
 
     void Start()
     {
-        if(_Spinner == null) _Spinner = Spinner.instance; 
+        if (_Spinner == null) _Spinner = Spinner.instance;
 
 
         transform.position = TilePlacer.Instance.spawnedTiles[_CurrentTile].transform.position;
@@ -29,12 +29,16 @@ public class Pawn : MonoBehaviour
         //StartCoroutine(MoveToTile(_CurrentTile + 3));
     }
 
+    private void OnDisable()
+    {
+        Spinner.OnSpinnerStopAtNumber -= MoveAfterSpinner;
+    }
 
     public void StartTurn()
     {
         Spinner.OnSpinnerStopAtNumber += MoveAfterSpinner;
         _Spinner.SpinWheel();
-        
+
     }
 
     public void EndTurn()
@@ -83,7 +87,7 @@ public class Pawn : MonoBehaviour
         while (lElapsedTime < _MoveDuration)
         {
             lElapsedTime += Time.deltaTime;
-            
+
             lDistanceOnSpline = Mathf.Lerp(lStartDistanceOnSpline, lEndDistanceOnSpline, lElapsedTime / _MoveDuration);
 
             transform.position = _SplineContainer.EvaluatePosition(lDistanceOnSpline);
@@ -103,7 +107,7 @@ public class Pawn : MonoBehaviour
     {
         RaycastHit lHit;
         BoardTile lTile;
-        if (Physics.Raycast(transform.position + new Vector3(0,1,0), Vector3.down, out lHit, 5f, _TileLayermask))
+        if (Physics.Raycast(transform.position + new Vector3(0, 1, 0), Vector3.down, out lHit, 5f, _TileLayermask))
         {
             lTile = lHit.collider.gameObject.GetComponent<BoardTile>();
             lTile.ExecuteEffect(this);
