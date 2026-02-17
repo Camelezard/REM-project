@@ -47,6 +47,7 @@ public class Pawn : MonoBehaviour
         Debug.Log($"{gameObject.name}TurnEnd");
     }
 
+
     // la coroutine va nous permetre de depalcer le pion jusque a la case voulu
     public IEnumerator MoveToTile(int pTargetTileIndex)
     {
