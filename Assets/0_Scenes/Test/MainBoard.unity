@@ -1133,7 +1133,7 @@ GameObject:
   - component: {fileID: 363173130}
   - component: {fileID: 363173129}
   m_Layer: 0
-  m_Name: Image
+  m_Name: UI_Wheel_Arrow_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1146,13 +1146,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363173127}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0000029504295, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1535065182}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 128.1}
@@ -1171,14 +1171,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: 2652d7b5389717047a5b6fbfdc4597e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6de695ab9185c0447a763382b07ecc7f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4077,6 +4077,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1721901966}
+  - {fileID: 2084949503}
   - {fileID: 363173128}
   m_Father: {fileID: 1827710328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4099,6 +4100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMovementPoint: 1
   maxMovementPoint: 6
+  generateNumbers: 0
   wheel: {fileID: 1721901966}
   numberFontSize: 30
   numberFontColor: {r: 0, g: 0, b: 0, a: 1}
@@ -4605,7 +4607,7 @@ GameObject:
   - component: {fileID: 1721901968}
   - component: {fileID: 1721901967}
   m_Layer: 0
-  m_Name: Wheel
+  m_Name: UI_Wheel_Numbers_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4650,7 +4652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2413806693520163455, guid: cd4d4bb6087690545a7ffde3f0e80896, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d9aecee4035cdb48b7d13bb4aa4bfc4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5693,14 +5695,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Spinner: {fileID: 1535065183}
-  _SplineContainer: {fileID: 1824261402}
   _MoveDuration: 0.2
   _TimePerMove: 1
   _TransitionTimeOnTile: 0.1
   _TileLayermask:
     serializedVersion: 2
     m_Bits: 64
-  currentTile: 0
+  _SplineContainer: {fileID: 1824261402}
 --- !u!1 &2049787168
 GameObject:
   m_ObjectHideFlags: 0
@@ -5930,6 +5931,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _BonusStep: 3
+--- !u!1 &2084949502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2084949503}
+  - component: {fileID: 2084949505}
+  - component: {fileID: 2084949504}
+  m_Layer: 0
+  m_Name: UI_Wheel_Center_Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2084949503
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084949502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1535065182}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2084949504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084949502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 4b39aa506d1d9c8498d7377fa99a8f0c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2084949505
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084949502}
+  m_CullTransparentMesh: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
