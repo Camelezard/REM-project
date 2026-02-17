@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance { get; private set; }
     public List<Player> _PlayersList { get; private set; }
-    public List<Pawn> _PawnList;
 
     private int CurrentPlayer = 0;
     //private const int MAX_PLAYER = 2;
@@ -48,16 +47,23 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void OnDisable()
+    {
+        instance = null;
+    }
+
     public void CreatePlayers(List<Player> lPlayerNumber)
     {
         _PlayersList = new List<Player>(lPlayerNumber);
     }
 
 
-    //Tunrn Management
+    //Get turn
     public Player GetCurrentPlayerTurn() => _PlayersList[CurrentPlayer];
-    public Pawn GetCurrentPlayerTurnPawn() => _PawnList[CurrentPlayer];
+    public int GetCurrentPlayerIndex() => CurrentPlayer;
 
+
+    //Tunrn Management
     public void NextPlayerTurn()
     {
         SetNextPlayerTurnIndex();

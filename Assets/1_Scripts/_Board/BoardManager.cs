@@ -16,29 +16,31 @@ public class BoardManager : MonoBehaviour
     [SerializeField] private float _SpawnTime = 1.5f;
     [SerializeField] private float _PlayerTransitionTime = 2f;
 
-    private List<Pawn> _PawnList;
+    private List<Pawn> _PawnList = new List<Pawn>();
 
 
     void Start()
     {
-        // ne pas oublier les deux listes pointe au meme endroit. si l'une est modifier, l'autre aussis
-        _PawnList = GameManager.GetInstance()._PawnList;
-        OnFinishPawnsSpawn += LunchSpawnPlayerFocusTransition;
-        OnNextTurn += LunchSpawnPlayerFocusTransition;
+
     }
 
 
+    public Pawn GetCurrentPawn(int index) => _PawnList[index];
+    public Pawn GetCurrentPawn() => _PawnList[GameManager.GetInstance().GetCurrentPlayerIndex()];
 
     //------------- Events  ---------------------
     void OnEnable()
     {
         SceneTransitionanager.OnSceneReadyFirstTime += OnFirstLoadStartTransition;
-
+        OnNextTurn += LunchSpawnPlayerFocusTransition;
+        OnFinishPawnsSpawn += LunchSpawnPlayerFocusTransition;
     }
 
     private void OnDisable()
     {
         SceneTransitionanager.OnSceneReadyFirstTime -= OnFirstLoadStartTransition;
+        OnNextTurn -= LunchSpawnPlayerFocusTransition;
+        OnFinishPawnsSpawn -= LunchSpawnPlayerFocusTransition;
     }
 
 
@@ -109,16 +111,18 @@ public class BoardManager : MonoBehaviour
     {
         float lElaps = 0f;
 
-        while (lElaps < _PlayerTransitionTime )
+        while (lElaps < _PlayerTransitionTime)
         {
             lElaps += Time.deltaTime;
 
+
+            // I
 
 
             yield return null;
         }
 
-        Pawn lPawn = GameManager.GetInstance().GetCurrentPlayerTurnPawn();
+        Pawn lPawn = GetCurrentPawn();
         lPawn.StartTurn();
     }
 
