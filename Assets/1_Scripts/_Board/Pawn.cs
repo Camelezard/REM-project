@@ -15,6 +15,7 @@ public class Pawn : MonoBehaviour
     [SerializeField] private LayerMask _TileLayermask;
 
     public SplineContainer _SplineContainer;
+    public bool canEndTurn = false;
 
     public int _CurrentTile { get; private set; } = 0;
 
@@ -45,6 +46,7 @@ public class Pawn : MonoBehaviour
     {
         Spinner.OnSpinnerStopAtNumber -= MoveAfterSpinner;
         BoardManager.OnpLplayerFinshTun?.Invoke();
+        canEndTurn = false;
 
         GameManager.GetInstance().NextPlayerTurn();
 
@@ -97,6 +99,9 @@ public class Pawn : MonoBehaviour
         }
 
         transform.position = _SplineContainer.EvaluatePosition(lEndDistanceOnSpline);
+        _CurrentTile = pFinalTileIndex;
+
+        if (canEndTurn) EndTurn();
     }
 
     private void MoveAfterSpinner(int pValue)

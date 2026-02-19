@@ -394,13 +394,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Spinner: {fileID: 0}
-  _MoveDuration: 1
-  _TimePerMove: 1
+  _MoveDuration: 0.3
+  _TimePerMove: 0.5
   _TransitionTimeOnTile: 0.1
   _TileLayermask:
     serializedVersion: 2
     m_Bits: 64
   _SplineContainer: {fileID: 0}
+  canEndTurn: 0
 --- !u!1 &8782883545208457439
 GameObject:
   m_ObjectHideFlags: 0

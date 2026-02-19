@@ -1163,7 +1163,7 @@ GameObject:
   - component: {fileID: 439680594}
   - component: {fileID: 439680593}
   - component: {fileID: 439680592}
-  - component: {fileID: 439680591}
+  - component: {fileID: 439680595}
   - component: {fileID: 439680590}
   m_Layer: 6
   m_Name: BasicTile(Clone)
@@ -1208,19 +1208,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &439680591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439680588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e91aed211a0cb84d84403d40512b283, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _BonusStep: 5
 --- !u!23 &439680592
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1301,6 +1288,19 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &439680595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439680588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _TileIndex: 20
 --- !u!1 &490055876
 GameObject:
   m_ObjectHideFlags: 0
@@ -3877,7 +3877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _TileIndex: 3
+  _TileIndex: 0
 --- !u!23 &1586835465
 MeshRenderer:
   m_ObjectHideFlags: 0
