@@ -59,7 +59,6 @@ public class BoardTile : MonoBehaviour
 
     public bool ExecuteEffect(Pawn pPawn)
     {
-        Debug.Log(_Effects.Count);
         if (_Effects.Count == 0) return false;
         else
         {

@@ -109,12 +109,13 @@ public class Pawn : MonoBehaviour
         RaycastHit lHit;
         BoardTile lTile;
         bool lTileHasEffect = false;
+
         if (Physics.Raycast(transform.position + new Vector3(0, 1, 0), Vector3.down, out lHit, 5f, _TileLayermask))
         {
             lTile = lHit.collider.gameObject.GetComponent<BoardTile>();
             lTileHasEffect = lTile.ExecuteEffect(this);
         }
-        Debug.Log(lTileHasEffect);
+
         return lTileHasEffect;
     }
 }
