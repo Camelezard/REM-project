@@ -6,7 +6,7 @@ public class MinigameEffect : TileEffect
 
     private void OnValidate()
     {
-        m_EffectMessage = $"Oh ? C'est l'heure de faire un minijeu !";
+        m_EffectMessage = $"Oh ? C'est l'heure de jouer à un minijeu !";
     }
 
     protected override void ExecuteEffect(Pawn pPawn)
