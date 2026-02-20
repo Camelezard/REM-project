@@ -20,6 +20,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0_Scenes/Test/MainBoardTest.unity
     guid: 3ec318c60c7106d46b36a56e74447564
+  - enabled: 1
+    path: Assets/0_Scenes/RetenirLesGestes.unity
+    guid: c930717f46f824e4c9d498659e92375b
+  - enabled: 1
+    path: Assets/0_Scenes/ShootingMinigame.unity
+    guid: 1cb86b4d471ccb443b9c1bf2e49007f5
+  - enabled: 1
+    path: Assets/0_Scenes/SingToJump.unity
+    guid: 4f78e4d22fc10fd4d927c50006d120a5
+  - enabled: 1
+    path: Assets/0_Scenes/Test/Habillage.unity
+    guid: 3e0057d5b816b38498cc12a2734fda64
+  - enabled: 1
+    path: Assets/0_Scenes/Test/Memory.unity
+    guid: debde29df54eccb4fa0d8c4acad6a015
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
