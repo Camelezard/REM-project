@@ -4,7 +4,12 @@ public class MoveToSpecificTileEffect : TileEffect
 {
     [SerializeField] private int _TileIndex = 10;
 
-    public override void Execute(Pawn pPawn)
+    private void OnValidate()
+    {
+        m_EffectMessage = $"Effet activé ! Déplace le pion jusqu'à la case {_TileIndex}.";
+    }
+
+    protected override void ExecuteEffect(Pawn pPawn)
     {
         pPawn.canEndTurn = true;
         StartCoroutine(pPawn.MoveBetweenTwoTiles(pPawn._CurrentTile, _TileIndex));

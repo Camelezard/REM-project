@@ -57,7 +57,7 @@ public class BoardTile : MonoBehaviour
         transform.position = _TileSplineContainer.EvaluatePosition(distanceOnPath);
     }
 
-    public bool ExecuteEffect(Pawn pPawn)
+    public bool LaunchTileEffect(Pawn pPawn)
     {
         if (_Effects.Count == 0) return false;
         else

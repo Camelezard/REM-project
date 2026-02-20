@@ -99,7 +99,7 @@ public class Pawn : MonoBehaviour
         }
 
         transform.position = _SplineContainer.EvaluatePosition(lEndDistanceOnSpline);
-        _CurrentTile = pFinalTileIndex;
+        _CurrentTile = pFinalTileIndex; 
 
         if (canEndTurn) EndTurn();
     }
@@ -118,7 +118,7 @@ public class Pawn : MonoBehaviour
         if (Physics.Raycast(transform.position + new Vector3(0, 1, 0), Vector3.down, out lHit, 5f, _TileLayermask))
         {
             lTile = lHit.collider.gameObject.GetComponent<BoardTile>();
-            lTileHasEffect = lTile.ExecuteEffect(this);
+            lTileHasEffect = lTile.LaunchTileEffect(this);
         }
 
         return lTileHasEffect;
