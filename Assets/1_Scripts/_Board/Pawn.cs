@@ -15,6 +15,7 @@ public class Pawn : MonoBehaviour
     [SerializeField] private LayerMask _TileLayermask;
 
     public SplineContainer _SplineContainer;
+    public bool canEndTurn = false;
 
     public int _CurrentTile { get; private set; } = 0;
 
@@ -45,6 +46,7 @@ public class Pawn : MonoBehaviour
     {
         Spinner.OnSpinnerStopAtNumber -= MoveAfterSpinner;
         BoardManager.OnpLplayerFinshTun?.Invoke();
+        canEndTurn = false;
 
         GameManager.GetInstance().NextPlayerTurn();
 
@@ -71,7 +73,8 @@ public class Pawn : MonoBehaviour
         }
 
         //CheckTile();    // comenter pour test le flow je sais pas ou indique la fin du tour
-        EndTurn();
+        if (!CheckTile()) EndTurn();
+
     }
 
     // Trasitione entre deux tiles ou qu'elle soit. 
@@ -96,6 +99,9 @@ public class Pawn : MonoBehaviour
         }
 
         transform.position = _SplineContainer.EvaluatePosition(lEndDistanceOnSpline);
+        _CurrentTile = pFinalTileIndex;
+
+        if (canEndTurn) EndTurn();
     }
 
     private void MoveAfterSpinner(int pValue)
@@ -103,14 +109,18 @@ public class Pawn : MonoBehaviour
         StartCoroutine(MoveToTile(_CurrentTile + pValue));
     }
 
-    private void CheckTile()
+    private bool CheckTile()
     {
         RaycastHit lHit;
         BoardTile lTile;
+        bool lTileHasEffect = false;
+
         if (Physics.Raycast(transform.position + new Vector3(0, 1, 0), Vector3.down, out lHit, 5f, _TileLayermask))
         {
             lTile = lHit.collider.gameObject.GetComponent<BoardTile>();
-            lTile.ExecuteEffect(this);
+            lTileHasEffect = lTile.ExecuteEffect(this);
         }
+
+        return lTileHasEffect;
     }
 }

@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class MoveToSpecificTIleEffect : TileEffect
+public class MoveToSpecificTileEffect : TileEffect
 {
     [SerializeField] private int _TileIndex = 10;
 
     public override void Execute(Pawn pPawn)
     {
+        pPawn.canEndTurn = true;
         StartCoroutine(pPawn.MoveBetweenTwoTiles(pPawn._CurrentTile, _TileIndex));
     }
 
