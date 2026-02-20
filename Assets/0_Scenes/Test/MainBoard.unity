@@ -1222,8 +1222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE0 la case 20."
-  _TileIndex: 20
+  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE0 la case 10."
+  _TileIndex: 10
 --- !u!1 &490055876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,6 +1269,7 @@ GameObject:
   - component: {fileID: 708245595}
   - component: {fileID: 708245594}
   - component: {fileID: 708245593}
+  - component: {fileID: 708245597}
   m_Layer: 6
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -1392,6 +1393,20 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &708245597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708245591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectMessage: "Oh ? C'est l'heure de jouer \xE0 un minijeu !"
+  _SelectedMinigame: 5
 --- !u!1 &751346753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,6 +1528,7 @@ GameObject:
   - component: {fileID: 824562685}
   - component: {fileID: 824562684}
   - component: {fileID: 824562683}
+  - component: {fileID: 824562687}
   m_Layer: 6
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -1636,6 +1652,20 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &824562687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824562681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectMessage: "Oh ? C'est l'heure de jouer \xE0 un minijeu !"
+  _SelectedMinigame: 5
 --- !u!1 &846920345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2451,6 +2481,7 @@ GameObject:
   - component: {fileID: 1172349445}
   - component: {fileID: 1172349444}
   - component: {fileID: 1172349443}
+  - component: {fileID: 1172349447}
   m_Layer: 6
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -2574,6 +2605,20 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &1172349447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172349441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectMessage: "Oh ? C'est l'heure de jouer \xE0 un minijeu !"
+  _SelectedMinigame: 5
 --- !u!1 &1189359533
 GameObject:
   m_ObjectHideFlags: 0
@@ -2905,8 +2950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE0 la case 0."
-  _TileIndex: 0
+  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE0 la case 10."
+  _TileIndex: 10
 --- !u!23 &1253637425
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3089,8 +3134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE0 la case 8."
-  _TileIndex: 8
+  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE0 la case 10."
+  _TileIndex: 10
 --- !u!23 &1262019190
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3953,8 +3998,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE0 la case 0."
-  _TileIndex: 0
+  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE0 la case 10."
+  _TileIndex: 10
 --- !u!23 &1586835465
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5274,6 +5319,7 @@ GameObject:
   - component: {fileID: 2029622397}
   - component: {fileID: 2029622396}
   - component: {fileID: 2029622395}
+  - component: {fileID: 2029622399}
   m_Layer: 6
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -5397,6 +5443,20 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &2029622399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029622393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectMessage: "Oh ? C'est l'heure de jouer \xE0 un minijeu !"
+  _SelectedMinigame: 5
 --- !u!1 &2031678587
 GameObject:
   m_ObjectHideFlags: 0
@@ -5443,6 +5503,7 @@ GameObject:
   - component: {fileID: 2058719852}
   - component: {fileID: 2058719851}
   - component: {fileID: 2058719850}
+  - component: {fileID: 2058719854}
   m_Layer: 6
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -5566,6 +5627,20 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!114 &2058719854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058719848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectMessage: "Oh ? C'est l'heure de jouer \xE0 un minijeu !"
+  _SelectedMinigame: 5
 --- !u!1 &2063011347
 GameObject:
   m_ObjectHideFlags: 0

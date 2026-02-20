@@ -16,6 +16,7 @@ public class Pawn : MonoBehaviour
 
     public SplineContainer _SplineContainer;
     public bool canEndTurn = false;
+    public bool isOnEffectTile;
 
     public int _CurrentTile { get; private set; } = 0;
 
@@ -102,6 +103,7 @@ public class Pawn : MonoBehaviour
         _CurrentTile = pFinalTileIndex; 
 
         if (canEndTurn) EndTurn();
+        else if (isOnEffectTile) CheckTile();
     }
 
     private void MoveAfterSpinner(int pValue)
@@ -119,6 +121,7 @@ public class Pawn : MonoBehaviour
         {
             lTile = lHit.collider.gameObject.GetComponent<BoardTile>();
             lTileHasEffect = lTile.LaunchTileEffect(this);
+            isOnEffectTile = lTileHasEffect;
         }
 
         return lTileHasEffect;
