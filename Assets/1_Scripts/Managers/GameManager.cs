@@ -100,9 +100,9 @@ public class GameManager : MonoBehaviour
         SceneTransitionanager.instance.SwitchOverlay("MainMenuTest", MAIN_BOARD_SCENE_NAME);
     }
 
-    public void StartMinigame(TypOfMinigame pTyp)
+    public void StartMinigame(TypOfMinigame pType)
     {
-        SceneTransitionanager.instance.LoadSingle(GetSceneNamWithEnum(pTyp));
+        SceneTransitionanager.instance.LoadSingle(GetSceneNamWithEnum(pType));
     }
 
     public void WinGame(Player pPlayer)
@@ -117,11 +117,11 @@ public class GameManager : MonoBehaviour
     //     Debug.Log("Game state reset.");
     // }
 
-    private string GetSceneNamWithEnum(TypOfMinigame pTyp)
+    private string GetSceneNamWithEnum(TypOfMinigame pType)
     {
         string SceneName = MINIGAME_TEST;
 
-        switch (pTyp)
+        switch (pType)
         {
             case TypOfMinigame.TugOFWar:
                 SceneName = MINIGAME_TEST;

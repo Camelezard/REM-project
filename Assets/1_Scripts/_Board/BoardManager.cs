@@ -111,7 +111,7 @@ public class BoardManager : MonoBehaviour
     {
         Pawn lPawn = GetCurrentPawn();
 
-        CameraManager.Instance.FollowPlayer(lPawn);
+        CameraManager.Instance.UpdateTarget(lPawn.transform);
 
         yield return new WaitForSeconds(_PlayerTransitionTime);
 

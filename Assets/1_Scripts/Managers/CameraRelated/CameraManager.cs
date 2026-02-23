@@ -6,14 +6,15 @@ public class CameraManager : MonoBehaviour
     public static CameraManager Instance { get; private set; }
 
     [SerializeField] private Vector3 _Offset = new Vector3(0, 10, -8);
+    [SerializeField] private Vector3 _BoardOffset = new Vector3(0, 10, -8);
     [SerializeField] private float _SmoothSpeed = 5f;
 
-    private Vector3 _DesiredPosition; 
+    private Vector3 _DesiredPosition;
+
+    private const string BOARD_TAG = "Board";
 
     public Transform target;
     public bool followTarget = false;
-
-    private Coroutine _CurrentFollowPawnCoroutine;
 
     private void Awake()
     {
@@ -26,27 +27,23 @@ public class CameraManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-
     }
 
     private void LateUpdate()
     {
         if (!followTarget || target == null) return;
 
-        _DesiredPosition = target.position + _Offset;
+        _DesiredPosition = target.gameObject.tag == BOARD_TAG ? transform.position + _BoardOffset : transform.position + _Offset;
 
-        transform.position = Vector3.Lerp(transform.position, _DesiredPosition, _SmoothSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(
+            transform.position, 
+            _DesiredPosition, 
+            _SmoothSpeed * Time.deltaTime);
     }
 
-    public void FollowPlayer(Pawn pPawn)
+    public void UpdateTarget(Transform pNewTarget, bool pNewFollowTarget = true)
     {
-        if (_CurrentFollowPawnCoroutine  != null) StopCoroutine(_CurrentFollowPawnCoroutine);
-        _CurrentFollowPawnCoroutine = StartCoroutine(FollowPawnCoroutine(pPawn));
-    }
-
-    private IEnumerator FollowPawnCoroutine(Pawn pPawn)
-    {
-        yield return null;
+        target = pNewTarget;
+        followTarget = pNewFollowTarget;
     }
 }
