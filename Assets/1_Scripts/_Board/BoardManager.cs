@@ -109,20 +109,12 @@ public class BoardManager : MonoBehaviour
 
     private IEnumerator FocusPlayer()
     {
-        float lElaps = 0f;
-
-        while (lElaps < _PlayerTransitionTime)
-        {
-            lElaps += Time.deltaTime;
-
-
-            // I
-
-
-            yield return null;
-        }
-
         Pawn lPawn = GetCurrentPawn();
+
+        CameraManager.Instance.FollowPlayer(lPawn);
+
+        yield return new WaitForSeconds(_PlayerTransitionTime);
+
         lPawn.StartTurn();
     }
 
