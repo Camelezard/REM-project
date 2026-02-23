@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
         SceneTransitionanager.instance.LoadSingle(GetSceneNamWithEnum(pTyp));
     }
 
-    public void WinGame()
+    public void WinGame(Player pPlayer)
     {
         SceneTransitionanager.instance.LoadAdditive(MINIGAME_TEST);
     }
