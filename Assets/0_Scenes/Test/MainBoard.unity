@@ -5254,7 +5254,6 @@ GameObject:
   - component: {fileID: 2029622397}
   - component: {fileID: 2029622396}
   - component: {fileID: 2029622395}
-  - component: {fileID: 2029622399}
   m_Layer: 6
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -5378,20 +5377,6 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
---- !u!114 &2029622399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029622393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectMessage: "Oh ? C'est l'heure de jouer \xE0 un minijeu !"
-  _SelectedMinigame: 5
 --- !u!1 &2031678587
 GameObject:
   m_ObjectHideFlags: 0
@@ -5438,7 +5423,6 @@ GameObject:
   - component: {fileID: 2058719852}
   - component: {fileID: 2058719851}
   - component: {fileID: 2058719850}
-  - component: {fileID: 2058719854}
   m_Layer: 6
   m_Name: BasicTile(Clone)
   m_TagString: Untagged
@@ -5562,20 +5546,6 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
---- !u!114 &2058719854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058719848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectMessage: "Oh ? C'est l'heure de jouer \xE0 un minijeu !"
-  _SelectedMinigame: 5
 --- !u!1 &2063011347
 GameObject:
   m_ObjectHideFlags: 0

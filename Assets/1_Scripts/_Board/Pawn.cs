@@ -54,8 +54,6 @@ public class Pawn : MonoBehaviour
 
         CameraManager.Instance.UpdateTarget(_BoardGround.transform);
         GameManager.GetInstance().NextPlayerTurn();
-
-        Debug.Log($"{gameObject.name}TurnEnd");
     }
 
 
@@ -107,7 +105,7 @@ public class Pawn : MonoBehaviour
         _CurrentTile = pFinalTileIndex; 
 
         if (canEndTurn) EndTurn();
-        else if (isOnEffectTile) CheckTile();
+        //else if (isOnEffectTile) CheckTile();
     }
 
     private void MoveAfterSpinner(int pValue)

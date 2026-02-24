@@ -110,6 +110,8 @@ public class BoardManager : MonoBehaviour
 
     private IEnumerator FocusPlayer()
     {
+        yield return new WaitForSeconds(2f);
+
         Pawn lPawn = GetCurrentPawn();
 
         CameraManager.Instance.UpdateTarget(lPawn.transform);
