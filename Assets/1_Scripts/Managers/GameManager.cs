@@ -18,7 +18,7 @@ public enum TypOfMinigame
 public class GameManager : MonoBehaviour
 {
     //private const string MAIN_BOARD_SCENE_NAME = "MainBoard";
-    private const string MAIN_BOARD_SCENE_NAME_TEST = "MainBoardTest";
+    private const string MAIN_BOARD_SCENE_NAME = "MainBoard";
     private const string MINIGAME_TEST = "Memory";
 
     private const string MINIGAME_TUG_OF_WAR = "Tir a la corde";
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
     // Scene Management
     public void LoadMainBoardFirstTime()
     {
-        SceneTransitionanager.instance.SwitchOverlay("MainMenuTest", MAIN_BOARD_SCENE_NAME_TEST);
+        SceneTransitionanager.instance.SwitchOverlay("MainMenuTest", MAIN_BOARD_SCENE_NAME);
     }
 
     public void StartMinigame(TypOfMinigame pTyp)
@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
         SceneTransitionanager.instance.LoadSingle(GetSceneNamWithEnum(pTyp));
     }
 
-    public void WinGame()
+    public void WinGame(Player pPlayer)
     {
         SceneTransitionanager.instance.LoadAdditive(MINIGAME_TEST);
     }
