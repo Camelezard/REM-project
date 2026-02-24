@@ -784,8 +784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\uFFFD ! D\uFFFDplace le pion jusqu'\uFFFD la case
-    9."
+  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
   m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
   _TileIndex: 9
 --- !u!65 &121834037
@@ -1107,7 +1106,7 @@ GameObject:
   - component: {fileID: 184456689}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Board
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1872,7 +1871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e91aed211a0cb84d84403d40512b283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\uFFFD ! Avance le pion de 1 cases."
+  m_EffectMessage: "Effet activ\xE9 ! Avance le pion de 1 cases."
   m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   _BonusStep: 1
 --- !u!65 &278460479
@@ -5988,8 +5987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\uFFFD ! D\uFFFDplace le pion jusqu'\uFFFD la case
-    9."
+  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
   m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
   _TileIndex: 9
 --- !u!65 &904890259
@@ -6090,8 +6088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\uFFFD ! D\uFFFDplace le pion jusqu'\uFFFD la case
-    9."
+  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
   m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
   _TileIndex: 9
 --- !u!65 &907566490
@@ -6362,8 +6359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\uFFFD ! D\uFFFDplace le pion jusqu'\uFFFD la case
-    9."
+  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
   m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
   _TileIndex: 9
 --- !u!65 &933386238
@@ -6770,7 +6766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e91aed211a0cb84d84403d40512b283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\uFFFD ! Avance le pion de 1 cases."
+  m_EffectMessage: "Effet activ\xE9 ! Avance le pion de 1 cases."
   m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   _BonusStep: 1
 --- !u!65 &966712033
@@ -6834,7 +6830,6 @@ GameObject:
   - component: {fileID: 1006793870}
   - component: {fileID: 1006793873}
   - component: {fileID: 1006793872}
-  - component: {fileID: 1006793871}
   m_Layer: 6
   m_Name: BoardTile_9
   m_TagString: Untagged
@@ -6859,21 +6854,6 @@ Transform:
   - {fileID: 2106117645}
   m_Father: {fileID: 1241058259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1006793871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1006793869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2dad3a6dd1e5d347b64dc857398ab51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectMessage: "Oh ? C'est l'heure de jouer \uFFFD un minijeu !"
-  m_TileMaterial: {fileID: 2100000, guid: e92f9fd3036201745a40893791922d9a, type: 2}
-  _SelectedMinigame: 5
 --- !u!65 &1006793872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6972,7 +6952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e91aed211a0cb84d84403d40512b283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\uFFFD ! Avance le pion de 1 cases."
+  m_EffectMessage: "Effet activ\xE9 ! Avance le pion de 1 cases."
   m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   _BonusStep: 1
 --- !u!65 &1035843125
@@ -7745,7 +7725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e91aed211a0cb84d84403d40512b283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\uFFFD ! Avance le pion de 1 cases."
+  m_EffectMessage: "Effet activ\xE9 ! Avance le pion de 1 cases."
   m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   _BonusStep: 1
 --- !u!65 &1157506694
@@ -10370,8 +10350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\uFFFD ! D\uFFFDplace le pion jusqu'\uFFFD la case
-    9."
+  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
   m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
   _TileIndex: 9
 --- !u!65 &1598406366
@@ -10611,143 +10590,6 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 620262322}
   _TileText: {fileID: 451755909}
---- !u!1 &1671039157
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1671039158}
-  - component: {fileID: 1671039161}
-  - component: {fileID: 1671039160}
-  - component: {fileID: 1671039159}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1671039158
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671039157}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.46748227, y: 0.0000013147774, z: 0.0000003931974, w: 0.8840025}
-  m_LocalPosition: {x: 1.1463687, y: 10.673607, z: -10.45}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2063011348}
-  m_LocalEulerAnglesHint: {x: 55.742, y: 0, z: 0}
---- !u!114 &1671039159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671039157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 0
-  m_RequiresOpaqueTextureOption: 0
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: 0
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
---- !u!81 &1671039160
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671039157}
-  m_Enabled: 1
---- !u!20 &1671039161
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671039157}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
 --- !u!1 &1672797971
 GameObject:
   m_ObjectHideFlags: 0
@@ -11328,6 +11170,76 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732022206}
   m_Mesh: {fileID: 7702762039658153461, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+--- !u!1001 &1799505022
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2063011348}
+    m_Modifications:
+    - target: {fileID: 927078570093470075, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 927078570093470075, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 927078570093470075, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 927078570093470075, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.93025756
+      objectReference: {fileID: 0}
+    - target: {fileID: 927078570093470075, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3669071
+      objectReference: {fileID: 0}
+    - target: {fileID: 927078570093470075, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 927078570093470075, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 927078570093470075, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 43.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 927078570093470075, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 927078570093470075, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904732371399475985, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 184456688}
+    - target: {fileID: 4904732371399475985, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+      propertyPath: followTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850481045789240062, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+      propertyPath: m_Name
+      value: BoardCamera
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+--- !u!4 &1799505023 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 927078570093470075, guid: be16759f9a7d30148b8fa70c1e3eb6d1, type: 3}
+  m_PrefabInstance: {fileID: 1799505022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1819228212
 GameObject:
   m_ObjectHideFlags: 0
@@ -11540,8 +11452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\uFFFD ! D\uFFFDplace le pion jusqu'\uFFFD la case
-    9."
+  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
   m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
   _TileIndex: 9
 --- !u!65 &1852122712
@@ -12040,14 +11951,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063011347}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.15984273, y: -0, z: -0, w: 0.9871425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1671039158}
+  - {fileID: 1799505023}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -18.396, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2068921648
 GameObject:
   m_ObjectHideFlags: 0
@@ -12581,8 +12492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\uFFFD ! D\uFFFDplace le pion jusqu'\uFFFD la case
-    9."
+  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
   m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
   _TileIndex: 9
 --- !u!65 &2146787340

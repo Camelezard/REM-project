@@ -8,8 +8,8 @@ public class MoveByStepEffect : TileEffect
 
     private void OnValidate()
     {
-        if (_BonusStep >= 0) m_EffectMessage = $"Effet activ� ! Avance le pion de {_BonusStep} cases.";
-        else m_EffectMessage = $"Effet activ� ! Recule le pion de {_BonusStep} cases.";
+        if (_BonusStep >= 0) m_EffectMessage = $"Effet activé ! Avance le pion de {_BonusStep} cases.";
+        else m_EffectMessage = $"Effet activé ! Recule le pion de {_BonusStep} cases.";
         
         #if UNITY_EDITOR
         m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveByStepEffectColor.mat");
