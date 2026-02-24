@@ -4,9 +4,15 @@ public class MinigameEffect : TileEffect
 {
     [SerializeField] private TypOfMinigame _SelectedMinigame = TypOfMinigame.Random;
 
+
     private void OnValidate()
     {
-        m_EffectMessage = $"Oh ? C'est l'heure de jouer à un minijeu !";
+        m_EffectMessage = $"Oh ? C'est l'heure de jouer ï¿½ un minijeu !";
+
+        #if UNITY_EDITOR
+        m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MinigameEffectColeor.mat");
+        ChangeColor(m_TileMaterial);
+        #endif
     }
 
     protected override void ExecuteEffect(Pawn pPawn)
@@ -18,6 +24,5 @@ public class MinigameEffect : TileEffect
     {
         return $"Request to launch a minigame : {_SelectedMinigame}";
     }
-    
-    
-}
+
+}   

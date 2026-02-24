@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
 using UnityEngine.Tilemaps;
+using Unity.VisualScripting;
+
 
 
 #if UNITY_EDITOR
@@ -83,10 +85,15 @@ public class TilePlacer : MonoBehaviour
             lNewTile._TileSplineContainer = _TileSplineContainer;
 
             lNewTile.AdjustOnSline();
+
+            lNewTile.ChangeText(i);
+
+            lNewTile.name = $"BoardTile_{i}";
         }
 
 
         _CanGenerateTiles = false;
+        
     }
 
     private void AdjustTiles()
