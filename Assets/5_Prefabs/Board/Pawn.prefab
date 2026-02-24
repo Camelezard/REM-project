@@ -393,10 +393,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e84016e3d4ef54bbf82fe9078c06c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SplineContainer: {fileID: 0}
-  _MoveDuration: 1
-  _TimePerMove: 1
+  _Spinner: {fileID: 0}
+  _MoveDuration: 0.3
+  _TimePerMove: 0.5
   _TransitionTimeOnTile: 0.1
+  _TileLayermask:
+    serializedVersion: 2
+    m_Bits: 64
+  _SplineContainer: {fileID: 0}
+  canEndTurn: 0
 --- !u!1 &8782883545208457439
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,10 @@ public class Pawn : MonoBehaviour
     [SerializeField] private LayerMask _TileLayermask;
 
     public SplineContainer _SplineContainer;
+    public bool canEndTurn = false;
+    public bool isOnEffectTile;
+
+    private GameObject _BoardGround;
 
     public int _CurrentTile { get; private set; } = 0;
 
@@ -25,6 +29,7 @@ public class Pawn : MonoBehaviour
 
         transform.position = TilePlacer.Instance.spawnedTiles[_CurrentTile].transform.position;
 
+        _BoardGround = GameObject.FindGameObjectWithTag("Board");
         //_Spinner.SpinWheel();
         //StartCoroutine(MoveToTile(_CurrentTile + 3));
     }
@@ -45,10 +50,10 @@ public class Pawn : MonoBehaviour
     {
         Spinner.OnSpinnerStopAtNumber -= MoveAfterSpinner;
         BoardManager.OnpLplayerFinshTun?.Invoke();
+        canEndTurn = false;
 
+        CameraManager.Instance.UpdateTarget(_BoardGround.transform);
         GameManager.GetInstance().NextPlayerTurn();
-
-        Debug.Log($"{gameObject.name}TurnEnd");
     }
 
 
@@ -71,7 +76,8 @@ public class Pawn : MonoBehaviour
         }
 
         //CheckTile();    // comenter pour test le flow je sais pas ou indique la fin du tour
-        EndTurn();
+        if (!CheckTile()) EndTurn();
+
     }
 
     // Trasitione entre deux tiles ou qu'elle soit. 
@@ -96,6 +102,10 @@ public class Pawn : MonoBehaviour
         }
 
         transform.position = _SplineContainer.EvaluatePosition(lEndDistanceOnSpline);
+        _CurrentTile = pFinalTileIndex; 
+
+        if (canEndTurn) EndTurn();
+        //else if (isOnEffectTile) CheckTile();
     }
 
     private void MoveAfterSpinner(int pValue)
@@ -103,14 +113,19 @@ public class Pawn : MonoBehaviour
         StartCoroutine(MoveToTile(_CurrentTile + pValue));
     }
 
-    private void CheckTile()
+    private bool CheckTile()
     {
         RaycastHit lHit;
         BoardTile lTile;
+        bool lTileHasEffect = false;
+
         if (Physics.Raycast(transform.position + new Vector3(0, 1, 0), Vector3.down, out lHit, 5f, _TileLayermask))
         {
             lTile = lHit.collider.gameObject.GetComponent<BoardTile>();
-            lTile.ExecuteEffect(this);
+            lTileHasEffect = lTile.LaunchTileEffect(this);
+            isOnEffectTile = lTileHasEffect;
         }
+
+        return lTileHasEffect;
     }
 }

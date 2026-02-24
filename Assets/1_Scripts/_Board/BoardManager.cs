@@ -36,6 +36,7 @@ public class BoardManager : MonoBehaviour
         OnFinishPawnsSpawn += LunchSpawnPlayerFocusTransition;
     }
 
+
     private void OnDisable()
     {
         SceneTransitionanager.OnSceneReadyFirstTime -= OnFirstLoadStartTransition;
@@ -109,20 +110,14 @@ public class BoardManager : MonoBehaviour
 
     private IEnumerator FocusPlayer()
     {
-        float lElaps = 0f;
-
-        while (lElaps < _PlayerTransitionTime)
-        {
-            lElaps += Time.deltaTime;
-
-
-            // I
-
-
-            yield return null;
-        }
+        yield return new WaitForSeconds(2f);
 
         Pawn lPawn = GetCurrentPawn();
+
+        CameraManager.Instance.UpdateTarget(lPawn.transform);
+
+        yield return new WaitForSeconds(_PlayerTransitionTime);
+
         lPawn.StartTurn();
     }
 
@@ -133,4 +128,5 @@ public class BoardManager : MonoBehaviour
         Debug.Log("StartTransition");
 
     }
+
 }

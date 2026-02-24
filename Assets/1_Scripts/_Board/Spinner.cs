@@ -145,7 +145,7 @@ public class Spinner : MonoBehaviour
         lCurrentZ = 0;
 
         lStartRot = wheel.localEulerAngles.z;
-        lEndRot = angles[pValueToStopAt - 1] + 360f * 6f/* + Random.Range(-20f, 20f)*/;
+        lEndRot = angles[pValueToStopAt - 1] + 360f * 6f + Random.Range(-25f, 25f);
 
         while (lElaspedTime < endingSpinDuration)
         {
