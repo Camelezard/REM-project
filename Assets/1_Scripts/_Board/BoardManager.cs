@@ -36,6 +36,7 @@ public class BoardManager : MonoBehaviour
         OnFinishPawnsSpawn += LunchSpawnPlayerFocusTransition;
     }
 
+
     private void OnDisable()
     {
         SceneTransitionanager.OnSceneReadyFirstTime -= OnFirstLoadStartTransition;
