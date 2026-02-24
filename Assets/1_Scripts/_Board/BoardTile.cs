@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
+using UnityEngine.UI;
 
 public class BoardTile : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class BoardTile : MonoBehaviour
     [Header("Tile Specifications")]
     [Range(0f, 1f)] public float distanceOnPath;
     [SerializeField] public Spline spline;
+    [SerializeField] private MeshRenderer _MeshRend;
+    [SerializeField] private Text _TileText;
 
     private List<TileEffect> _Effects = new List<TileEffect>();
 
@@ -69,5 +72,28 @@ public class BoardTile : MonoBehaviour
 
             return true;
         }
+    }
+
+
+    // Colors
+
+    public void ChangeColor(Material pTileColor)
+    {
+        if (pTileColor == null || _MeshRend == null) return;
+
+        var mats = _MeshRend.sharedMaterials;
+
+        if (mats.Length > 1)
+        {
+            mats[2] = pTileColor;   
+            _MeshRend.sharedMaterials = mats;
+        }
+        print("change");
+
+    }
+
+    public void ChangeText(int pNum)
+    {
+        _TileText.text = pNum.ToString();
     }
 }
