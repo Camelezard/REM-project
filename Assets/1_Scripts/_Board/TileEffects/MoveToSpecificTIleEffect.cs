@@ -6,7 +6,12 @@ public class MoveToSpecificTileEffect : TileEffect
 
     private void OnValidate()
     {
-        m_EffectMessage = $"Effet activé ! Déplace le pion jusqu'à la case {_TileIndex}.";
+        m_EffectMessage = $"Effet activï¿½ ! Dï¿½place le pion jusqu'ï¿½ la case {_TileIndex}.";
+
+        #if UNITY_EDITOR
+        m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveToSpecificTileEffectColor.mat");
+        ChangeColor(m_TileMaterial);
+        #endif
     }
 
     protected override void ExecuteEffect(Pawn pPawn)
