@@ -18,6 +18,8 @@ public class Pawn : MonoBehaviour
     public bool canEndTurn = false;
     public bool isOnEffectTile;
 
+    private GameObject _BoardGround;
+
     public int _CurrentTile { get; private set; } = 0;
 
     void Start()
@@ -27,6 +29,7 @@ public class Pawn : MonoBehaviour
 
         transform.position = TilePlacer.Instance.spawnedTiles[_CurrentTile].transform.position;
 
+        _BoardGround = GameObject.FindGameObjectWithTag("Board");
         //_Spinner.SpinWheel();
         //StartCoroutine(MoveToTile(_CurrentTile + 3));
     }
@@ -49,6 +52,7 @@ public class Pawn : MonoBehaviour
         BoardManager.OnpLplayerFinshTun?.Invoke();
         canEndTurn = false;
 
+        CameraManager.Instance.UpdateTarget(_BoardGround.transform);
         GameManager.GetInstance().NextPlayerTurn();
 
         Debug.Log($"{gameObject.name}TurnEnd");

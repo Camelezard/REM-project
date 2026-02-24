@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a37a1c0df3185af43bec06111d27d886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Offset: {x: 0, y: 10, z: -8}
-  _BoardOffset: {x: 0, y: 20, z: -16}
+  _Offset: {x: 0, y: 5, z: -4}
+  _BoardOffset: {x: 0, y: 10, z: -13}
   _SmoothSpeed: 5
   target: {fileID: 0}
   followTarget: 0

@@ -31,13 +31,15 @@ public class CameraManager : MonoBehaviour
 
     private void LateUpdate()
     {
+        
         if (!followTarget || target == null) return;
 
-        _DesiredPosition = target.gameObject.tag == BOARD_TAG ? transform.position + _BoardOffset : transform.position + _Offset;
+        if (target.tag == BOARD_TAG) _DesiredPosition = target.position + _BoardOffset;
+        else _DesiredPosition = target.position + _Offset;
 
         transform.position = Vector3.Lerp(
-            transform.position, 
-            _DesiredPosition, 
+            transform.position,
+            _DesiredPosition,
             _SmoothSpeed * Time.deltaTime);
     }
 
