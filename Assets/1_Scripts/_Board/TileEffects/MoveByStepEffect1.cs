@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class MoveByStepEffect : TileEffect
+public class SwapPlayerPositionEffect : TileEffect
 {
-    [SerializeField] private int _BonusStep = 3;
 
 
 
     private void OnValidate()
     {
-        if (_BonusStep >= 0) m_EffectMessage = $"Effet activé ! Avance le pion de {_BonusStep} cases.";
-        else m_EffectMessage = $"Effet activé ! Recule le pion de {_BonusStep} cases.";
-        
         #if UNITY_EDITOR
         m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveByStepEffectColor.mat");
         ChangeColor(m_TileMaterial);

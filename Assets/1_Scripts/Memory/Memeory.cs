@@ -189,7 +189,7 @@ public class Memeory : MonoBehaviour
     
     private void FinishGame()
     {
-        Player Winer = _PlayerOne.score >= _PlayerTow.score ? GameManager.GetInstance().GetPlayerOne() :GameManager.GetInstance().GetPlayerTow();
+        Player Winer = _PlayerOne.score >= _PlayerTow.score ? GameManager.GetInstance().GetPlayerOne() :GameManager.GetInstance().GetPlayerTwo();
         GameManager.GetInstance().WinGame(Winer);
     }
 }

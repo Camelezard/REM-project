@@ -20,7 +20,7 @@ public class TilePlacer : MonoBehaviour
     [SerializeField] private bool _CanGenerateTiles = false;
     [SerializeField] private bool _AdjustTiles = false;
 
-    [SerializeField] private List<BoardTile> _SpawnedTiles = new List<BoardTile>();
+    [SerializeField] private List<BoardTile> _SpawnedTiles;
     public List<BoardTile> spawnedTiles => _SpawnedTiles;
     Spline _TileSpline;
 
@@ -71,6 +71,8 @@ public class TilePlacer : MonoBehaviour
         BoardTile lNewTile;
 
         _TileSpline = _TileSplineContainer.Spline;
+
+        if (_SpawnedTiles == null) _SpawnedTiles = new List<BoardTile>();
 
         ClearTiles();
 

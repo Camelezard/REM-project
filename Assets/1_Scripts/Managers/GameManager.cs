@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
     //Get turn
     public Player GetCurrentPlayerTurn() => _PlayersList[CurrentPlayer];
     public Player GetPlayerOne() => _PlayersList[0];
-    public Player GetPlayerTow() => _PlayersList[1];
+    public Player GetPlayerTwo() => _PlayersList[1];
     public Player GetPlayerInList(int pIndex) => _PlayersList[pIndex - 1];
     public int GetCurrentPlayerIndex() => CurrentPlayer;
 
@@ -106,9 +106,9 @@ public class GameManager : MonoBehaviour
         SceneTransitionanager.instance.SwitchOverlay("MainMenuTest", MAIN_BOARD_SCENE_NAME);
     }
 
-    public void StartMinigame(TypOfMinigame pTyp)
+    public void StartMinigame(TypOfMinigame pType)
     {
-        CurrentMinigameName = GetSceneNamWithEnum(pTyp);
+        CurrentMinigameName = GetSceneNamWithEnum(pType);
 
         SceneManager.LoadScene(CurrentMinigameName, LoadSceneMode.Additive);
 
@@ -140,11 +140,11 @@ public class GameManager : MonoBehaviour
     //     Debug.Log("Game state reset.");
     // }
 
-    private string GetSceneNamWithEnum(TypOfMinigame pTyp)
+    private string GetSceneNamWithEnum(TypOfMinigame pType)
     {
         string SceneName = MINIGAME_TEST;
 
-        switch (pTyp)
+        switch (pType)
         {
             case TypOfMinigame.TugOFWar:
                 SceneName = MINIGAME_TEST;

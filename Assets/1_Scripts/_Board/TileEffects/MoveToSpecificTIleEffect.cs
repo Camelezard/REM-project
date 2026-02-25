@@ -6,7 +6,7 @@ public class MoveToSpecificTileEffect : TileEffect
 
     private void OnValidate()
     {
-        m_EffectMessage = $"Effet activ� ! D�place le pion jusqu'� la case {_TileIndex}.";
+        m_EffectMessage = $"Effet activé ! Déplace le pion jusqu'é la case {_TileIndex}.";
 
         #if UNITY_EDITOR
         m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveToSpecificTileEffectColor.mat");
@@ -16,7 +16,7 @@ public class MoveToSpecificTileEffect : TileEffect
 
     protected override void ExecuteEffect(Pawn pPawn)
     {
-        if (!pPawn.isOnEffectTile) pPawn.canEndTurn = true;
+        /*if (!pPawn.isOnEffectTile)*/ pPawn.canEndTurn = true;
         StartCoroutine(pPawn.MoveBetweenTwoTiles(pPawn._CurrentTile, _TileIndex));
     }
 
