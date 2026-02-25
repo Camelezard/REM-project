@@ -8,7 +8,7 @@ public abstract class TileEffect : MonoBehaviour
     protected Material m_OriginalMat;
     protected Coroutine m_CurrentExecuteCoroutine;
 
-    void OnDestroy()
+    protected void OnDestroy()
     {
 #if UNITY_EDITOR
         RestoreOriginalMat();

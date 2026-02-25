@@ -19,7 +19,7 @@ public class MoveByStepEffect : TileEffect
 
     protected override void ExecuteEffect(Pawn pPawn)
     {
-        StartCoroutine(pPawn.MoveToTile(pPawn._CurrentTile + _BonusStep));
+        StartCoroutine(pPawn.MoveToTile(pPawn.currentTile + _BonusStep));
     }
 
     public override string GetDescription()

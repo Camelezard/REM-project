@@ -6,6 +6,8 @@ using System;
 
 public class BoardManager : MonoBehaviour
 {
+    public static BoardManager Instance;
+
     public static Action OnPlayerWin;
     public static Action OnNextTurn;
     public static Action OnFinishPawnsSpawn;
@@ -16,8 +18,20 @@ public class BoardManager : MonoBehaviour
     [SerializeField] private float _SpawnTime = 1.5f;
     [SerializeField] private float _PlayerTransitionTime = 2f;
 
-    private List<Pawn> _PawnList = new List<Pawn>();
+    public List<Pawn> pawnList { get; private set; } = new List<Pawn>();
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
 
     void Start()
     {
@@ -25,8 +39,8 @@ public class BoardManager : MonoBehaviour
     }
 
 
-    public Pawn GetCurrentPawn(int index) => _PawnList[index];
-    public Pawn GetCurrentPawn() => _PawnList[GameManager.GetInstance().GetCurrentPlayerIndex()];
+    public Pawn GetCurrentPawn(int index) => pawnList[index];
+    public Pawn GetCurrentPawn() => pawnList[GameManager.GetInstance().GetCurrentPlayerIndex()];
 
     //------------- Events  ---------------------
     void OnEnable()
@@ -59,7 +73,7 @@ public class BoardManager : MonoBehaviour
         {
             CreateAPawn(out lPawn);
             lPawn._SplineContainer = _SplineContainer;
-            _PawnList.Add(lPawn);
+            pawnList.Add(lPawn);
 
             yield return new WaitForSeconds(lWaitTime);
         }
@@ -70,17 +84,17 @@ public class BoardManager : MonoBehaviour
 
     private void ClearPawns()
     {
-        if (_PawnList == null || _PawnList.Count <= 0)
+        if (pawnList == null || pawnList.Count <= 0)
         {
             return;
         }
 
-        foreach (Pawn lPawn in _PawnList)
+        foreach (Pawn lPawn in pawnList)
         {
             Destroy(lPawn.gameObject);
         }
 
-        _PawnList.Clear();
+        pawnList.Clear();
 
     }
 
