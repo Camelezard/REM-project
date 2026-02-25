@@ -983,7 +983,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  - {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5316,7 +5316,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  - {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5950,7 +5950,7 @@ GameObject:
   - component: {fileID: 904890257}
   - component: {fileID: 904890260}
   - component: {fileID: 904890259}
-  - component: {fileID: 904890258}
+  - component: {fileID: 904890261}
   m_Layer: 6
   m_Name: BoardTile_1
   m_TagString: Untagged
@@ -5975,21 +5975,6 @@ Transform:
   - {fileID: 1227914639}
   m_Father: {fileID: 1241058259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &904890258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904890256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
-  m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
-  _TileIndex: 9
 --- !u!65 &904890259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6040,6 +6025,20 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1697882404}
   _TileText: {fileID: 1834612390}
+--- !u!114 &904890261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904890256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319cfc2003f8b884598cfaca97b491df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectMessage: "Effet activ\xE9 ! Les pions \xE9changent leur cases."
+  m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
 --- !u!1 &907566487
 GameObject:
   m_ObjectHideFlags: 0
@@ -10313,7 +10312,7 @@ GameObject:
   - component: {fileID: 1598406364}
   - component: {fileID: 1598406367}
   - component: {fileID: 1598406366}
-  - component: {fileID: 1598406365}
+  - component: {fileID: 1598406368}
   m_Layer: 6
   m_Name: BoardTile_3
   m_TagString: Untagged
@@ -10338,21 +10337,6 @@ Transform:
   - {fileID: 93570740}
   m_Father: {fileID: 1241058259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1598406365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598406363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
-  m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
-  _TileIndex: 9
 --- !u!65 &1598406366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10403,6 +10387,20 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 147586792}
   _TileText: {fileID: 110843158}
+--- !u!114 &1598406368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598406363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319cfc2003f8b884598cfaca97b491df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectMessage: "Effet activ\xE9 ! Les pions \xE9changent leur cases."
+  m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
 --- !u!1 &1625881993
 GameObject:
   m_ObjectHideFlags: 0
@@ -10973,7 +10971,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  - {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12117,7 +12115,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: 2100000, guid: e92f9fd3036201745a40893791922d9a, type: 2}
+  - {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12455,7 +12453,7 @@ GameObject:
   - component: {fileID: 2146787338}
   - component: {fileID: 2146787341}
   - component: {fileID: 2146787340}
-  - component: {fileID: 2146787339}
+  - component: {fileID: 2146787342}
   m_Layer: 6
   m_Name: BoardTile_5
   m_TagString: Untagged
@@ -12480,21 +12478,6 @@ Transform:
   - {fileID: 896093031}
   m_Father: {fileID: 1241058259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2146787339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146787337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
-  m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
-  _TileIndex: 9
 --- !u!65 &2146787340
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12545,6 +12528,20 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 821167333}
   _TileText: {fileID: 213718461}
+--- !u!114 &2146787342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146787337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319cfc2003f8b884598cfaca97b491df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectMessage: "Effet activ\xE9 ! Les pions \xE9changent leur cases."
+  m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

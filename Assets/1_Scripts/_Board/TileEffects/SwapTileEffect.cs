@@ -6,10 +6,17 @@ public class SwapTileEffect : TileEffect
     private void OnValidate()
     {
         m_EffectMessage = $"Effet activé ! Les pions échangent leur cases.";
+
+#if UNITY_EDITOR
+        m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveByStepEffectColor.mat");
+        ChangeColor(m_TileMaterial);
+#endif
     }
 
     protected override void ExecuteEffect(Pawn pPawn)
     {
+        pPawn.canEndTurn = true;
+
         Pawn lPawn1 = BoardManager.Instance.pawnList[0];
         Pawn lPawn2 = BoardManager.Instance.pawnList[1];
 
