@@ -23,6 +23,7 @@ public class BoardTile : MonoBehaviour
     [SerializeField] public Spline spline;
     [SerializeField] private MeshRenderer _MeshRend;
     [SerializeField] private Text _TileText;
+    [SerializeField] private bool _CanResetColor = true;
 
     private List<TileEffect> _Effects = new List<TileEffect>();
 
@@ -42,6 +43,11 @@ public class BoardTile : MonoBehaviour
         foreach (TileEffect lEffect in _Effects)
         {
             lDescription = "- " + lEffect.GetDescription() + "\n";
+        }
+
+        if (_CanResetColor)
+        {
+            ResetColor();
         }
     }
 
@@ -85,11 +91,19 @@ public class BoardTile : MonoBehaviour
 
         if (mats.Length > 1)
         {
-            mats[2] = pTileColor;   
+            mats[2] = pTileColor;
             _MeshRend.sharedMaterials = mats;
         }
         print("change");
+    }
 
+
+    public void ResetColor()
+    {
+        ChangeColor(UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/NullTileEffectColor.mat"));
+        _CanResetColor = false;
+
+        print("colorReset");
     }
 
     public void ChangeText(int pNum)

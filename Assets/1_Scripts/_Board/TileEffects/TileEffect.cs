@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
+[ExecuteAlways]
 public abstract class TileEffect : MonoBehaviour
 {
     [SerializeField] protected string m_EffectMessage = "";
     [SerializeField] protected Material m_TileMaterial;
-    protected Material m_OriginalMat;
     protected Coroutine m_CurrentExecuteCoroutine;
 
     void OnDestroy()
@@ -63,11 +63,10 @@ public abstract class TileEffect : MonoBehaviour
 
     void RestoreOriginalMat()
     {
-        m_OriginalMat = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/NullTileEffectColor.mat");
-
+        print("component removed");
         BoardTile tile = GetComponent<BoardTile>();
-        if (tile == null || m_OriginalMat == null) return;
+        if (tile == null ) return;
 
-        tile.ChangeColor(m_OriginalMat);
+        tile.ResetColor();
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class MinigameEffect : TileEffect
 {
     [SerializeField] private TypOfMinigame _SelectedMinigame = TypOfMinigame.Random;
@@ -14,6 +15,7 @@ public class MinigameEffect : TileEffect
         ChangeColor(m_TileMaterial);
         #endif
     }
+
 
     protected override void ExecuteEffect(Pawn pPawn)
     {
