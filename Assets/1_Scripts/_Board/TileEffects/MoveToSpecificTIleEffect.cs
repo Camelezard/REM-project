@@ -9,7 +9,7 @@ public class MoveToSpecificTileEffect : TileEffect
         m_EffectMessage = $"Effet activé ! Déplace le pion jusqu'é la case {_TileIndex}.";
 
         #if UNITY_EDITOR
-        m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveToSpecificTileEffectColor.mat");
+        m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveByStepEffectColor.mat");
         ChangeColor(m_TileMaterial);
         #endif
     }
