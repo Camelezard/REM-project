@@ -35,6 +35,7 @@ public class BoardTile : MonoBehaviour
     private void Awake()
     {
         _Effects.AddRange(GetComponents<TileEffect>());
+        BoardManager.OnPlayerAboutToMove += ShowEffectBillBoard;
     }
 
     void OnValidate()
@@ -120,7 +121,7 @@ public class BoardTile : MonoBehaviour
 
     private void ShowEffectBillBoard()
     {
-        if (BoardManager.Instance.GetCurrentPawn().currentTile + 6 <= tileIndex)
+        if (BoardManager.Instance.GetCurrentPawn().currentTile + 6 >= tileIndex && !(tileIndex < BoardManager.Instance.GetCurrentPawn().currentTile) && _Effects.Count > 0)
         {
             _EffectBillBoard.gameObject.SetActive(true);
         }

@@ -11,7 +11,8 @@ public class BoardManager : MonoBehaviour
     public static Action OnPlayerWin;
     public static Action OnNextTurn;
     public static Action OnFinishPawnsSpawn;
-    public static Action OnpLplayerFinshTun;
+    public static Action OnPlayerFinishTurn;
+    public static event Action OnPlayerAboutToMove;
 
     [SerializeField] private Pawn _PawnFactory;
     [SerializeField] public SplineContainer _SplineContainer;
@@ -124,6 +125,8 @@ public class BoardManager : MonoBehaviour
 
     private IEnumerator FocusPlayer()
     {
+        OnPlayerAboutToMove.Invoke();
+
         yield return new WaitForSeconds(2f);
 
         Pawn lPawn = GetCurrentPawn();

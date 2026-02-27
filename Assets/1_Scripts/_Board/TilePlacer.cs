@@ -90,7 +90,7 @@ public class TilePlacer : MonoBehaviour
 
             lNewTile.ChangeText(i + 1);
 
-            lNewTile.name = $"BoardTile_{i}";
+            lNewTile.name = $"BoardTile_{i + 1}";
         }
 
 

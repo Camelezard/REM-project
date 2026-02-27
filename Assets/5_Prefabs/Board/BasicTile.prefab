@@ -113,13 +113,14 @@ GameObject:
   - component: {fileID: 6061084440594907479}
   - component: {fileID: 8408084369822720511}
   - component: {fileID: 472454638045827906}
+  - component: {fileID: 8339280417946891506}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6061084440594907479
 RectTransform:
   m_ObjectHideFlags: 0
@@ -278,6 +279,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 8408084369822720511}
   m_maskType: 0
+--- !u!114 &8339280417946891506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3245497307227561169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b5e08285e30c34aaa7b3ac354679e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4650812735557039576
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,6 +357,8 @@ MonoBehaviour:
   _MeshRend: {fileID: 351486841708188955}
   _TileText: {fileID: 98935105228195925}
   _EffectBillBoard: {fileID: 472454638045827906}
+  _UpdateVisual: 0
+  tileIndex: 0
 --- !u!65 &1792829078328943520
 BoxCollider:
   m_ObjectHideFlags: 0
