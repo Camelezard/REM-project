@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Splines;
 using UnityEngine.UI;
@@ -23,6 +24,9 @@ public class BoardTile : MonoBehaviour
     [SerializeField] public Spline spline;
     [SerializeField] private MeshRenderer _MeshRend;
     [SerializeField] private Text _TileText;
+    [SerializeField] private TextMeshPro _EffectBillBoard;
+
+    [SerializeField] private bool _UpdateVisual = false;
 
     private List<TileEffect> _Effects = new List<TileEffect>();
 
@@ -37,12 +41,14 @@ public class BoardTile : MonoBehaviour
 
         _Effects.Clear();
         _Effects.AddRange(GetComponents<TileEffect>());
+        AdjustEffectText();
 
         string lDescription;
         foreach (TileEffect lEffect in _Effects)
         {
             lDescription = "- " + lEffect.GetDescription() + "\n";
         }
+        _UpdateVisual = false;
     }
 
     /// <summary>
@@ -95,5 +101,18 @@ public class BoardTile : MonoBehaviour
     public void ChangeText(int pNum)
     {
         _TileText.text = pNum.ToString();
+    }
+
+    private void AdjustEffectText()
+    {
+        if (_Effects.Count == 0) _EffectBillBoard.gameObject.SetActive(false);
+        else
+        {
+            _EffectBillBoard.gameObject.SetActive(true);
+            for (int i = 0; i < _Effects.Count; i++)
+            {
+                _EffectBillBoard.text = _Effects[i].billboardEffectMessage; 
+            }
+        }
     }
 }

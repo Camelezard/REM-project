@@ -6,6 +6,7 @@ public class SwapTileEffect : TileEffect
     private void OnValidate()
     {
         m_EffectMessage = $"Effet activé ! Les pions échangent leur cases.";
+        billboardEffectMessage = $"Échange de case";
 
 #if UNITY_EDITOR
         m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveByStepEffectColor.mat");
