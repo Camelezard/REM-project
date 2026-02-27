@@ -785,7 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
-  m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   _TileIndex: 9
 --- !u!65 &121834037
 BoxCollider:
@@ -3335,7 +3335,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  - {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4678,7 +4678,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  - {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6088,7 +6088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
-  m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   _TileIndex: 9
 --- !u!65 &907566490
 BoxCollider:
@@ -6359,7 +6359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
-  m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   _TileIndex: 9
 --- !u!65 &933386238
 BoxCollider:
@@ -8728,9 +8728,9 @@ MonoBehaviour:
         z: 0.12330661
       Rotation:
         value:
-          x: 9.1348523e-10
+          x: -0.0000000237943
           y: -0.043412317
-          z: -0.000000021022235
+          z: 0.0000005475834
           w: 0.9990572
     - Position:
         x: -0.1069596
@@ -8746,9 +8746,9 @@ MonoBehaviour:
         z: 0.75587875
       Rotation:
         value:
-          x: 0.0000000060442624
+          x: 0.0000000034881553
           y: -0.38704026
-          z: -0.000000014399507
+          z: -0.000000008309984
           w: 0.9220628
     - Position:
         x: -4.3669596
@@ -8764,9 +8764,9 @@ MonoBehaviour:
         z: 0.6388759
       Rotation:
         value:
-          x: -0.0000000014551419
+          x: -0.0000000014294268
           y: -0.34548786
-          z: 0.0000000039524943
+          z: 0.0000000038826466
           w: 0.9384232
     - Position:
         x: -4.14696
@@ -8908,9 +8908,9 @@ MonoBehaviour:
         z: 0.8045448
       Rotation:
         value:
-          x: 6.8225915e-18
+          x: 0.000000041970072
           y: -0.6285271
-          z: -8.4427984e-18
+          z: -0.000000051936993
           w: 0.77778774
     m_MetaData:
     - Mode: 0
@@ -9542,7 +9542,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  - {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11451,7 +11451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 9."
-  m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   _TileIndex: 9
 --- !u!65 &1852122712
 BoxCollider:
@@ -11862,7 +11862,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  - {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
