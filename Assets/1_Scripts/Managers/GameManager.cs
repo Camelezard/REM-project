@@ -131,6 +131,8 @@ public class GameManager : MonoBehaviour
         SceneManager.SetActiveScene(board);
 
         NextPlayerTurn();
+
+        //BoardManager.Ins
     }
 
     // private void ResetGameState()

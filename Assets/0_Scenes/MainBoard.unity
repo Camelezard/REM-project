@@ -688,7 +688,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  - {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -745,7 +745,7 @@ Transform:
   m_GameObject: {fileID: 121273506}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.4429026, y: -0.0000019209806, z: 0.7807884}
+  m_LocalPosition: {x: 4.4429026, y: -0.0000019209806, z: 0.7807885}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1594,7 +1594,7 @@ GameObject:
   - component: {fileID: 234837046}
   - component: {fileID: 234837049}
   - component: {fileID: 234837048}
-  - component: {fileID: 234837047}
+  - component: {fileID: 234837050}
   m_Layer: 6
   m_Name: BoardTile_1
   m_TagString: Untagged
@@ -1619,21 +1619,6 @@ Transform:
   - {fileID: 2023070146}
   m_Father: {fileID: 1353389789964539274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &234837047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234837045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 10."
-  m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
-  _TileIndex: 10
 --- !u!65 &234837048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1685,6 +1670,21 @@ MonoBehaviour:
   _MeshRend: {fileID: 1448281054}
   _TileText: {fileID: 1248492494}
   _CanResetColor: 0
+--- !u!114 &234837050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234837045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e91aed211a0cb84d84403d40512b283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectMessage: "Effet activ\xE9 ! Avance le pion de 1 cases."
+  m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
+  _BonusStep: 1
 --- !u!1 &241075379
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,6 +2937,7 @@ MonoBehaviour:
   m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 10."
   m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
   _TileIndex: 10
+  _AlernativeSpline: {fileID: 0}
 --- !u!65 &473551013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4215,6 +4216,7 @@ MonoBehaviour:
   m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 10."
   m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
   _TileIndex: 10
+  _AlernativeSpline: {fileID: 1407311121}
 --- !u!65 &707386434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5773,7 +5775,7 @@ GameObject:
   - component: {fileID: 993991192}
   - component: {fileID: 993991195}
   - component: {fileID: 993991194}
-  - component: {fileID: 993991193}
+  - component: {fileID: 993991196}
   m_Layer: 6
   m_Name: BoardTile_5
   m_TagString: Untagged
@@ -5798,21 +5800,6 @@ Transform:
   - {fileID: 953312240}
   m_Father: {fileID: 1353389789964539274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &993991193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993991191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 10."
-  m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
-  _TileIndex: 10
 --- !u!65 &993991194
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5864,6 +5851,21 @@ MonoBehaviour:
   _MeshRend: {fileID: 91079419}
   _TileText: {fileID: 1971793545}
   _CanResetColor: 0
+--- !u!114 &993991196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993991191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e91aed211a0cb84d84403d40512b283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectMessage: "Effet activ\xE9 ! Avance le pion de 1 cases."
+  m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
+  _BonusStep: 1
 --- !u!1 &1008158925
 GameObject:
   m_ObjectHideFlags: 0
@@ -6747,7 +6749,7 @@ GameObject:
   - component: {fileID: 1219962056}
   - component: {fileID: 1219962059}
   - component: {fileID: 1219962058}
-  - component: {fileID: 1219962057}
+  - component: {fileID: 1219962060}
   m_Layer: 6
   m_Name: BoardTile_3
   m_TagString: Untagged
@@ -6772,21 +6774,6 @@ Transform:
   - {fileID: 1776341036}
   m_Father: {fileID: 1353389789964539274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1219962057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1219962055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 021b7488761ae5040b049300764fcb91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectMessage: "Effet activ\xE9 ! D\xE9place le pion jusqu'\xE9 la case 10."
-  m_TileMaterial: {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
-  _TileIndex: 10
 --- !u!65 &1219962058
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6838,6 +6825,21 @@ MonoBehaviour:
   _MeshRend: {fileID: 1690729736}
   _TileText: {fileID: 82622813}
   _CanResetColor: 0
+--- !u!114 &1219962060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219962055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e91aed211a0cb84d84403d40512b283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectMessage: "Effet activ\xE9 ! Avance le pion de 1 cases."
+  m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
+  _BonusStep: 1
 --- !u!1 &1248492492
 GameObject:
   m_ObjectHideFlags: 0
@@ -7697,6 +7699,178 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401441531}
   m_CullTransparentMesh: 1
+--- !u!1 &1407311119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1407311120}
+  - component: {fileID: 1407311121}
+  m_Layer: 0
+  m_Name: Shortcut_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1407311120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407311119}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.20383376, y: 0.07758522, z: 3.159244}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7687785623737705072}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1407311121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407311119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Spline:
+    m_EditModeType: 1
+    m_Knots: []
+    m_MetaData: []
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Splines:
+  - m_EditModeType: 1
+    m_Knots:
+    - Position:
+        x: 0.013874173
+        y: -0.0045852214
+        z: 0.071174145
+      TangentIn:
+        x: -0
+        y: -0
+        z: -0.1548813
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0.1548813
+      Rotation:
+        value:
+          x: 0.029137794
+          y: 0.09538509
+          z: -0.010821383
+          w: 0.9949551
+    - Position:
+        x: 0.30687416
+        y: -0.097585216
+        z: 1.589174
+      TangentIn:
+        x: -0
+        y: -0
+        z: -0.28866166
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0.21280146
+      Rotation:
+        value:
+          x: 0.015603661
+          y: -0.32446805
+          z: -0.0030439754
+          w: 0.945763
+    - Position:
+        x: -0.5331258
+        y: -0.07758522
+        z: 1.639174
+      TangentIn:
+        x: -0
+        y: -0
+        z: -0.27354345
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0.26312795
+      Rotation:
+        value:
+          x: -0.005171049
+          y: -0.6459399
+          z: -0.0031384279
+          w: 0.7633643
+    - Position:
+        x: -1.2831259
+        y: -0.07758522
+        z: 1.849174
+      TangentIn:
+        x: -0
+        y: -0
+        z: -0.24100727
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0.29746237
+      Rotation:
+        value:
+          x: -0.018614393
+          y: -0.3549944
+          z: -0.0075045214
+          w: 0.934653
+    - Position:
+        x: -1.463126
+        y: 0.0024147779
+        z: 3.019174
+      TangentIn:
+        x: -0
+        y: -0
+        z: -0.11864654
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0.11864654
+      Rotation:
+        value:
+          x: -0.033136763
+          y: -0.07642498
+          z: -0.009072359
+          w: 0.9964832
+    m_MetaData:
+    - Mode: 0
+      Tension: 0.5
+    - Mode: 0
+      Tension: 0.5
+    - Mode: 0
+      Tension: 0.5
+    - Mode: 0
+      Tension: 0.5
+    - Mode: 0
+      Tension: 0.5
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Knots:
+    m_KnotsLink: []
 --- !u!1 &1448207259
 GameObject:
   m_ObjectHideFlags: 0
@@ -7904,7 +8078,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  - {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9487,7 +9661,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: 2100000, guid: b44a1ca52cfc48f4fa65d5dec034c0b2, type: 2}
+  - {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10542,7 +10716,7 @@ Transform:
   m_GameObject: {fileID: 1880913871}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.0528393, y: -0.0000004300755, z: -0.35706377}
+  m_LocalPosition: {x: -4.0528393, y: -0.0000004300755, z: -0.3570637}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10819,7 +10993,7 @@ Transform:
   m_GameObject: {fileID: 1960509649}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.5208893, y: 7.600673e-17, z: -5.076215}
+  m_LocalPosition: {x: -4.520889, y: 7.600673e-17, z: -5.076215}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11874,6 +12048,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7687785623737705072}
   - {fileID: 1353389789964539274}
   - {fileID: 184456688}
   m_Father: {fileID: 1256189248}
@@ -12167,7 +12342,7 @@ GameObject:
   - component: {fileID: 7687785623737705072}
   - component: {fileID: 5225414286179739531}
   m_Layer: 0
-  m_Name: Spline
+  m_Name: MainSpline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12186,7 +12361,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7687785623737705072}
   - {fileID: 2037856178}
   - {fileID: 234837046}
   - {fileID: 1617388042}
@@ -12553,11 +12727,12 @@ Transform:
   m_GameObject: {fileID: 658020808131371935}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0869596, y: 0, z: -7.928418}
+  m_LocalPosition: {x: -0.2730404, y: 0, z: -7.718418}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1353389789964539274}
+  m_Children:
+  - {fileID: 1407311120}
+  m_Father: {fileID: 2068921649}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

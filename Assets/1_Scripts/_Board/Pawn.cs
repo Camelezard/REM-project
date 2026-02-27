@@ -81,14 +81,28 @@ public class Pawn : MonoBehaviour
     }
 
     // Trasitione entre deux tiles ou qu'elle soit. 
-    public IEnumerator MoveBetweenTwoTiles(int pOriinTileIndex, int pFinalTileIndex)
+    public IEnumerator MoveBetweenTwoTiles(int pOriinTileIndex, int pFinalTileIndex, SplineContainer pSplineContainer = null)
     {
         float lElapsedTime = 0f;
         float lDistanceOnSpline;
 
         // determie la place en pourcent sur le spline
-        float lStartDistanceOnSpline = TilePlacer.Instance.spawnedTiles[pOriinTileIndex].distanceOnPath;
-        float lEndDistanceOnSpline = TilePlacer.Instance.spawnedTiles[pFinalTileIndex].distanceOnPath;
+        float lStartDistanceOnSpline;
+        float lEndDistanceOnSpline;
+
+        if (pSplineContainer != null)
+        {
+            lStartDistanceOnSpline = 0;
+            lEndDistanceOnSpline = 1;
+
+        }
+        else
+        {
+            lStartDistanceOnSpline = TilePlacer.Instance.spawnedTiles[pOriinTileIndex].distanceOnPath;
+            lEndDistanceOnSpline = TilePlacer.Instance.spawnedTiles[pFinalTileIndex].distanceOnPath;
+
+            pSplineContainer = _SplineContainer;
+        }
 
         while (lElapsedTime < _MoveDuration)
         {
@@ -96,17 +110,35 @@ public class Pawn : MonoBehaviour
 
             lDistanceOnSpline = Mathf.Lerp(lStartDistanceOnSpline, lEndDistanceOnSpline, lElapsedTime / _MoveDuration);
 
-            transform.position = _SplineContainer.EvaluatePosition(lDistanceOnSpline);
+            transform.position = pSplineContainer.EvaluatePosition(lDistanceOnSpline);
 
             yield return null;
         }
 
-        transform.position = _SplineContainer.EvaluatePosition(lEndDistanceOnSpline);
-        _CurrentTile = pFinalTileIndex; 
+        transform.position = pSplineContainer.EvaluatePosition(lEndDistanceOnSpline);
+        _CurrentTile = pFinalTileIndex;
 
-        if (canEndTurn) EndTurn();
-        //else if (isOnEffectTile) CheckTile();
+        yield return StartCoroutine(ResolveTileEffects());
+        EndTurn();
     }
+
+    private IEnumerator ResolveTileEffects()
+    {
+        bool hasEffect = true;
+
+        while (hasEffect)
+        {
+            hasEffect = CheckTile();
+
+            if (hasEffect)
+            {
+                while (isOnEffectTile)
+                    yield return null;
+            }
+        }
+    }
+
+
 
     private void MoveAfterSpinner(int pValue)
     {
