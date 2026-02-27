@@ -28,6 +28,8 @@ public class BoardTile : MonoBehaviour
 
     [SerializeField] private bool _UpdateVisual = false;
 
+    public int tileIndex = 0;
+
     private List<TileEffect> _Effects = new List<TileEffect>();
 
     private void Awake()
@@ -41,7 +43,7 @@ public class BoardTile : MonoBehaviour
 
         _Effects.Clear();
         _Effects.AddRange(GetComponents<TileEffect>());
-        AdjustEffectText();
+        AdjustEffectBillBoardText();
 
         string lDescription;
         foreach (TileEffect lEffect in _Effects)
@@ -103,7 +105,7 @@ public class BoardTile : MonoBehaviour
         _TileText.text = pNum.ToString();
     }
 
-    private void AdjustEffectText()
+    private void AdjustEffectBillBoardText()
     {
         if (_Effects.Count == 0) _EffectBillBoard.gameObject.SetActive(false);
         else
@@ -113,6 +115,18 @@ public class BoardTile : MonoBehaviour
             {
                 _EffectBillBoard.text = _Effects[i].billboardEffectMessage; 
             }
+        }
+    }
+
+    private void ShowEffectBillBoard()
+    {
+        if (BoardManager.Instance.GetCurrentPawn().currentTile + 6 <= tileIndex)
+        {
+            _EffectBillBoard.gameObject.SetActive(true);
+        }
+        else
+        {
+            _EffectBillBoard.gameObject.SetActive(false);
         }
     }
 }
