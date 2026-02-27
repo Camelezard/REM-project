@@ -8,8 +8,16 @@ public class MoveByStepEffect : TileEffect
 
     private void OnValidate()
     {
-        if (_BonusStep >= 0) m_EffectMessage = $"Effet activé ! Avance le pion de {_BonusStep} cases.";
-        else m_EffectMessage = $"Effet activé ! Recule le pion de {_BonusStep} cases.";
+        if (_BonusStep >= 0)
+        {
+            m_EffectMessage = $"Effet activé ! Avance le pion de {_BonusStep} cases.";
+            billboardEffectMessage = $"+{_BonusStep}";
+        }
+        else
+        {
+            m_EffectMessage = $"Effet activé ! Recule le pion de {Mathf.Abs(_BonusStep)} cases.";
+            billboardEffectMessage = $"{_BonusStep}";
+        }
         
         #if UNITY_EDITOR
         m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveByStepEffectColor.mat");
@@ -19,7 +27,7 @@ public class MoveByStepEffect : TileEffect
 
     protected override void ExecuteEffect(Pawn pPawn)
     {
-        StartCoroutine(pPawn.MoveToTile(pPawn._CurrentTile + _BonusStep));
+        StartCoroutine(pPawn.MoveToTile(pPawn.currentTile + _BonusStep));
     }
 
     public override string GetDescription()

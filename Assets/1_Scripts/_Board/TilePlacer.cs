@@ -88,7 +88,9 @@ public class TilePlacer : MonoBehaviour
 
             lNewTile.AdjustOnSline();
 
-            lNewTile.ChangeText(i);
+            lNewTile.tileIndex = i;
+
+            lNewTile.ChangeText(i + 1);
 
             lNewTile.name = $"BoardTile_{i}";
         }

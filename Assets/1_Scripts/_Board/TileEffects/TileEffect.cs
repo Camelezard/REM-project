@@ -8,7 +8,9 @@ public abstract class TileEffect : MonoBehaviour
     [SerializeField] protected Material m_TileMaterial;
     protected Coroutine m_CurrentExecuteCoroutine;
 
-    void OnDestroy()
+    public string billboardEffectMessage = "";
+
+    protected void OnDestroy()
     {
 #if UNITY_EDITOR
         RestoreOriginalMat();
