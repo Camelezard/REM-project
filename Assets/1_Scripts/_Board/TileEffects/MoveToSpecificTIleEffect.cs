@@ -6,10 +6,11 @@ public class MoveToSpecificTileEffect : TileEffect
 
     private void OnValidate()
     {
-        m_EffectMessage = $"Effet activé ! Déplace le pion jusqu'é la case {_TileIndex}.";
+        m_EffectMessage = $"Effet activé ! Déplace le pion jusqu'à la case {_TileIndex}.";
+        billboardEffectMessage = $"Déplace à la case {_TileIndex}";
 
         #if UNITY_EDITOR
-        m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveToSpecificTileEffectColor.mat");
+        m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveByStepEffectColor.mat");
         ChangeColor(m_TileMaterial);
         #endif
     }
@@ -17,7 +18,7 @@ public class MoveToSpecificTileEffect : TileEffect
     protected override void ExecuteEffect(Pawn pPawn)
     {
         /*if (!pPawn.isOnEffectTile)*/ pPawn.canEndTurn = true;
-        StartCoroutine(pPawn.MoveBetweenTwoTiles(pPawn._CurrentTile, _TileIndex));
+        StartCoroutine(pPawn.MoveBetweenTwoTiles(pPawn.currentTile, _TileIndex));
     }
 
     public override string GetDescription()

@@ -20,14 +20,14 @@ public class Pawn : MonoBehaviour
 
     private GameObject _BoardGround;
 
-    public int _CurrentTile { get; private set; } = 0;
+    public int currentTile { get; private set; } = 0;
 
     void Start()
     {
         if (_Spinner == null) _Spinner = Spinner.instance;
 
 
-        transform.position = TilePlacer.Instance.spawnedTiles[_CurrentTile].transform.position;
+        transform.position = TilePlacer.Instance.spawnedTiles[currentTile].transform.position;
 
         _BoardGround = GameObject.FindGameObjectWithTag("Board");
         //_Spinner.SpinWheel();
@@ -49,7 +49,7 @@ public class Pawn : MonoBehaviour
     public void EndTurn()
     {
         Spinner.OnSpinnerStopAtNumber -= MoveAfterSpinner;
-        BoardManager.OnpLplayerFinshTun?.Invoke();
+        BoardManager.OnPlayerFinishTurn?.Invoke();
         canEndTurn = false;
 
         CameraManager.Instance.UpdateTarget(_BoardGround.transform);
@@ -60,19 +60,19 @@ public class Pawn : MonoBehaviour
     // la coroutine va nous permetre de depalcer le pion jusque a la case voulu
     public IEnumerator MoveToTile(int pTargetTileIndex)
     {
-        int lDirection = pTargetTileIndex > _CurrentTile ? 1 : -1; // pour savoir si on avance ou si on recule
+        int lDirection = pTargetTileIndex > currentTile ? 1 : -1; // pour savoir si on avance ou si on recule
 
-        while (_CurrentTile != pTargetTileIndex)
+        while (currentTile != pTargetTileIndex)
         {
-            int lNextTile = _CurrentTile + lDirection;
+            int lNextTile = currentTile + lDirection;
 
             // transition entre deux tile
-            yield return StartCoroutine(MoveBetweenTwoTiles(_CurrentTile, lNextTile));
+            yield return StartCoroutine(MoveBetweenTwoTiles(currentTile, lNextTile));
 
             // le personnage stop un instant sur les cases pour donner un effet de jeu de plateau
             yield return new WaitForSeconds(_TimePerMove);
 
-            _CurrentTile = lNextTile;
+            currentTile = lNextTile;
         }
 
         //CheckTile();    // comenter pour test le flow je sais pas ou indique la fin du tour
@@ -102,7 +102,7 @@ public class Pawn : MonoBehaviour
         }
 
         transform.position = _SplineContainer.EvaluatePosition(lEndDistanceOnSpline);
-        _CurrentTile = pFinalTileIndex; 
+        currentTile = pFinalTileIndex; 
 
         if (canEndTurn) EndTurn();
         //else if (isOnEffectTile) CheckTile();
@@ -110,7 +110,7 @@ public class Pawn : MonoBehaviour
 
     private void MoveAfterSpinner(int pValue)
     {
-        StartCoroutine(MoveToTile(_CurrentTile + pValue));
+        StartCoroutine(MoveToTile(currentTile + pValue));
     }
 
     private bool CheckTile()

@@ -8,7 +8,9 @@ public abstract class TileEffect : MonoBehaviour
     protected Material m_OriginalMat;
     protected Coroutine m_CurrentExecuteCoroutine;
 
-    void OnDestroy()
+    public string billboardEffectMessage = "";
+
+    protected void OnDestroy()
     {
 #if UNITY_EDITOR
         RestoreOriginalMat();
