@@ -444,6 +444,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 769848f45bfbd1a44b637283695b2709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _LeftFlipper: {fileID: 505993682215067303}
+  _RightFlipper: {fileID: 2853889869329157647}
+  horizontalZonePercent: 0.4
+  verticalZonePercent: 0.4
+  _PlayerID: 1
+  _PlayerZone: 0
 --- !u!1 &8140673449961149869
 GameObject:
   m_ObjectHideFlags: 0
