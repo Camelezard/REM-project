@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     public List<Player> _PlayersList { get; private set; }
 
+    
+
     private int CurrentPlayer = 0;
     //private const int MAX_PLAYER = 2;
 
@@ -116,7 +118,7 @@ public class GameManager : MonoBehaviour
         SceneManager.SetActiveScene(minigame);
     }
 
-    public void WinGame(Player pPlayer)
+    public void WinGame(Player pWiner)
     {
         if (CurrentMinigameName == null)
         {
@@ -130,7 +132,7 @@ public class GameManager : MonoBehaviour
         Scene board = SceneManager.GetSceneByName(MAIN_BOARD_SCENE_NAME);
         SceneManager.SetActiveScene(board);
 
-        NextPlayerTurn();
+        BoardManager.OnMinigameFinished.Invoke();
 
         //BoardManager.Ins
     }

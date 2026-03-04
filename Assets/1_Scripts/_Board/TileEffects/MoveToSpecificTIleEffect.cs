@@ -20,7 +20,7 @@ public class MoveToSpecificTileEffect : TileEffect
     protected override void ExecuteEffect(Pawn pPawn)
     {
         /*if (!pPawn.isOnEffectTile)*/ pPawn.canEndTurn = true;
-        StartCoroutine(pPawn.MoveBetweenTwoTiles(pPawn._CurrentTile, _TileIndex,_AlernativeSpline));
+        StartCoroutine(pPawn.MoveBetweenTwoTiles(pPawn.currentTile, _TileIndex,_AlernativeSpline));
     }
 
     public override string GetDescription()

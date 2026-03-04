@@ -116,27 +116,12 @@ public class Pawn : MonoBehaviour
         }
 
         transform.position = pSplineContainer.EvaluatePosition(lEndDistanceOnSpline);
-        _CurrentTile = pFinalTileIndex;
+        currentTile = pFinalTileIndex;
 
-        yield return StartCoroutine(ResolveTileEffects());
-        EndTurn();
+        if (canEndTurn) EndTurn();
+        //else if (isOnEffectTile) CheckTile();
     }
 
-    private IEnumerator ResolveTileEffects()
-    {
-        bool hasEffect = true;
-
-        while (hasEffect)
-        {
-            hasEffect = CheckTile();
-
-            if (hasEffect)
-            {
-                while (isOnEffectTile)
-                    yield return null;
-            }
-        }
-    }
 
 
 

@@ -12,6 +12,7 @@ public class BoardManager : MonoBehaviour
     public static Action OnNextTurn;
     public static Action OnFinishPawnsSpawn;
     public static Action OnpLplayerFinshTun;
+    public static Action OnMinigameFinished;
 
     [SerializeField] private Pawn _PawnFactory;
     [SerializeField] public SplineContainer _SplineContainer;
@@ -42,20 +43,26 @@ public class BoardManager : MonoBehaviour
     public Pawn GetCurrentPawn(int index) => pawnList[index];
     public Pawn GetCurrentPawn() => pawnList[GameManager.GetInstance().GetCurrentPlayerIndex()];
 
+    public Pawn GetPawnWithPlayer(Player pPlayer)
+    {
+        return pawnList[pPlayer.playerId];
+    }
+
     //------------- Events  ---------------------
     void OnEnable()
     {
         SceneTransitionanager.OnSceneReadyFirstTime += OnFirstLoadStartTransition;
-        OnNextTurn += LunchSpawnPlayerFocusTransition;
-        OnFinishPawnsSpawn += LunchSpawnPlayerFocusTransition;
+        OnNextTurn += LunchPlayerFocusTransition;
+        OnFinishPawnsSpawn += LunchPlayerFocusTransition;
     }
 
 
     private void OnDisable()
     {
         SceneTransitionanager.OnSceneReadyFirstTime -= OnFirstLoadStartTransition;
-        OnNextTurn -= LunchSpawnPlayerFocusTransition;
-        OnFinishPawnsSpawn -= LunchSpawnPlayerFocusTransition;
+        OnNextTurn -= LunchPlayerFocusTransition;
+        OnFinishPawnsSpawn -= LunchPlayerFocusTransition;
+
     }
 
 
@@ -117,7 +124,7 @@ public class BoardManager : MonoBehaviour
 
 
     //---------------   Transition   ---------------
-    public void LunchSpawnPlayerFocusTransition()
+    public void LunchPlayerFocusTransition()
     {
         StartCoroutine(FocusPlayer());
     }
@@ -142,5 +149,4 @@ public class BoardManager : MonoBehaviour
         Debug.Log("StartTransition");
 
     }
-
 }
