@@ -11,6 +11,8 @@ public class BoardManager : MonoBehaviour
     public static Action OnPlayerWin;
     public static Action OnNextTurn;
     public static Action OnFinishPawnsSpawn;
+    public static Action OnPlayerFinishTurn;
+    public static event Action OnPlayerAboutToMove;
     public static Action OnpLplayerFinshTun;
     public static Action OnMinigameFinished;
 
@@ -131,6 +133,8 @@ public class BoardManager : MonoBehaviour
 
     private IEnumerator FocusPlayer()
     {
+        OnPlayerAboutToMove.Invoke();
+
         yield return new WaitForSeconds(2f);
 
         Pawn lPawn = GetCurrentPawn();

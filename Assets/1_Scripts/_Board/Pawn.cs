@@ -49,7 +49,7 @@ public class Pawn : MonoBehaviour
     public void EndTurn()
     {
         Spinner.OnSpinnerStopAtNumber -= MoveAfterSpinner;
-        BoardManager.OnpLplayerFinshTun?.Invoke();
+        BoardManager.OnPlayerFinishTurn?.Invoke();
         canEndTurn = false;
 
         CameraManager.Instance.UpdateTarget(_BoardGround.transform);
