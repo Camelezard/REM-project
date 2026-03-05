@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19996e699e83b04cb071c0cfc384601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _BounceForceMultiplier: 2
+  _BounceForceMultiplier: 1.5
   _FlipperRb: {fileID: 1355169146747902524}
 --- !u!1 &1990866659047182709
 GameObject:
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19996e699e83b04cb071c0cfc384601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _BounceForceMultiplier: 2
+  _BounceForceMultiplier: 1.5
   _FlipperRb: {fileID: 1322782007574944154}
 --- !u!1 &7790561675685512846
 GameObject:
