@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19996e699e83b04cb071c0cfc384601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _BounceForceMultiplier: 1.5
+  _BounceForceMultiplier: 2
   _FlipperRb: {fileID: 1355169146747902524}
 --- !u!1 &1990866659047182709
 GameObject:
@@ -347,7 +347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4088400831989420324}
-  - component: {fileID: 4711728991447984369}
+  - component: {fileID: 6795342210850223819}
   m_Layer: 0
   m_Name: collision
   m_TagString: Untagged
@@ -370,7 +370,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 505993682215067303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 65}
---- !u!70 &4711728991447984369
+--- !u!70 &6795342210850223819
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -404,8 +404,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.018326519, y: -0.005145908}
-  m_Size: {x: 0.57638747, y: 1.4357165}
+  m_Offset: {x: -0.036275502, y: -0.010538099}
+  m_Size: {x: 0.5725515, y: 1.4344572}
   m_Direction: 0
 --- !u!1 &4638350252043924577
 GameObject:
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19996e699e83b04cb071c0cfc384601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _BounceForceMultiplier: 1.5
+  _BounceForceMultiplier: 2
   _FlipperRb: {fileID: 1322782007574944154}
 --- !u!1 &7790561675685512846
 GameObject:
@@ -635,7 +635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 945876478244606376}
-  - component: {fileID: 7604218042243068889}
+  - component: {fileID: 1463830309687371197}
   m_Layer: 0
   m_Name: collision
   m_TagString: Untagged
@@ -658,7 +658,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2853889869329157647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -65.76}
---- !u!70 &7604218042243068889
+--- !u!70 &1463830309687371197
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -692,6 +692,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.018326519, y: -0.005145908}
-  m_Size: {x: 0.57638747, y: 1.4357165}
+  m_Offset: {x: -0.024164138, y: 0.004739642}
+  m_Size: {x: 0.54833084, y: 1.4169286}
   m_Direction: 0
