@@ -49,7 +49,7 @@ Rigidbody2D:
   m_Mass: 0.5674502
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.5
   m_Material: {fileID: 6200000, guid: 46b7ba4bff69f0f46a3f72ac71e40701, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -59,7 +59,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &7527317251786319415
 CircleCollider2D:

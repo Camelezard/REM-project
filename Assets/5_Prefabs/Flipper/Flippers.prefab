@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2853889869329157647}
+  - component: {fileID: 1355169146747902524}
   m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
@@ -34,6 +35,33 @@ Transform:
   - {fileID: 945876478244606376}
   m_Father: {fileID: 9130096371111361022}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1355169146747902524
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52999660936394995}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &1990866659047182709
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 505993682215067303}
+  - component: {fileID: 1322782007574944154}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -398,6 +427,33 @@ Transform:
   - {fileID: 4088400831989420324}
   m_Father: {fileID: 9130096371111361022}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1322782007574944154
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638350252043924577}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &7790561675685512846
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +502,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _LeftFlipper: {fileID: 505993682215067303}
   _RightFlipper: {fileID: 2853889869329157647}
+  _LeftFlipperEndRot: 65
+  _RightFlipperEndRot: -65
+  _RotationSpeed: 1000
   horizontalZonePercent: 0.4
   verticalZonePercent: 0.4
   _PlayerID: 1
