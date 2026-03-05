@@ -20,7 +20,7 @@ public class TilePlacer : MonoBehaviour
     [SerializeField] private bool _CanGenerateTiles = false;
     [SerializeField] private bool _AdjustTiles = false;
 
-    [SerializeField] private List<BoardTile> _SpawnedTiles;
+    [SerializeField] private List<BoardTile> _SpawnedTiles = new List<BoardTile>();
     public List<BoardTile> spawnedTiles => _SpawnedTiles;
     Spline _TileSpline;
 
@@ -72,8 +72,6 @@ public class TilePlacer : MonoBehaviour
 
         _TileSpline = _TileSplineContainer.Spline;
 
-        if (_SpawnedTiles == null) _SpawnedTiles = new List<BoardTile>();
-
         ClearTiles();
 
         for (int i = 0; i < _TileCount; i++)
@@ -88,11 +86,9 @@ public class TilePlacer : MonoBehaviour
 
             lNewTile.AdjustOnSline();
 
-            lNewTile.tileIndex = i;
+            lNewTile.ChangeText(i);
 
-            lNewTile.ChangeText(i + 1);
-
-            lNewTile.name = $"BoardTile_{i + 1}";
+            lNewTile.name = $"BoardTile_{i}";
         }
 
 
@@ -122,12 +118,6 @@ public class TilePlacer : MonoBehaviour
         {
             if (tile != null)
                 DestroyImmediate(tile.gameObject);
-        }
-#else
-        foreach (var tile in _spawnedTiles)
-        {
-            if (tile != null)
-                Destroy(tile.gameObject);
         }
 #endif
 

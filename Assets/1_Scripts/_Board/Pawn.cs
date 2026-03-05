@@ -1,7 +1,5 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem.iOS;
 using UnityEngine.Splines;
 
 public class Pawn : MonoBehaviour

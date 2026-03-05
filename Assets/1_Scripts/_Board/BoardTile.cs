@@ -108,10 +108,12 @@ public class BoardTile : MonoBehaviour
 
     public void ResetColor()
     {
+        # if UNITY_EDITOR
         ChangeColor(UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/NullTileEffectColor.mat"));
         _CanResetColor = false;
 
         print("colorReset");
+        #endif
     }
 
     public void ChangeText(int pNum)
