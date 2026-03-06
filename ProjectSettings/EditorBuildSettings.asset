@@ -9,31 +9,34 @@ EditorBuildSettings:
     path: Assets/0_Scenes/Test/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/0_Scenes/Test/Tir a la corde.unity
+    path: Assets/0_Scenes/Minigames/Planes.unity
+    guid: e0eba20e0e10b5b46b9eb37b2612c585
+  - enabled: 1
+    path: Assets/0_Scenes/Minigames/Tir a la corde.unity
     guid: 9b298ae6435e2604e95758be1fd08520
   - enabled: 1
-    path: Assets/0_Scenes/Test/MainMenuTest.unity
+    path: Assets/0_Scenes/MainMenuTest.unity
     guid: 395b18ec38c6aea44beb836bf53585e4
-  - enabled: 1
+  - enabled: 0
     path: Assets/0_Scenes/Test/MainBoard.unity
     guid: fd4b4ac1b5491ec48bcc7b87bbebb4c4
   - enabled: 1
-    path: Assets/0_Scenes/Test/MainBoard.unity
+    path: Assets/0_Scenes/MainBoard.unity
     guid: 3ec318c60c7106d46b36a56e74447564
   - enabled: 1
-    path: Assets/0_Scenes/RetenirLesGestes.unity
+    path: Assets/0_Scenes/Minigames/RetenirLesGestes.unity
     guid: c930717f46f824e4c9d498659e92375b
   - enabled: 1
-    path: Assets/0_Scenes/ShootingMinigame.unity
+    path: Assets/0_Scenes/Minigames/ShootingMinigame.unity
     guid: 1cb86b4d471ccb443b9c1bf2e49007f5
   - enabled: 1
-    path: Assets/0_Scenes/SingToJump.unity
+    path: Assets/0_Scenes/Minigames/SingToJump.unity
     guid: 4f78e4d22fc10fd4d927c50006d120a5
   - enabled: 1
     path: Assets/0_Scenes/Test/Habillage.unity
     guid: 3e0057d5b816b38498cc12a2734fda64
   - enabled: 1
-    path: Assets/0_Scenes/Test/Memory.unity
+    path: Assets/0_Scenes/Minigames/Memory.unity
     guid: debde29df54eccb4fa0d8c4acad6a015
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

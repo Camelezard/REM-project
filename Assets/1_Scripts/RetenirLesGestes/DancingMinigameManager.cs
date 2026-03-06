@@ -20,6 +20,10 @@ public class DancingMinigameManager : MonoBehaviour
 
     private bool _IsPlayersTurn = false;
     private bool _IsDisplayingSequence = false;
+    private bool _IsPlayerOneLosing = false;
+    private bool _IsPlayerTwoLosing = false;
+    private bool _IsPlayerOnePlaying = false;
+    private bool _IsPlayerTwoPlaying = false;
     private Coroutine _DisplaySequenceCoroutine;
 
     public TextMeshProUGUI displayText;
@@ -27,13 +31,16 @@ public class DancingMinigameManager : MonoBehaviour
     public float numberDisplayTime = 1;
     public float timeBetweenNumber = 0.5f;
     public float readyTime = 3f;
+    private float _ShowWinTime = 2f;
 
     public int player1Id = 1;
     public int player2Id = 2;
 
     public float numberFontSize = 450f;
     public float losingFontSize = 300f;
-    
+
+    private Player _Winer = null;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,7 +58,7 @@ public class DancingMinigameManager : MonoBehaviour
 
     private void SetupButtons()
     {
-       
+
         for (int i = 0; i < _Player1Buttons.Count; i++)
         {
             int lButtonValue = i + 1;
@@ -72,7 +79,7 @@ public class DancingMinigameManager : MonoBehaviour
             _NumberSequence.Add(Random.Range(1, 4));
             Debug.Log(_NumberSequence[i]);
         }
-        
+
     }
 
     private IEnumerator DisplaySequence()
@@ -104,6 +111,7 @@ public class DancingMinigameManager : MonoBehaviour
 
     private void OnButtonPress(int pPlayer, int pButtonValue)
     {
+
         if (!_IsPlayersTurn) return;
 
         if (pPlayer == player1Id)
@@ -117,8 +125,11 @@ public class DancingMinigameManager : MonoBehaviour
             }
             else
             {
+                SetButtonsInteractable(player1Id, false);
                 displayText.fontSize = losingFontSize;
                 displayText.text = "Player 1 lose...";
+
+                _IsPlayerOneLosing = true;
             }
         }
 
@@ -133,8 +144,11 @@ public class DancingMinigameManager : MonoBehaviour
             }
             else
             {
+                SetButtonsInteractable(player2Id, false);
                 displayText.fontSize = losingFontSize;
                 displayText.text = "Player 2 lose...";
+
+                _IsPlayerTwoLosing = true;
             }
         }
 
@@ -166,9 +180,23 @@ public class DancingMinigameManager : MonoBehaviour
             }
             else _DisplaySequenceCoroutine = StartCoroutine(DisplaySequence());
         }
+
+        if (!_IsPlayerOnePlaying && !_IsPlayerTwoPlaying)
+        {
+            print("check");
+            if (_IsPlayerOneLosing || _IsPlayerTwoLosing)
+            {
+                CheckWinner(out bool pTie);
+                if (!pTie)
+                {
+                    StartCoroutine(ShowWin());
+                    return;
+                }
+            }
+        }
     }
 
-    private void SetButtonsInteractable(int pPlayer,bool pInteractable)
+    private void SetButtonsInteractable(int pPlayer, bool pInteractable)
     {
         if (pPlayer == player1Id)
         {
@@ -176,14 +204,35 @@ public class DancingMinigameManager : MonoBehaviour
             {
                 button.interactable = pInteractable;
             }
+
+            _IsPlayerOnePlaying = pInteractable;
         }
-        
+
         if (pPlayer == player2Id)
         {
             foreach (Button button in _Player2Buttons)
             {
                 button.interactable = pInteractable;
             }
+            _IsPlayerTwoPlaying = pInteractable;
         }
+    }
+
+    private void CheckWinner(out bool pTie)
+    {
+        bool lTie = _IsPlayerOneLosing && _IsPlayerTwoLosing;
+
+        pTie = lTie;
+
+        if (_IsPlayerOneLosing)
+            _Winer = GameManager.GetInstance().GetPlayerTwo();
+        else if (_IsPlayerTwoLosing)
+            _Winer = GameManager.GetInstance().GetPlayerOne();
+    }
+
+    private IEnumerator ShowWin()
+    {
+        yield return new WaitForSeconds(_ShowWinTime);
+        GameManager.GetInstance().WinGame(_Winer);
     }
 }

@@ -28,8 +28,12 @@ public class GameManager : MonoBehaviour
     private const string MINIGAME_DRESSING = "Habillage";
     private const string MINIGAME_DANSING = "RetenirLesGestes";
 
+    private string CurrentMinigameName;
+
     public static GameManager instance { get; private set; }
     public List<Player> _PlayersList { get; private set; }
+
+    
 
     private int CurrentPlayer = 0;
     //private const int MAX_PLAYER = 2;
@@ -66,7 +70,7 @@ public class GameManager : MonoBehaviour
 
     private void OnDisable()
     {
-        instance = null;
+        //instance = null;
     }
 
     public void CreatePlayers(List<Player> lPlayerNumber)
@@ -77,7 +81,11 @@ public class GameManager : MonoBehaviour
 
     //Get turn
     public Player GetCurrentPlayerTurn() => _PlayersList[CurrentPlayer];
+    public Player GetPlayerOne() => _PlayersList[0];
+    public Player GetPlayerTwo() => _PlayersList[1];
+    public Player GetPlayerInList(int pIndex) => _PlayersList[pIndex - 1];
     public int GetCurrentPlayerIndex() => CurrentPlayer;
+
 
 
     //Tunrn Management
@@ -107,12 +115,31 @@ public class GameManager : MonoBehaviour
 
     public void StartMinigame(TypOfMinigame pType)
     {
-        SceneTransitionanager.instance.LoadSingle(GetSceneNamWithEnum(pType));
+        CurrentMinigameName = GetSceneNamWithEnum(pType);
+
+        SceneManager.LoadScene(CurrentMinigameName, LoadSceneMode.Additive);
+
+        Scene minigame = SceneManager.GetSceneByName(CurrentMinigameName);
+        SceneManager.SetActiveScene(minigame);
     }
 
-    public void WinGame(Player pPlayer)
+    public void WinGame(Player pWiner)
     {
-        SceneTransitionanager.instance.LoadAdditive(MINIGAME_TEST);
+        if (CurrentMinigameName == null)
+        {
+            Debug.Log("CurrentMinigameName not set");
+            return;
+        }
+
+        SceneManager.UnloadSceneAsync(CurrentMinigameName);
+        CurrentMinigameName = null;
+
+        Scene board = SceneManager.GetSceneByName(MAIN_BOARD_SCENE_NAME);
+        SceneManager.SetActiveScene(board);
+
+        BoardManager.OnMinigameFinished.Invoke();
+
+        //BoardManager.Ins
     }
 
     // private void ResetGameState()
