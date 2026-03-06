@@ -13,13 +13,14 @@ public class DeathZone : MonoBehaviour
         {
             if (_PlayerZone == PlayerZone.Top)
             {
-                OnBallPass.Invoke((int)PlayerZone.Top);
+                OnBallPass.Invoke((int)PlayerZone.Bottom);
             }
 
             else if (_PlayerZone == PlayerZone.Bottom)
             {
-                OnBallPass.Invoke((int)PlayerZone.Bottom);
+                OnBallPass.Invoke((int)PlayerZone.Top);
             }
         }
+        Destroy(collision.gameObject);
     }
 }
