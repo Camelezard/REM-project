@@ -7,7 +7,7 @@ public class PlaneControler : MonoBehaviour
     [SerializeField] private float horizontalSpeed = 8f;
     [SerializeField] private float tiltAmount = 20f;
 
-    public int playerID;
+    public int playerIndex;
 
     private float horizontalInput;
 
@@ -18,37 +18,37 @@ public class PlaneControler : MonoBehaviour
         TiltPlane();
     }
 
-void HandleTouchInput()
-{
-    horizontalInput = 0;
-
-    if (Touchscreen.current == null)
-        return;
-
-    foreach (var touch in Touchscreen.current.touches)
+    void HandleTouchInput()
     {
-        if (!touch.press.isPressed)
-            continue;
+        horizontalInput = 0;
 
-        float touchX = touch.position.ReadValue().x;
+        if (Touchscreen.current == null)
+            return;
 
-        if (playerID == 1 && touchX < Screen.width / 2)
-            horizontalInput = GetDirection(touchX);
+        foreach (var touch in Touchscreen.current.touches)
+        {
+            if (!touch.press.isPressed)
+                continue;
 
-        else if (playerID == 2 && touchX > Screen.width / 2)
-            horizontalInput = GetDirection(touchX);
+            float touchX = touch.position.ReadValue().x;
+
+            if (playerIndex == 1 && touchX < Screen.width / 2)
+                horizontalInput = GetDirection(touchX);
+
+            else if (playerIndex == 2 && touchX > Screen.width / 2)
+                horizontalInput = GetDirection(touchX);
+        }
     }
-}
 
-float GetDirection(float touchX)
-{
-    float screenCenter = (playerID == 1) ? Screen.width / 4 : Screen.width * 0.75f;
-    return Mathf.Clamp((touchX - screenCenter) / (Screen.width / 4), -1f, 1f);
-}
+    float GetDirection(float touchX)
+    {
+        float screenCenter = (playerIndex == 1) ? Screen.width / 4 : Screen.width * 0.75f;
+        return Mathf.Clamp((touchX - screenCenter) / (Screen.width / 4), -1f, 1f);
+    }
 
     float GetMouseDirection(float mouseX)
     {
-        float screenCenter = (playerID == 1) ? Screen.width / 4 : Screen.width * 0.75f;
+        float screenCenter = (playerIndex == 1) ? Screen.width / 4 : Screen.width * 0.75f;
         return Mathf.Clamp((mouseX - screenCenter) / (Screen.width / 4), -1f, 1f);
     }
 
@@ -56,7 +56,7 @@ float GetDirection(float touchX)
     {
         float screenCenter = Screen.width / 2;
 
-        if (playerID == 1)
+        if (playerIndex == 1)
             screenCenter = Screen.width / 4;
         else
             screenCenter = Screen.width * 0.75f;
@@ -68,6 +68,8 @@ float GetDirection(float touchX)
     {
         Vector3 movement = new Vector3(horizontalInput * horizontalSpeed, forwardSpeed, 0);
         transform.Translate(movement * Time.deltaTime);
+
+        GameManager.GetInstance().WinGame(GameManager.GetInstance().GetPlayerInList(playerIndex));
     }
 
     void TiltPlane()
