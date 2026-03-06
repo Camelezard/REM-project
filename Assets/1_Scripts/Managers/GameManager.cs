@@ -93,6 +93,11 @@ public class GameManager : MonoBehaviour
         if (CurrentPlayer >= _PlayersList.Count) CurrentPlayer = 0;
     }
 
+    public int GetPlayersCount()
+    {
+        return _PlayersList.Count;
+    }
+
 
     // Scene Management
     public void LoadMainBoardFirstTime()

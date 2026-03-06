@@ -3,6 +3,12 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
+public enum PlayerZone
+{
+    Bottom,
+    Top
+}
+
 public class Flippers : MonoBehaviour
 {
     [SerializeField] private Transform _LeftFlipper;
@@ -25,11 +31,7 @@ public class Flippers : MonoBehaviour
     [SerializeField] private int _PlayerID = 1;
     [SerializeField] private PlayerZone _PlayerZone;
 
-    public enum PlayerZone
-    {
-        Bottom,
-        Top
-    }
+    
 
     private void Awake()
     {
