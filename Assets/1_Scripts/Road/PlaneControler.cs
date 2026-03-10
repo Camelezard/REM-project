@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,9 +8,25 @@ public class PlaneControler : MonoBehaviour
     [SerializeField] private float horizontalSpeed = 8f;
     [SerializeField] private float tiltAmount = 20f;
 
+    private float minX;
+    private float maxX;
+
     public int playerID;
 
     private float horizontalInput;
+
+    private void Awake()
+    {
+        transform.position = new Vector3
+            (transform.position.x,
+            RoadManager.instance.startRoadPoint.transform.position.y,
+            transform.position.z);
+    }
+
+    private void Start() {
+        minX = RoadManager.instance.rightRoadBound.transform.position.x;
+        maxX = RoadManager.instance.leftRoadBound.transform.position.x;
+    }
 
     void Update()
     {
@@ -76,5 +93,11 @@ public class PlaneControler : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation,
                                              Quaternion.Euler(0, 0, targetZRotation),
                                              Time.deltaTime * 5f);
+
+        transform.position = new Vector3(
+        Mathf.Clamp(transform.position.y, minX, maxX),
+        transform.position.y,
+        transform.position.z
+        );
     }
 }
