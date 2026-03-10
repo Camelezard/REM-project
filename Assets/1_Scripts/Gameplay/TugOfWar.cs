@@ -33,9 +33,12 @@ public class TugOfWar : MonoBehaviour
     [SerializeField] private float _setTime = 1f;
     [SerializeField] private float _goTime = 1f;
 
+    [Header("Transition")]
+    [SerializeField] private float _WinShowTime = 2;
+
+    private Player _Winer;
     private Vector2? startPos = null;
     private Vector3 pullVelocity = Vector3.zero;
-    private float _WinShowTime = 2;
 
     private bool _CannPull = true;
 
@@ -104,18 +107,19 @@ public class TugOfWar : MonoBehaviour
         {
             if (_MiddleFlag.transform.position.x <= _LeftFlag.transform.position.x)
             {
-                Win(1);
+                _Winer = GameManager.GetInstance().GetPlayerOne();
             }
             else if (_MiddleFlag.transform.position.x >= _RightFlag.transform.position.x)
             {
-                Win(2);
+                _Winer = GameManager.GetInstance().GetPlayerTwo();
             }
+                Win();
         }
     }
 
-    private void Win(int pPlayer)
+    private void Win()
     {
-        print($"P{pPlayer} win");
+        print($"P{_Winer} win"); 
 
         StartCoroutine(ShowWin());
         _CannPull = false;
@@ -129,8 +133,9 @@ public class TugOfWar : MonoBehaviour
             ElapsTime += Time.deltaTime;
             yield return null;
         }
-        ResetTogOfWarGame();
+        //ResetTogOfWarGame();
 
+        GameManager.GetInstance().WinGame(_Winer);
     }
 
     private void ResetTogOfWarGame()

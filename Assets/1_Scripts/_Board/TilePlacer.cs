@@ -86,11 +86,9 @@ public class TilePlacer : MonoBehaviour
 
             lNewTile.AdjustOnSline();
 
-            lNewTile.tileIndex = i;
+            lNewTile.ChangeText(i);
 
-            lNewTile.ChangeText(i + 1);
-
-            lNewTile.name = $"BoardTile_{i + 1}";
+            lNewTile.name = $"BoardTile_{i}";
         }
 
 
@@ -120,12 +118,6 @@ public class TilePlacer : MonoBehaviour
         {
             if (tile != null)
                 DestroyImmediate(tile.gameObject);
-        }
-#else
-        foreach (var tile in _spawnedTiles)
-        {
-            if (tile != null)
-                Destroy(tile.gameObject);
         }
 #endif
 

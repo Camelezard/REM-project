@@ -16,6 +16,7 @@ public class Memeory : MonoBehaviour
     [SerializeField] private MemoryPlayer _PlayerOne;
     [SerializeField] private MemoryPlayer _PlayerTow;
     int _CurrentPlayerIndex = 0;
+    private int _PairRemoved = 0;
 
 
     private MemoryCard _GeneratedCard;
@@ -160,6 +161,9 @@ public class Memeory : MonoBehaviour
 
         GetCurrentPlayer().StartTurn();
         GetCurrentPlayer().UpdateScor(2);
+
+        _PairRemoved ++;
+        if ( _PairRemoved >= _CardSpritList.Count) FinishGame();
     }
 
     private void PassTurn()
@@ -183,8 +187,9 @@ public class Memeory : MonoBehaviour
         _SecondShowCard = null;
     }
     
-    private void WinGame()
+    private void FinishGame()
     {
-        
+        Player Winer = _PlayerOne.score >= _PlayerTow.score ? GameManager.GetInstance().GetPlayerOne() :GameManager.GetInstance().GetPlayerTwo();
+        GameManager.GetInstance().WinGame(Winer);
     }
 }

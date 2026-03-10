@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class MoveToSpecificTileEffect : TileEffect
 {
     [SerializeField] private int _TileIndex = 10;
+    [SerializeField] private SplineContainer _AlernativeSpline = null;
 
     private void OnValidate()
     {
@@ -18,7 +20,7 @@ public class MoveToSpecificTileEffect : TileEffect
     protected override void ExecuteEffect(Pawn pPawn)
     {
         /*if (!pPawn.isOnEffectTile)*/ pPawn.canEndTurn = true;
-        StartCoroutine(pPawn.MoveBetweenTwoTiles(pPawn.currentTile, _TileIndex));
+        StartCoroutine(pPawn.MoveBetweenTwoTiles(pPawn.currentTile, _TileIndex,_AlernativeSpline));
     }
 
     public override string GetDescription()
