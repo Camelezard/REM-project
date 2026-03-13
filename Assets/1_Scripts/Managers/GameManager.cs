@@ -11,7 +11,8 @@ public enum TypOfMinigame
     SingToJump,
     Memory,
     Dressing,
-    Dancing
+    Dancing,
+    Flipper
 }
 
 
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     private const string MINIGAME_MEMORY = "Memory";
     private const string MINIGAME_DRESSING = "Habillage";
     private const string MINIGAME_DANSING = "RetenirLesGestes";
+    private const string MINIGAME_FLIPPER = "Flipper";
 
     private string CurrentMinigameName;
 
@@ -101,6 +103,11 @@ public class GameManager : MonoBehaviour
         if (CurrentPlayer >= _PlayersList.Count) CurrentPlayer = 0;
     }
 
+    public int GetPlayersCount()
+    {
+        return _PlayersList.Count;
+    }
+
 
     // Scene Management
     public void LoadMainBoardFirstTime()
@@ -169,6 +176,10 @@ public class GameManager : MonoBehaviour
 
             case TypOfMinigame.Dancing:
                 SceneName = MINIGAME_DANSING;
+                break;
+
+            case TypOfMinigame.Flipper:
+                SceneName = MINIGAME_FLIPPER;
                 break;
 
 
