@@ -1,21 +1,47 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlaneControler : MonoBehaviour
 {
     [SerializeField] private float forwardSpeed = 5f;
+    [SerializeField] private float boostSpeed = 8.5f;
     [SerializeField] private float horizontalSpeed = 8f;
     [SerializeField] private float tiltAmount = 20f;
+
+    private float boostTime = 0;
+
+    private float minX;
+    private float maxX;
 
     public int playerID;
 
     private float horizontalInput;
+
+    private void Awake()
+    {
+        transform.position = new Vector3
+            (transform.position.x,
+            RoadManager.instance.startRoadPoint.transform.position.y,
+            transform.position.z);
+    }
+
+    private void Start()
+    {
+        minX = RoadManager.instance.leftRoadBound.position.x;
+        maxX = RoadManager.instance.rightRoadBound.position.x;
+    }
 
     void Update()
     {
         HandleTouchInput();
         MovePlane();
         TiltPlane();
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        print(collision);
     }
 
     void HandleTouchInput()
@@ -76,5 +102,21 @@ public class PlaneControler : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation,
                                              Quaternion.Euler(0, 0, targetZRotation),
                                              Time.deltaTime * 5f);
+
+        transform.position = new Vector3(
+        Mathf.Clamp(transform.position.x, minX, maxX),
+        transform.position.y,
+        transform.position.z
+        );
+    }
+
+    private void Boost(RoadPowerUp powerUp)
+    {
+        boostTime = powerUp.boostTime;
+    }
+
+    private void Slow()
+    {
+        
     }
 }
