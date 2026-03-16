@@ -35,13 +35,22 @@ public class PlaneControler : MonoBehaviour
     void Update()
     {
         HandleTouchInput();
+        UpdateBoost();
         MovePlane();
         TiltPlane();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        print(collision);
+        RoadPowerUp lPowerUp = other.GetComponent<RoadPowerUp>();
+        PlaneControler lOtherPlayer = other.GetComponent<PlaneControler>();
+
+        if (lPowerUp != null)
+        {
+            Boost(lPowerUp);
+
+            Destroy(other.gameObject);
+        }
     }
 
     void HandleTouchInput()
@@ -92,7 +101,9 @@ public class PlaneControler : MonoBehaviour
 
     void MovePlane()
     {
-        Vector3 movement = new Vector3(horizontalInput * horizontalSpeed, forwardSpeed, 0);
+        float currentSpeed = (boostTime > 0) ? boostSpeed : forwardSpeed;
+
+        Vector3 movement = new Vector3(horizontalInput * horizontalSpeed, currentSpeed, 0);
         transform.Translate(movement * Time.deltaTime);
     }
 
@@ -112,11 +123,22 @@ public class PlaneControler : MonoBehaviour
 
     private void Boost(RoadPowerUp powerUp)
     {
-        boostTime = powerUp.boostTime;
+        if (powerUp.boostTime > boostTime)
+        {
+            boostTime = powerUp.boostTime;
+        }
     }
 
     private void Slow()
     {
-        
+
+    }
+
+    void UpdateBoost()
+    {
+        if (boostTime > 0)
+        {
+            boostTime -= Time.deltaTime;
+        }
     }
 }
