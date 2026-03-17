@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/0_Scenes/Minigames/SingToJump.unity
     guid: 4f78e4d22fc10fd4d927c50006d120a5
   - enabled: 1
-    path: Assets/0_Scenes/Test/Habillage.unity
+    path: Assets/0_Scenes/Minigames/Habillage.unity
     guid: 3e0057d5b816b38498cc12a2734fda64
   - enabled: 1
     path: Assets/0_Scenes/Minigames/Memory.unity
