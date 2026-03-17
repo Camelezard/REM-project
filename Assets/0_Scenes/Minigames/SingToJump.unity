@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 706087738}
     - target: {fileID: 1049856924503965480, guid: 39f60490f5d62fc4da4e8afb1d7cefcf, type: 3}
       propertyPath: groundRaycastDistance
-      value: 0.05
+      value: 0.000001
       objectReference: {fileID: 0}
     - target: {fileID: 4349204455901748956, guid: 39f60490f5d62fc4da4e8afb1d7cefcf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 706087740}
     - target: {fileID: 6309180714605799212, guid: 39f60490f5d62fc4da4e8afb1d7cefcf, type: 3}
       propertyPath: maxJumpForce
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6309180714605799212, guid: 39f60490f5d62fc4da4e8afb1d7cefcf, type: 3}
       propertyPath: loudnessSensibilty
