@@ -55,7 +55,7 @@ public class SingJumping : MonoBehaviour
 
         
         lLoudness = Mathf.Clamp(lLoudness, minJumpForce, maxJumpForce);
-        Debug.Log(lLoudness);
+
         if (!isInAir)
         {
             velocityY = 0;
