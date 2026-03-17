@@ -18,16 +18,14 @@ public class PlaneControler : MonoBehaviour
 
     private float horizontalInput;
 
-    private void Awake()
-    {
-        transform.position = new Vector3
-            (transform.position.x,
-            RoadManager.instance.startRoadPoint.transform.position.y,
-            transform.position.z);
-    }
 
     private void Start()
     {
+        transform.position = 
+        new Vector3 (transform.position.x,
+        RoadManager.instance.startRoadPoint.transform.position.y,
+        transform.position.z);
+
         minX = RoadManager.instance.leftRoadBound.position.x;
         maxX = RoadManager.instance.rightRoadBound.position.x;
     }
@@ -48,8 +46,6 @@ public class PlaneControler : MonoBehaviour
         if (lPowerUp != null)
         {
             Boost(lPowerUp);
-
-            Destroy(other.gameObject);
         }
     }
 

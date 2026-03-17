@@ -44,12 +44,12 @@ public class Memeory : MonoBehaviour
     }
 
     private MemoryPlayer GetCurrentPlayer() => _CurrentPlayerIndex == 0 ? _PlayerOne : _PlayerTow;
-    
+
     private MemoryPlayer GetWaitingPlayer() => _CurrentPlayerIndex == 0 ? _PlayerTow : _PlayerOne;
 
     private void NexTurn()
     {
-        _CurrentPlayerIndex ++;
+        _CurrentPlayerIndex++;
         if (_CurrentPlayerIndex >= PLAYER_IN_GAME) _CurrentPlayerIndex = 0;
     }
 
@@ -113,6 +113,9 @@ public class Memeory : MonoBehaviour
 
     public void OnCardClicked(int pCardTypeIndex, MemoryCard pCard)
     {
+        if (!_CanInteract) return;
+        if (pCard == _FirstShowCard) return;
+
         if (_FirstShowCard == null)
         {
             _FirstShowCard = pCard;
@@ -122,6 +125,9 @@ public class Memeory : MonoBehaviour
         {
             _SecondShowCard = pCard;
             pCard.ShowCard();
+
+            _CanInteract = false;
+
             StartCoroutine(TileComparaisonTransition());
         }
     }
@@ -141,18 +147,23 @@ public class Memeory : MonoBehaviour
         {
             WinACard();
         }
-        else PassTurn();
+        else
+        {
+            PassTurn();
+        }
+
+        _CanInteract = true;
     }
 
     private void WinACard()
     {
         print("wahahah j'ai une carte");
-        
+
         Vector3 lAnimDirection = (GetCurrentPlayer() == _PlayerOne) ? Vector3.left : Vector3.right;
 
         _FirstShowCard.PlayWinAnimation(lAnimDirection);
         _SecondShowCard.PlayWinAnimation(lAnimDirection);
-        
+
         _FirstShowCard.WinCardReaction();
         _SecondShowCard.WinCardReaction();
 
@@ -162,14 +173,14 @@ public class Memeory : MonoBehaviour
         GetCurrentPlayer().StartTurn();
         GetCurrentPlayer().UpdateScor(2);
 
-        _PairRemoved ++;
-        if ( _PairRemoved >= _CardSpritList.Count) FinishGame();
+        _PairRemoved++;
+        if (_PairRemoved >= _CardSpritList.Count) FinishGame();
     }
 
     private void PassTurn()
     {
-        print ("OhNon");
-        
+        print("OhNon");
+
         HideCards();
         NexTurn();
 
@@ -186,10 +197,10 @@ public class Memeory : MonoBehaviour
         _FirstShowCard = null;
         _SecondShowCard = null;
     }
-    
+
     private void FinishGame()
     {
-        Player Winer = _PlayerOne.score >= _PlayerTow.score ? GameManager.GetInstance().GetPlayerOne() :GameManager.GetInstance().GetPlayerTwo();
+        Player Winer = _PlayerOne.score >= _PlayerTow.score ? GameManager.GetInstance().GetPlayerOne() : GameManager.GetInstance().GetPlayerTwo();
         GameManager.GetInstance().WinGame(Winer);
     }
 }
