@@ -135,6 +135,26 @@ PrefabInstance:
       propertyPath: groundRaycastDistance
       value: 0.000001
       objectReference: {fileID: 0}
+    - target: {fileID: 2835971515119337456, guid: 39f60490f5d62fc4da4e8afb1d7cefcf, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2835971515119337456, guid: 39f60490f5d62fc4da4e8afb1d7cefcf, type: 3}
+      propertyPath: horizontalSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2835971515119337456, guid: 39f60490f5d62fc4da4e8afb1d7cefcf, type: 3}
+      propertyPath: _HorizontalSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2835971515119337456, guid: 39f60490f5d62fc4da4e8afb1d7cefcf, type: 3}
+      propertyPath: _HorizontalAccForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2835971515119337456, guid: 39f60490f5d62fc4da4e8afb1d7cefcf, type: 3}
+      propertyPath: _HorizontalZonePercent
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4349204455901748956, guid: 39f60490f5d62fc4da4e8afb1d7cefcf, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1
