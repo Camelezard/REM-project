@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class MemoryCard : MonoBehaviour
 {
     [SerializeField] public Image _CardSprite;
+    [SerializeField] public Image _CardAspect;
     [SerializeField] Sprite _HideSprite;
+    [SerializeField] Sprite _ReveldSpriteAspeect;
     [SerializeField] float _ShowRotationDelay = 1;
     [SerializeField] float _ExitRotationDelay = 1;
     [SerializeField] Button _CardButton;
@@ -24,6 +26,11 @@ public class MemoryCard : MonoBehaviour
 
     private bool isTured = false;
 
+    void Start()
+    {
+        _CardAspect.sprite = _HideSprite;
+        _CardSprite.color = new Color(1, 1, 1, 0);
+    }
 
 
     public void OnCardClicked()
@@ -55,8 +62,8 @@ public class MemoryCard : MonoBehaviour
         float lProgress = 0f;
         bool lCanChangeImage = true;
 
-        Sprite startSprite = isTured ? _ShowSprite : _HideSprite;
-        Sprite endSprite = isTured ? _HideSprite : _ShowSprite;
+        Sprite startSprite = isTured ? _ShowSprite : null;
+        Sprite endSprite = isTured ? null : _ShowSprite;
 
         _CardSprite.sprite = startSprite;
 
@@ -71,9 +78,21 @@ public class MemoryCard : MonoBehaviour
             {
                 lCanChangeImage = false;
                 _CardSprite.sprite = endSprite;
+
+                if (endSprite == null)
+                {
+                    _CardSprite.color = new Color(1, 1, 1, 0);
+                    _CardAspect.sprite = _HideSprite;
+                }
+                else
+                {
+                    _CardSprite.color = new Color(1, 1, 1, 1);
+                    _CardAspect.sprite = _ReveldSpriteAspeect;
+                }
             }
 
             transform.localRotation = Quaternion.Euler(0, isTured ? 180f - lAngle : lAngle, 0);
+
 
             yield return null;
         }
