@@ -394,6 +394,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 355478648}
   _TileText: {fileID: 326233751}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 503403790}
   _UpdateVisual: 0
   tileIndex: 3
@@ -534,7 +535,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1020,6 +1021,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1956345959}
   _TileText: {fileID: 1966239275}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 101592752}
   _UpdateVisual: 0
   tileIndex: 8
@@ -2171,6 +2173,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1979705928}
   _TileText: {fileID: 224033713}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 1950448553}
   _UpdateVisual: 0
   tileIndex: 23
@@ -2202,7 +2205,7 @@ Transform:
   m_GameObject: {fileID: 184456687}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2341,7 +2344,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3108,6 +3111,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 738175980}
   _TileText: {fileID: 1376655222}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 487901495}
   _UpdateVisual: 0
   tileIndex: 2
@@ -3516,7 +3520,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3604,7 +3608,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3692,7 +3696,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3780,7 +3784,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3971,6 +3975,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 381060419}
   _TileText: {fileID: 1124067964}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 298050126}
   _UpdateVisual: 0
   tileIndex: 12
@@ -4588,6 +4593,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 341608211}
   _TileText: {fileID: 307505504}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 130104520}
   _UpdateVisual: 0
   tileIndex: 0
@@ -5467,7 +5473,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5953,6 +5959,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1720779942}
   _TileText: {fileID: 2077555146}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 1169259839}
   _UpdateVisual: 0
   tileIndex: 24
@@ -6042,6 +6049,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1363006308}
   _TileText: {fileID: 821404223}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 1413850862}
   _UpdateVisual: 0
   tileIndex: 22
@@ -6131,6 +6139,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 891104949}
   _TileText: {fileID: 1773482181}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 1610090417}
   _UpdateVisual: 0
   tileIndex: 18
@@ -6220,6 +6229,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 2099400070}
   _TileText: {fileID: 440676314}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 424271814}
   _UpdateVisual: 0
   tileIndex: 13
@@ -6470,7 +6480,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6558,7 +6568,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7045,7 +7055,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7235,7 +7245,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7323,7 +7333,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8073,6 +8083,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1185625355}
   _TileText: {fileID: 1344947326}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 1697787491}
   _UpdateVisual: 0
   tileIndex: 7
@@ -8162,6 +8173,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1485687024}
   _TileText: {fileID: 895169180}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 95273491}
   _UpdateVisual: 0
   tileIndex: 19
@@ -8412,7 +8424,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8500,7 +8512,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8884,6 +8896,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1450151483}
   _TileText: {fileID: 1453965451}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 139270138}
   _UpdateVisual: 0
   tileIndex: 27
@@ -9417,7 +9430,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10392,6 +10405,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 799540107}
   _TileText: {fileID: 1567938471}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 776534645}
   _UpdateVisual: 0
   tileIndex: 26
@@ -10453,7 +10467,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10671,6 +10685,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 30348691}
   _TileText: {fileID: 29286856}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 728518474}
   _UpdateVisual: 0
   tileIndex: 16
@@ -10922,7 +10937,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11150,6 +11165,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 810802564}
   _TileText: {fileID: 1324882186}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 1038666232}
   _UpdateVisual: 0
   tileIndex: 25
@@ -11239,6 +11255,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1438527615}
   _TileText: {fileID: 1244761332}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 1548281377}
   _UpdateVisual: 0
   tileIndex: 28
@@ -11458,7 +11475,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12185,7 +12202,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12524,7 +12541,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12719,6 +12736,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1244756854}
   _TileText: {fileID: 1586149639}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 2016190523}
   _UpdateVisual: 0
   tileIndex: 29
@@ -12882,7 +12900,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14022,6 +14040,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 733722929}
   _TileText: {fileID: 1882376463}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 22628207}
   _UpdateVisual: 0
   tileIndex: 9
@@ -14083,7 +14102,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14199,6 +14218,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1633226489}
   _TileText: {fileID: 1062965860}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 263295800}
   _UpdateVisual: 0
   tileIndex: 10
@@ -14667,6 +14687,7 @@ MonoBehaviour:
   m_TileMaterial: {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
   billboardEffectMessage: "D\xE9place \xE0 la case 10"
   _TileIndex: 10
+  _AlernativeSpline: {fileID: 0}
 --- !u!65 &1702621404
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14717,6 +14738,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 2058978216}
   _TileText: {fileID: 628045411}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 815135004}
   _UpdateVisual: 0
   tileIndex: 6
@@ -14778,7 +14800,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14894,6 +14916,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1768221114}
   _TileText: {fileID: 1526798525}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 1045830816}
   _UpdateVisual: 0
   tileIndex: 15
@@ -14955,7 +14978,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15122,7 +15145,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15210,7 +15233,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15585,6 +15608,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 625803422}
   _TileText: {fileID: 1229425784}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 886024832}
   _UpdateVisual: 0
   tileIndex: 14
@@ -15776,9 +15800,97 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 185655258}
   _TileText: {fileID: 2129890539}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 637040942}
   _UpdateVisual: 0
   tileIndex: 11
+--- !u!1 &1869990485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869990487}
+  - component: {fileID: 1869990486}
+  m_Layer: 0
+  m_Name: Ground_wood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1869990486
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869990485}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d0b427dc20397c54e9a3e58691cfd7d1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 2
+  m_Size: {x: 20.1, y: 20.239998}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1869990487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869990485}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1870638831
 GameObject:
   m_ObjectHideFlags: 0
@@ -16095,6 +16207,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1786298703}
   _TileText: {fileID: 43949168}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 259184309}
   _UpdateVisual: 0
   tileIndex: 20
@@ -16373,6 +16486,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 362305286}
   _TileText: {fileID: 424510244}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 972758572}
   _UpdateVisual: 0
   tileIndex: 5
@@ -16434,7 +16548,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16703,7 +16817,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16819,6 +16933,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1018406877}
   _TileText: {fileID: 422321182}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 894434852}
   _UpdateVisual: 0
   tileIndex: 21
@@ -16908,6 +17023,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 809282915}
   _TileText: {fileID: 978942382}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 848202251}
   _UpdateVisual: 0
   tileIndex: 1
@@ -17395,7 +17511,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: 2100000, guid: 1e940d00c34a4b64394c0729c4bd445c, type: 2}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17722,6 +17838,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 891714626}
   _TileText: {fileID: 2140535498}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 1790219373}
   _UpdateVisual: 0
   tileIndex: 17
@@ -17783,7 +17900,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3833804058933606847, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
   - {fileID: 3358005850063296056, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
-  - {fileID: -3950378285074996720, guid: 1e60c0de2285e7a40a765aaa39c3ed9f, type: 3}
+  - {fileID: 2100000, guid: 4caa2d6205f34d34fa9dc7fc0802f776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17899,6 +18016,7 @@ MonoBehaviour:
       m_Data: []
   _MeshRend: {fileID: 1774221738}
   _TileText: {fileID: 1382432934}
+  _CanResetColor: 0
   _EffectBillBoard: {fileID: 30593274}
   _UpdateVisual: 0
   tileIndex: 4
@@ -18202,3 +18320,4 @@ SceneRoots:
   - {fileID: 1256189248}
   - {fileID: 2031678588}
   - {fileID: 1110086425}
+  - {fileID: 1869990487}
