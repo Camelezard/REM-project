@@ -1529,7 +1529,7 @@ MonoBehaviour:
   rightRoadBound: {fileID: 2110110150}
   leftRoadBound: {fileID: 582069894}
   startRoadPoint: {fileID: 1400643727}
-  endRoadPoint: {fileID: 2110110150}
+  endRoadPoint: {fileID: 2072800247}
   positivePowerUps: {fileID: 8919729759082899124, guid: ae06c55a407eeba47a4c6b2c9b5fe201, type: 3}
   negativePowerUps: {fileID: 2068174706672372835, guid: c740ac5fbb60437429484f5b4de3bf3e, type: 3}
   numberOfLines: 10
@@ -2019,6 +2019,10 @@ PrefabInstance:
     - target: {fileID: 6412351620197998113, guid: a2e0be80d8965f943801ed514f3eb298, type: 3}
       propertyPath: m_Name
       value: J2Plan
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176060607820429928, guid: a2e0be80d8965f943801ed514f3eb298, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2556,6 +2560,10 @@ PrefabInstance:
     - target: {fileID: 2985843191472693398, guid: 1e790cdd43b7c364e88a849c45a32e72, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3023946586391231153, guid: 1e790cdd43b7c364e88a849c45a32e72, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4465371460130234055, guid: 1e790cdd43b7c364e88a849c45a32e72, type: 3}
       propertyPath: m_Name

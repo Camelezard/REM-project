@@ -8,6 +8,9 @@ public class PlaneControler : MonoBehaviour
     [SerializeField] private float boostSpeed = 8.5f;
     [SerializeField] private float horizontalSpeed = 8f;
     [SerializeField] private float tiltAmount = 20f;
+    [SerializeField] private float slowSpeed = 2.5f;
+    [SerializeField] private int playerId = 1;
+    private float slowTime = 0;
 
     private float boostTime = 0;
 
@@ -21,8 +24,8 @@ public class PlaneControler : MonoBehaviour
 
     private void Start()
     {
-        transform.position = 
-        new Vector3 (transform.position.x,
+        transform.position =
+        new Vector3(transform.position.x,
         RoadManager.instance.startRoadPoint.transform.position.y,
         transform.position.z);
 
@@ -36,16 +39,19 @@ public class PlaneControler : MonoBehaviour
         UpdateBoost();
         MovePlane();
         TiltPlane();
+        CheckWin();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         RoadPowerUp lPowerUp = other.GetComponent<RoadPowerUp>();
-        PlaneControler lOtherPlayer = other.GetComponent<PlaneControler>();
 
         if (lPowerUp != null)
         {
-            Boost(lPowerUp);
+            if (lPowerUp.isMalus)
+                Slow(lPowerUp);
+            else
+                Boost(lPowerUp);
         }
     }
 
@@ -97,7 +103,12 @@ public class PlaneControler : MonoBehaviour
 
     void MovePlane()
     {
-        float currentSpeed = (boostTime > 0) ? boostSpeed : forwardSpeed;
+        float currentSpeed = forwardSpeed;
+
+        if (boostTime > 0)
+            currentSpeed = boostSpeed;
+        else if (slowTime > 0)
+            currentSpeed = slowSpeed;
 
         Vector3 movement = new Vector3(horizontalInput * horizontalSpeed, currentSpeed, 0);
         transform.Translate(movement * Time.deltaTime);
@@ -125,9 +136,12 @@ public class PlaneControler : MonoBehaviour
         }
     }
 
-    private void Slow()
+    private void Slow(RoadPowerUp powerUp)
     {
-
+        if (powerUp.boostTime > slowTime)
+        {
+            slowTime = powerUp.boostTime;
+        }
     }
 
     void UpdateBoost()
@@ -135,6 +149,19 @@ public class PlaneControler : MonoBehaviour
         if (boostTime > 0)
         {
             boostTime -= Time.deltaTime;
+        }
+
+        if (slowTime > 0)
+        {
+            slowTime -= Time.deltaTime;
+        }
+    }
+
+    void CheckWin()
+    {
+        if (transform.position.y >= RoadManager.instance.endRoadPoint.position.y)
+        {
+            GameManager.GetInstance().WinGame(GameManager.GetInstance().GetPlayerInList(playerID));
         }
     }
 }
