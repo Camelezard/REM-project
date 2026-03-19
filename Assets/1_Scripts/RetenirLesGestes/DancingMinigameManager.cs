@@ -11,6 +11,14 @@ public class DancingMinigameManager : MonoBehaviour
     private List<int> _NumberSequence = new List<int>();
     [SerializeField] private List<Button> _Player1Buttons = new List<Button>();
     [SerializeField] private List<Button> _Player2Buttons = new List<Button>();
+
+    [SerializeField] private CharacterPoseController _ModelePoseControler;
+    [SerializeField] private CharacterPoseController _PlayerOnePoseControler;
+    [SerializeField] private CharacterPoseController _PlayerTwoPoseControler;
+
+    [SerializeField] public float poseTime = 1;
+    
+
     private List<int> _Player1Inputs = new List<int>();
     private List<int> _Player2Inputs = new List<int>();
     private int _Player1CurrentIndex = 0;
@@ -28,6 +36,7 @@ public class DancingMinigameManager : MonoBehaviour
 
     public TextMeshProUGUI displayText;
 
+
     public float numberDisplayTime = 1;
     public float timeBetweenNumber = 0.5f;
     public float readyTime = 3f;
@@ -40,6 +49,8 @@ public class DancingMinigameManager : MonoBehaviour
     public float losingFontSize = 300f;
 
     private Player _Winer = null;
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -95,9 +106,28 @@ public class DancingMinigameManager : MonoBehaviour
         for (int i = 0; i < currentLevel; i++)
         {
             displayText.text = _NumberSequence[i].ToString();
+
+            switch (_NumberSequence[i])
+            {
+                case 1:
+                    _ModelePoseControler.PlayOneShotPose(PoseEnum.PoseOne, poseTime);
+                    break;
+
+                case 2:
+                    _ModelePoseControler.PlayOneShotPose(PoseEnum.PoseTwo, poseTime);
+                    break;
+
+                case 3:
+                    _ModelePoseControler.PlayOneShotPose(PoseEnum.PoseTree, poseTime);
+                    break;
+
+                default:
+                    _ModelePoseControler.PlayOneShotPose(PoseEnum.PoseOne, poseTime);
+                    break;
+            }
             yield return new WaitForSeconds(numberDisplayTime);
 
-            displayText.text = "";
+            //displayText.text = "";
             yield return new WaitForSeconds(timeBetweenNumber);
         }
 
@@ -111,12 +141,26 @@ public class DancingMinigameManager : MonoBehaviour
 
     private void OnButtonPress(int pPlayer, int pButtonValue)
     {
+        PoseEnum lPose;
+        switch (pButtonValue)
+        {
+            case 1: lPose = PoseEnum.PoseOne; break;
+            case 2: lPose = PoseEnum.PoseTwo; break;
+            case 3: lPose = PoseEnum.PoseTree; break;
+
+            default: lPose = PoseEnum.PoseOne;
+            break;
+        }
+
 
         if (!_IsPlayersTurn) return;
 
         if (pPlayer == player1Id)
         {
             _Player1Inputs.Add(pButtonValue);
+
+            _PlayerOnePoseControler.PlayOneShotPose(lPose,poseTime);
+            _PlayerOnePoseControler.SetFaceExpressionOneShot(ExpresionEnum.Joy,poseTime);
 
             if (_Player1Inputs[_Player1CurrentIndex] == _NumberSequence[_Player1CurrentIndex])
             {
@@ -129,13 +173,21 @@ public class DancingMinigameManager : MonoBehaviour
                 displayText.fontSize = losingFontSize;
                 displayText.text = "Player 1 lose...";
 
+                _PlayerOnePoseControler.SetFaceExpressionPermanent(ExpresionEnum.Sob);
+                _PlayerOnePoseControler.PlayPermanentPose(PoseEnum.Deception);
+
                 _IsPlayerOneLosing = true;
             }
+
+            
         }
 
         if (pPlayer == player2Id)
         {
             _Player2Inputs.Add(pButtonValue);
+
+            _PlayerTwoPoseControler.PlayOneShotPose(lPose,poseTime);
+            _PlayerTwoPoseControler.SetFaceExpressionOneShot(ExpresionEnum.Joy,poseTime);
 
             if (_Player2Inputs[_Player2CurrentIndex] == _NumberSequence[_Player2CurrentIndex])
             {
@@ -147,6 +199,9 @@ public class DancingMinigameManager : MonoBehaviour
                 SetButtonsInteractable(player2Id, false);
                 displayText.fontSize = losingFontSize;
                 displayText.text = "Player 2 lose...";
+
+                _PlayerTwoPoseControler.SetFaceExpressionPermanent(ExpresionEnum.Sob);
+                _PlayerTwoPoseControler.PlayPermanentPose(PoseEnum.Deception);
 
                 _IsPlayerTwoLosing = true;
             }
