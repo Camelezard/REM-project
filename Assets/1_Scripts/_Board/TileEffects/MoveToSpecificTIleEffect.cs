@@ -12,7 +12,7 @@ public class MoveToSpecificTileEffect : TileEffect
         billboardEffectMessage = $"Déplace à la case {_TileIndex}";
 
         #if UNITY_EDITOR
-        m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveByStepEffectColor.mat");
+        m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveToSpecificTileEffectColor.mat");
         ChangeColor(m_TileMaterial);
         #endif
     }

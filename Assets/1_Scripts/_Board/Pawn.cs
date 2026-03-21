@@ -50,7 +50,20 @@ public class Pawn : MonoBehaviour
         BoardManager.OnPlayerFinishTurn?.Invoke();
         canEndTurn = false;
 
-        CameraManager.Instance.UpdateTarget(_BoardGround.transform);
+        if (_BoardGround == null)
+        {
+            _BoardGround = GameObject.FindGameObjectWithTag("Board");
+        }
+
+        if (_BoardGround != null)
+        {
+            CameraManager.Instance.UpdateTarget(BoardManager.Instance.GetBoardCenter());
+        }
+        else
+        {
+            Debug.LogWarning("BoardGround not found");
+        }
+
         GameManager.GetInstance().NextPlayerTurn();
     }
 
@@ -125,6 +138,12 @@ public class Pawn : MonoBehaviour
 
     private void MoveAfterSpinner(int pValue)
     {
+        if (gameObject == null)
+        {
+            Debug.LogError("spiner go not found");
+            return;
+        }
+
         StartCoroutine(MoveToTile(currentTile + pValue));
     }
 
@@ -137,10 +156,18 @@ public class Pawn : MonoBehaviour
         if (Physics.Raycast(transform.position + new Vector3(0, 1, 0), Vector3.down, out lHit, 5f, _TileLayermask))
         {
             lTile = lHit.collider.gameObject.GetComponent<BoardTile>();
-            lTileHasEffect = lTile.LaunchTileEffect(this);
+            lTileHasEffect = lTile.LaunchTileEffect(this); 
             isOnEffectTile = lTileHasEffect;
         }
 
+        Debug.DrawLine(transform.position,transform.position + Vector3.up *100,Color.red,3);
+
         return lTileHasEffect;
+    }
+
+    public void Cleanup()
+    {
+        Spinner.OnSpinnerStopAtNumber -= MoveAfterSpinner;
+        StopAllCoroutines();
     }
 }

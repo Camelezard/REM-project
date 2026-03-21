@@ -59,6 +59,11 @@ public class BoardTile : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        BoardManager.OnPlayerAboutToMove -= ShowEffectBillBoard;
+    }
+
     /// <summary>
     /// 
     /// permet d'ajuster la position de la tile pour les raprocher ou les ecarter
@@ -108,12 +113,12 @@ public class BoardTile : MonoBehaviour
 
     public void ResetColor()
     {
-        # if UNITY_EDITOR
+#if UNITY_EDITOR
         ChangeColor(UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/NullTileEffectColor.mat"));
         _CanResetColor = false;
 
         print("colorReset");
-        #endif
+#endif
     }
 
     public void ChangeText(int pNum)
@@ -129,7 +134,7 @@ public class BoardTile : MonoBehaviour
             _EffectBillBoard.gameObject.SetActive(true);
             for (int i = 0; i < _Effects.Count; i++)
             {
-                _EffectBillBoard.text = _Effects[i].billboardEffectMessage; 
+                _EffectBillBoard.text = _Effects[i].billboardEffectMessage;
             }
         }
     }

@@ -16,10 +16,14 @@ public class BoardManager : MonoBehaviour
     public static Action OnpLplayerFinshTun;
     public static Action OnMinigameFinished;
 
+    private bool isTransitioning = false;
+
     [SerializeField] private Pawn _PawnFactory;
     [SerializeField] public SplineContainer _SplineContainer;
     [SerializeField] private float _SpawnTime = 1.5f;
     [SerializeField] private float _PlayerTransitionTime = 2f;
+
+    [SerializeField] private Transform _BoardCenter;
 
     public List<Pawn> pawnList { get; private set; } = new List<Pawn>();
 
@@ -44,6 +48,7 @@ public class BoardManager : MonoBehaviour
 
     public Pawn GetCurrentPawn(int index) => pawnList[index];
     public Pawn GetCurrentPawn() => pawnList[GameManager.GetInstance().GetCurrentPlayerIndex()];
+    public Transform GetBoardCenter() => _BoardCenter;
 
     public Pawn GetPawnWithPlayer(Player pPlayer)
     {
@@ -56,6 +61,8 @@ public class BoardManager : MonoBehaviour
         SceneTransitionanager.OnSceneReadyFirstTime += OnFirstLoadStartTransition;
         OnNextTurn += LunchPlayerFocusTransition;
         OnFinishPawnsSpawn += LunchPlayerFocusTransition;
+
+        OnMinigameFinished += LunchPlayerFocusTransition;
     }
 
 
@@ -65,6 +72,9 @@ public class BoardManager : MonoBehaviour
         OnNextTurn -= LunchPlayerFocusTransition;
         OnFinishPawnsSpawn -= LunchPlayerFocusTransition;
 
+
+        OnMinigameFinished -= LunchPlayerFocusTransition;
+        Instance = null;
     }
 
 
@@ -100,6 +110,7 @@ public class BoardManager : MonoBehaviour
 
         foreach (Pawn lPawn in pawnList)
         {
+            lPawn.Cleanup();
             Destroy(lPawn.gameObject);
         }
 
@@ -128,24 +139,35 @@ public class BoardManager : MonoBehaviour
     //---------------   Transition   ---------------
     public void LunchPlayerFocusTransition()
     {
+        if (isTransitioning) return;
         StartCoroutine(FocusPlayer());
     }
 
+
     private IEnumerator FocusPlayer()
     {
-        OnPlayerAboutToMove.Invoke();
+        isTransitioning = true;
+
+        OnPlayerAboutToMove?.Invoke();
 
         yield return new WaitForSeconds(2f);
 
         Pawn lPawn = GetCurrentPawn();
+
+        foreach (var pawn in pawnList)
+        {
+            pawn.Cleanup();
+        }
 
         CameraManager.Instance.UpdateTarget(lPawn.transform);
 
         yield return new WaitForSeconds(_PlayerTransitionTime);
 
         lPawn.StartTurn();
-    }
 
+        isTransitioning = false;
+    }
+    
     public void OnFirstLoadStartTransition()
     {
         StartCoroutine(SpawnPawns());

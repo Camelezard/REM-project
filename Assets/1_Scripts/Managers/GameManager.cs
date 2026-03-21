@@ -35,8 +35,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     public List<Player> _PlayersList { get; private set; }
 
-    
-
     private int CurrentPlayer = 0;
     //private const int MAX_PLAYER = 2;
 
@@ -69,6 +67,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
 
     private void OnDisable()
     {
@@ -117,21 +116,32 @@ public class GameManager : MonoBehaviour
 
     public void StartMinigame(TypOfMinigame pType)
     {
+        StartCoroutine(LoadMinigameCoroutine(pType));
+    }
+
+    private IEnumerator LoadMinigameCoroutine(TypOfMinigame pType)
+    {
         CurrentMinigameName = GetSceneNamWithEnum(pType);
 
-        SceneManager.LoadScene(CurrentMinigameName, LoadSceneMode.Additive);
+        AsyncOperation op = SceneManager.LoadSceneAsync(CurrentMinigameName, LoadSceneMode.Additive);
+
+        yield return op;
 
         Scene minigame = SceneManager.GetSceneByName(CurrentMinigameName);
-        SceneManager.SetActiveScene(minigame);
+
+        if (minigame.isLoaded)
+        {
+            SceneManager.SetActiveScene(minigame);
+        }
+        else
+        {
+            Debug.LogError("Scene not loaded properly");
+        }
     }
 
     public void WinGame(Player pWiner)
     {
-        if (CurrentMinigameName == null)
-        {
-            Debug.Log("CurrentMinigameName not set");
-            return;
-        }
+        if (CurrentMinigameName == null) return;
 
         SceneManager.UnloadSceneAsync(CurrentMinigameName);
         CurrentMinigameName = null;
@@ -139,9 +149,16 @@ public class GameManager : MonoBehaviour
         Scene board = SceneManager.GetSceneByName(MAIN_BOARD_SCENE_NAME);
         SceneManager.SetActiveScene(board);
 
-        BoardManager.OnMinigameFinished.Invoke();
+        BoardManager.OnMinigameFinished?.Invoke();
 
-        //BoardManager.Ins
+        if (pWiner == GetCurrentPlayerTurn())
+        {
+            BoardManager.OnNextTurn?.Invoke();
+        }
+        else
+        {
+            NextPlayerTurn();
+        }
     }
 
     // private void ResetGameState()

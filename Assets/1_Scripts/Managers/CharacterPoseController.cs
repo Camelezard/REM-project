@@ -59,6 +59,7 @@ public class CharacterPoseController : MonoBehaviour
 
         print("time out"); 
     }
+    
 
     // Face expresions
     public void SetFaceExpressionOneShot(ExpresionEnum pExpression, float pDuration)
