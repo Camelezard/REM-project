@@ -2,13 +2,12 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System;
 
 public enum TypOfMinigame
 {
     Random,
     TugOFWar,
-    SingToJump,
+    //SingToJump,
     Memory,
     Dressing,
     Dancing,
@@ -34,8 +33,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance { get; private set; }
     public List<Player> _PlayersList { get; private set; }
-
-    
+    private List<TypOfMinigame> remainingMinigames = new List<TypOfMinigame>();
 
     private int CurrentPlayer = 0;
     //private const int MAX_PLAYER = 2;
@@ -70,9 +68,10 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void OnDisable()
+
+    void Start()
     {
-        //instance = null;
+        ResetRandLIstOfMinigames();
     }
 
     public void CreatePlayers(List<Player> lPlayerNumber)
@@ -117,21 +116,44 @@ public class GameManager : MonoBehaviour
 
     public void StartMinigame(TypOfMinigame pType)
     {
-        CurrentMinigameName = GetSceneNamWithEnum(pType);
-
-        SceneManager.LoadScene(CurrentMinigameName, LoadSceneMode.Additive);
-
-        Scene minigame = SceneManager.GetSceneByName(CurrentMinigameName);
-        SceneManager.SetActiveScene(minigame);
+        StartCoroutine(LoadMinigameCoroutine(pType));
     }
 
-    public void WinGame(Player pWiner)
+    private IEnumerator LoadMinigameCoroutine(TypOfMinigame pType)
     {
-        if (CurrentMinigameName == null)
+        if (pType == TypOfMinigame.Random)
         {
-            Debug.Log("CurrentMinigameName not set");
-            return;
+            pType = GetRandomMinigame();
         }
+
+        CurrentMinigameName = GetSceneNamWithEnum(pType);
+
+        AsyncOperation op = SceneManager.LoadSceneAsync(CurrentMinigameName, LoadSceneMode.Additive);
+
+        yield return op;
+
+        Scene minigame = SceneManager.GetSceneByName(CurrentMinigameName);
+
+        if (minigame.isLoaded)
+        {
+            SceneManager.SetActiveScene(minigame);
+        }
+        else
+        {
+            Debug.LogError("Scene not loaded properly");
+        }
+    }
+
+    public void WinGame(Player pWiner, float pDelais = 1f)
+    {
+        StartCoroutine(WinGameCoroutine(pWiner,pDelais));
+    }
+
+    private IEnumerator WinGameCoroutine(Player pWiner, float pDelais = 1f)
+    {
+        yield return new WaitForSeconds(pDelais);
+
+        if (CurrentMinigameName == null) yield break;
 
         SceneManager.UnloadSceneAsync(CurrentMinigameName);
         CurrentMinigameName = null;
@@ -139,9 +161,16 @@ public class GameManager : MonoBehaviour
         Scene board = SceneManager.GetSceneByName(MAIN_BOARD_SCENE_NAME);
         SceneManager.SetActiveScene(board);
 
-        BoardManager.OnMinigameFinished.Invoke();
+        BoardManager.OnMinigameFinished?.Invoke();
 
-        //BoardManager.Ins
+        if (pWiner == GetCurrentPlayerTurn())
+        {
+            BoardManager.OnNextTurn?.Invoke();
+        }
+        else
+        {
+            NextPlayerTurn();
+        }
     }
 
     // private void ResetGameState()
@@ -161,9 +190,9 @@ public class GameManager : MonoBehaviour
                 SceneName = MINIGAME_TEST;
                 break;
 
-            case TypOfMinigame.SingToJump:
-                SceneName = MINIGAME_SING_TO_JUMP;
-                break;
+            // case TypOfMinigame.SingToJump:
+            //     SceneName = MINIGAME_SING_TO_JUMP;
+            //     break;
 
             case TypOfMinigame.Memory:
                 SceneName = MINIGAME_MEMORY;
@@ -189,5 +218,39 @@ public class GameManager : MonoBehaviour
         }
 
         return SceneName;
+    }
+
+
+    private void ResetRandLIstOfMinigames()
+    {
+        remainingMinigames = new List<TypOfMinigame>(
+            (TypOfMinigame[])System.Enum.GetValues(typeof(TypOfMinigame))
+        );
+
+        remainingMinigames.Remove(TypOfMinigame.Random);
+
+        Shuffle(remainingMinigames);
+    }
+
+    private void Shuffle(List<TypOfMinigame> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            int rand = Random.Range(i, list.Count);
+            (list[i], list[rand]) = (list[rand], list[i]);
+        }
+    }
+
+    public TypOfMinigame GetRandomMinigame()
+    {
+        if (remainingMinigames.Count == 0)
+        {
+            ResetRandLIstOfMinigames();
+        }
+
+        TypOfMinigame game = remainingMinigames[0];
+        remainingMinigames.RemoveAt(0);
+
+        return game;
     }
 }

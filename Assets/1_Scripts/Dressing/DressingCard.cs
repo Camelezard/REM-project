@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.U2D.Animation;
 using Unity.VisualScripting;
 
-public enum DressType { Pant, Hat, Body }
+public enum DressType { Pant, Hat, Body, Skin }
 
 public class DressingCard : MonoBehaviour
 {
