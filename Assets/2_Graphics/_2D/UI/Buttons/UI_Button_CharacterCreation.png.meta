@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d56f5c11808a1146a2c23443a68747e
-      internalID: 147907154
+      spriteID: 9497d990739a69348946ee4793db4829
+      internalID: -477606237
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9f9dd4747f06174cbe9c76cf0ea4250
-      internalID: 997651621
+      spriteID: 65ad1aaafc7b0614d8582805fc104f5c
+      internalID: 618085599
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
       name: UI_Button_CharacterCreation_2
       rect:
         serializedVersion: 2
-        x: 609
+        x: 601
         y: 6
         width: 260
         height: 215
@@ -156,8 +156,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66e459d633e0d794d83e3d110ad6ff7c
-      internalID: 1974518084
+      spriteID: 7280fea64bbfcc44a8a22281c7ed0de2
+      internalID: -1923308535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Button_CharacterCreation_3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 6
+        width: 260
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44bb4414da51414493197b61f93172f
+      internalID: 1100602791
       vertices: []
       indices: 
       edges: []
@@ -166,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ab912932d05ea1e429a87274d25728c9
+    spriteID: c2994e6d0e47b73428e4e699018b81d4
     internalID: 0
     vertices: []
     indices: 
@@ -176,9 +198,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Button_CharacterCreation_0: 147907154
-      UI_Button_CharacterCreation_1: 997651621
-      UI_Button_CharacterCreation_2: 1974518084
+      UI_Button_CharacterCreation_0: -477606237
+      UI_Button_CharacterCreation_1: 618085599
+      UI_Button_CharacterCreation_2: -1923308535
+      UI_Button_CharacterCreation_3: 1100602791
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
