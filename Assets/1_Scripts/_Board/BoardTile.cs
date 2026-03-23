@@ -29,6 +29,8 @@ public class BoardTile : MonoBehaviour
 
     [SerializeField] private bool _UpdateVisual = false;
 
+    public List<Pawn> pawnsOnTile = new List<Pawn>();
+
     public int tileIndex = 0;
 
     private List<TileEffect> _Effects = new List<TileEffect>();
@@ -149,5 +151,17 @@ public class BoardTile : MonoBehaviour
         {
             _EffectBillBoard.gameObject.SetActive(false);
         }
+    }
+
+    public void AddPawn(Pawn pawn)
+    {
+        if (!pawnsOnTile.Contains(pawn))
+            pawnsOnTile.Add(pawn);
+    }
+
+    public void RemovePawn(Pawn pawn)
+    {
+        if (pawnsOnTile.Contains(pawn))
+            pawnsOnTile.Remove(pawn);
     }
 }

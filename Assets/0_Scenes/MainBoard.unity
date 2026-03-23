@@ -693,6 +693,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 941918482}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &49905556
 MonoBehaviour:
@@ -1451,6 +1452,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 650968192}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &112767353
 GameObject:
@@ -1620,6 +1622,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1707012819}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &116682630
 GameObject:
@@ -1965,6 +1968,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1127716439}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &145668682
 GameObject:
@@ -2512,6 +2516,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 412697261}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &168558016
 GameObject:
@@ -3279,6 +3284,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1651409685}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &229761387
 MonoBehaviour:
@@ -4116,6 +4122,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 484010062}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &251451759
 MonoBehaviour:
@@ -4412,6 +4419,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 2020824680}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &280676100
 GameObject:
@@ -5131,6 +5139,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1197414767}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &401263658
 MonoBehaviour:
@@ -5683,6 +5692,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1097718981}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &442575634
 GameObject:
@@ -6159,6 +6169,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 981733008}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &471792055
 MonoBehaviour:
@@ -6567,6 +6578,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1549794160}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &501701212
 MonoBehaviour:
@@ -6583,7 +6595,7 @@ MonoBehaviour:
   m_EffectMessage: "Oh ? C'est l'heure de jouer \xE0 un minijeu !"
   m_TileMaterial: {fileID: 2100000, guid: e92f9fd3036201745a40893791922d9a, type: 2}
   billboardEffectMessage: 
-  _SelectedMinigame: 0
+  _SelectedMinigame: 4
   _BonusStep: -3
 --- !u!1 &512352703
 GameObject:
@@ -7119,6 +7131,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1057330304}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &549593221
 MonoBehaviour:
@@ -7225,6 +7238,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 909296518}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &590605623
 GameObject:
@@ -7806,6 +7820,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 146553440}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &616964152
 MonoBehaviour:
@@ -8001,6 +8016,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 218414575}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &637083321
 MonoBehaviour:
@@ -8017,7 +8033,7 @@ MonoBehaviour:
   m_EffectMessage: "Oh ? C'est l'heure de jouer \xE0 un minijeu !"
   m_TileMaterial: {fileID: 2100000, guid: e92f9fd3036201745a40893791922d9a, type: 2}
   billboardEffectMessage: 
-  _SelectedMinigame: 0
+  _SelectedMinigame: 3
   _BonusStep: -3
 --- !u!1 &644367285
 GameObject:
@@ -11183,6 +11199,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1761883311}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &880499908
 MonoBehaviour:
@@ -12046,6 +12063,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 914545292}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &929230818
 MonoBehaviour:
@@ -13370,6 +13388,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1844698125}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &1011468150
 MonoBehaviour:
@@ -13665,6 +13684,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1180338990}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &1036566596
 GameObject:
@@ -14397,6 +14417,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 999617781}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &1069660126
 GameObject:
@@ -17794,6 +17815,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 64352440}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &1241058258
 GameObject:
@@ -18015,6 +18037,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 888512385}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &1247043907
 MonoBehaviour:
@@ -18031,7 +18054,7 @@ MonoBehaviour:
   m_EffectMessage: "Oh ? C'est l'heure de jouer \xE0 un minijeu !"
   m_TileMaterial: {fileID: 2100000, guid: e92f9fd3036201745a40893791922d9a, type: 2}
   billboardEffectMessage: 
-  _SelectedMinigame: 0
+  _SelectedMinigame: 4
   _BonusStep: -3
 --- !u!1 &1256004985
 GameObject:
@@ -18199,6 +18222,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 245977026}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &1267252087
 GameObject:
@@ -19199,6 +19223,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 153367160}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &1336492289
 GameObject:
@@ -19377,6 +19402,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 799788563}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &1348003983
 GameObject:
@@ -19716,6 +19742,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1637494577}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &1367940692
 MonoBehaviour:
@@ -19999,6 +20026,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1506683478}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &1448207259
 GameObject:
@@ -20239,6 +20267,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1654088412}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &1467665109
 MonoBehaviour:
@@ -20528,6 +20557,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 248324204}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &1496837827
 MonoBehaviour:
@@ -21000,6 +21030,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1166794294}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &1511851759
 MonoBehaviour:
@@ -21016,7 +21047,7 @@ MonoBehaviour:
   m_EffectMessage: "Oh ? C'est l'heure de jouer \xE0 un minijeu !"
   m_TileMaterial: {fileID: 2100000, guid: e92f9fd3036201745a40893791922d9a, type: 2}
   billboardEffectMessage: 
-  _SelectedMinigame: 0
+  _SelectedMinigame: 4
   _BonusStep: -3
 --- !u!1 &1516802245
 GameObject:
@@ -21108,6 +21139,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 590605626}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &1516802249
 MonoBehaviour:
@@ -21391,6 +21423,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1267252090}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &1546484415
 MonoBehaviour:
@@ -24421,6 +24454,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1171754439}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &1717332867
 MonoBehaviour:
@@ -25486,6 +25520,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1584694522}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &1817012625
 MonoBehaviour:
@@ -27359,6 +27394,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1036566599}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &1946612442
 GameObject:
@@ -27669,6 +27705,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1824169540}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!1 &1997010899
 GameObject:
@@ -28387,6 +28424,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 1143440103}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &2051708521
 MonoBehaviour:
@@ -28403,7 +28441,7 @@ MonoBehaviour:
   m_EffectMessage: "Oh ? C'est l'heure de jouer \xE0 un minijeu !"
   m_TileMaterial: {fileID: 2100000, guid: e92f9fd3036201745a40893791922d9a, type: 2}
   billboardEffectMessage: 
-  _SelectedMinigame: 0
+  _SelectedMinigame: 2
   _BonusStep: -3
 --- !u!1 &2061217558
 GameObject:
@@ -28495,6 +28533,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 40516357}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &2061217562
 MonoBehaviour:
@@ -28913,6 +28952,7 @@ MonoBehaviour:
   _CanResetColor: 0
   _EffectBillBoard: {fileID: 545109260}
   _UpdateVisual: 0
+  pawnsOnTile: []
   tileIndex: 0
 --- !u!114 &2105432281
 MonoBehaviour:
