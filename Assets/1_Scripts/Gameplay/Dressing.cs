@@ -3,13 +3,21 @@ using UnityEngine;
 
 public class Dressing : MonoBehaviour
 {
-    [Header("Closes")]
-    [SerializeField] private List<Sprite> _Pants;
-    [SerializeField] private List<Sprite> _Choses;
-    [SerializeField] private List<Sprite> _DressTop;
+    [SerializeField] ModelCreator Modele;
+    public static List<string> outfitLabels = new List<string> { "Mousquetaire", "Clown", "Cowboy", "REM_Clothesv2" };
 
-    public List<Sprite> pants => _Pants;
-    public List<Sprite> choses => _Choses;
-    public List<Sprite> dressTop => _DressTop;
+    public static string modelLabel;
 
+    void Start()
+    {
+        InitializeModel();
+    }
+
+    void InitializeModel()
+    {
+        modelLabel = outfitLabels[Random.Range(0, outfitLabels.Count)];
+
+        if (Modele == null) print("model not refered");
+        else Modele.ApplyRandomOutfit(modelLabel);
+    }
 }

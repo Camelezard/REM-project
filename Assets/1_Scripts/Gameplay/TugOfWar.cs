@@ -113,7 +113,7 @@ public class TugOfWar : MonoBehaviour
             {
                 _Winer = GameManager.GetInstance().GetPlayerTwo();
             }
-                Win();
+                //Win();
         }
     }
 

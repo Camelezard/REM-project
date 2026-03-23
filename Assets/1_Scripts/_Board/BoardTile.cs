@@ -29,6 +29,8 @@ public class BoardTile : MonoBehaviour
 
     [SerializeField] private bool _UpdateVisual = false;
 
+    public List<Pawn> pawnsOnTile = new List<Pawn>();
+
     public int tileIndex = 0;
 
     private List<TileEffect> _Effects = new List<TileEffect>();
@@ -57,6 +59,11 @@ public class BoardTile : MonoBehaviour
         {
             ResetColor();
         }
+    }
+
+    private void OnDestroy()
+    {
+        BoardManager.OnPlayerAboutToMove -= ShowEffectBillBoard;
     }
 
     /// <summary>
@@ -108,12 +115,12 @@ public class BoardTile : MonoBehaviour
 
     public void ResetColor()
     {
-        # if UNITY_EDITOR
+#if UNITY_EDITOR
         ChangeColor(UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/NullTileEffectColor.mat"));
         _CanResetColor = false;
 
         print("colorReset");
-        #endif
+#endif
     }
 
     public void ChangeText(int pNum)
@@ -129,7 +136,7 @@ public class BoardTile : MonoBehaviour
             _EffectBillBoard.gameObject.SetActive(true);
             for (int i = 0; i < _Effects.Count; i++)
             {
-                _EffectBillBoard.text = _Effects[i].billboardEffectMessage; 
+                _EffectBillBoard.text = _Effects[i].billboardEffectMessage;
             }
         }
     }
@@ -144,5 +151,17 @@ public class BoardTile : MonoBehaviour
         {
             _EffectBillBoard.gameObject.SetActive(false);
         }
+    }
+
+    public void AddPawn(Pawn pawn)
+    {
+        if (!pawnsOnTile.Contains(pawn))
+            pawnsOnTile.Add(pawn);
+    }
+
+    public void RemovePawn(Pawn pawn)
+    {
+        if (pawnsOnTile.Contains(pawn))
+            pawnsOnTile.Remove(pawn);
     }
 }

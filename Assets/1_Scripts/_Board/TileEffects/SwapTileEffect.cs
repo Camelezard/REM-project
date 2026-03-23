@@ -5,16 +5,16 @@ public class SwapTileEffect : TileEffect
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void OnValidate()
     {
-        m_EffectMessage = $"Effet activé ! Les pions échangent leur cases.";
-        billboardEffectMessage = $"Échange de case";
+        m_EffectMessage = $"Effet activï¿½ ! Les pions ï¿½changent leur cases.";
+        billboardEffectMessage = $"ï¿½change de case";
 
 #if UNITY_EDITOR
-        m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/MoveByStepEffectColor.mat");
+        m_TileMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/TileEfectMaterials/SwapEffectColor 1.mat");
         ChangeColor(m_TileMaterial);
 #endif
     }
 
-    protected override void ExecuteEffect(Pawn pPawn)
+    protected override void ExecuteEffect(Pawn pPawn) 
     {
         pPawn.canEndTurn = true;
 

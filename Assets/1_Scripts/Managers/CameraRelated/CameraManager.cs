@@ -29,6 +29,11 @@ public class CameraManager : MonoBehaviour
         }
     }
 
+    void OnDisable()
+    {
+        Instance = null;
+    }
+
     private void LateUpdate()
     {
         

@@ -4,15 +4,5 @@ using UnityEngine;
 public class Player
 {
     public int playerId;
-
-    public int winsNumber;
-    public int defeatsNumber;
-
-    public float totalTime;
-
-
-    Sprite playerHat = null;
-    Sprite playerTop = null;
-    Sprite playerPant = null;
-    Sprite playerShooses = null;
+    public CharacterData characterData;
 }

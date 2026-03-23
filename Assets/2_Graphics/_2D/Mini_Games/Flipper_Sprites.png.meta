@@ -93,11 +93,37 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flipper_Sprites_0
+      name: Flipper_Walls
       rect:
         serializedVersion: 2
         x: 2
@@ -105,7 +131,7 @@ TextureImporter:
         width: 79
         height: 277
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -127,7 +153,7 @@ TextureImporter:
         width: 109
         height: 165
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -149,7 +175,7 @@ TextureImporter:
         width: 109
         height: 165
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -171,7 +197,7 @@ TextureImporter:
         width: 109
         height: 167
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -193,7 +219,7 @@ TextureImporter:
         width: 109
         height: 166
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -207,7 +233,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipper_Sprites_5
+      name: Flipper_Red_Right
       rect:
         serializedVersion: 2
         x: 14
@@ -229,7 +255,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipper_Sprites_6
+      name: Flipper_Joint
       rect:
         serializedVersion: 2
         x: 297
@@ -237,7 +263,7 @@ TextureImporter:
         width: 37
         height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -251,7 +277,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipper_Sprites_7
+      name: Flipper_Red_Left
       rect:
         serializedVersion: 2
         x: 4
@@ -273,7 +299,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipper_Sprites_8
+      name: Flipper_Ball
       rect:
         serializedVersion: 2
         x: 300
@@ -281,7 +307,7 @@ TextureImporter:
         width: 71
         height: 71
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -295,7 +321,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipper_Sprites_9
+      name: Flipper_Blue_Right
       rect:
         serializedVersion: 2
         x: 16
@@ -317,7 +343,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipper_Sprites_10
+      name: Flipper_Blue_Left
       rect:
         serializedVersion: 2
         x: 13
@@ -352,17 +378,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Flipper_Sprites_0: 630906401
+      Flipper_Ball: 1930590405
+      Flipper_Blue_Left: -256754350
+      Flipper_Blue_Right: -1877429369
+      Flipper_Joint: -2045568377
+      Flipper_Red_Left: -1033740184
+      Flipper_Red_Right: -496714460
       Flipper_Sprites_1: -2016775350
-      Flipper_Sprites_10: -256754350
       Flipper_Sprites_2: -421445561
       Flipper_Sprites_3: -1309422504
       Flipper_Sprites_4: 978421687
-      Flipper_Sprites_5: -496714460
-      Flipper_Sprites_6: -2045568377
-      Flipper_Sprites_7: -1033740184
-      Flipper_Sprites_8: 1930590405
-      Flipper_Sprites_9: -1877429369
+      Flipper_Walls: 630906401
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
