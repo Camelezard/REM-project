@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Panneau_Directionnel_0
+      name: UI_Panneau_Directionnel_RArrows
       rect:
         serializedVersion: 2
         x: 14
@@ -105,7 +105,7 @@ TextureImporter:
         width: 415
         height: 155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -119,7 +119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_Panneau_Directionnel_1
+      name: UI_Panneau_Directionnel_BG
       rect:
         serializedVersion: 2
         x: 14
@@ -127,7 +127,7 @@ TextureImporter:
         width: 417
         height: 177
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -141,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_Panneau_Directionnel_2
+      name: UI_Panneau_Directionnel_LArrows
       rect:
         serializedVersion: 2
         x: 13
@@ -149,7 +149,7 @@ TextureImporter:
         width: 418
         height: 155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -176,9 +176,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Panneau_Directionnel_0: 684915764
-      UI_Panneau_Directionnel_1: -1386700942
-      UI_Panneau_Directionnel_2: -186964657
+      UI_Panneau_Directionnel_BG: -1386700942
+      UI_Panneau_Directionnel_LArrows: -186964657
+      UI_Panneau_Directionnel_RArrows: 684915764
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
