@@ -19,9 +19,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Dodger>() != null)
+        Dodger lDodger = collision.gameObject.GetComponent<Dodger>();
+        if (lDodger != null)
         {
-            Destroy(collision.gameObject);
+            lDodger.GetDamaged();
+            Destroy(gameObject);
         }
     }
 }

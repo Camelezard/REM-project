@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.InputSystem;
@@ -13,6 +14,8 @@ public class Dodger : MonoBehaviour
     [SerializeField] protected float m_horizontalzonePercent = 0.5f;
     [SerializeField] protected float m_verticalZonePErcent = 0.5f;
     [SerializeField] protected PlayerZone m_PlayerZone = PlayerZone.Bottom;
+
+    [SerializeField] private int _HealthPoint = 3;
 
     protected virtual void Start()
     {
@@ -91,5 +94,15 @@ public class Dodger : MonoBehaviour
         }
 
         transform.position += new Vector3(m_velocity.x, m_velocity.y, 0) * m_speed * Time.deltaTime;
+    }
+
+    public void GetDamaged()
+    {
+        _HealthPoint--;
+
+        if (_HealthPoint <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
