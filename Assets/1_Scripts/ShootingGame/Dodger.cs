@@ -8,6 +8,7 @@ using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 public class Dodger : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] protected ShootingMinigameManager m_ShootingMinigameManager;
     [SerializeField] protected float m_speed = 5f;
     protected Vector2 m_velocity;
 
@@ -102,6 +103,7 @@ public class Dodger : MonoBehaviour
 
         if (_HealthPoint <= 0)
         {
+            GameManager.GetInstance().WinGame(m_ShootingMinigameManager.shooterPlayer);
             Destroy(gameObject);
         }
     }

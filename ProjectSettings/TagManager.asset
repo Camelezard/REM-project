@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Board
   - FlipperBall
+  - Cloud
   layers:
   - Default
   - TransparentFX
