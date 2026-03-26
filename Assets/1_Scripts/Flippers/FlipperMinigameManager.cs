@@ -38,7 +38,7 @@ public class FlipperMinigameManager : MonoBehaviour
 
     private void SpawnBall()
     {
-        Vector2 lRandPos = new Vector2(Random.value, Random.value);
+        Vector2 lRandPos = new Vector2(Random.value, Random.value) * 2;
         Instantiate(_BallPrefab, lRandPos, Quaternion.identity);
     }
 }
