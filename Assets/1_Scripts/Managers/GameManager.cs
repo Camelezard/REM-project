@@ -8,7 +8,7 @@ public enum TypOfMinigame
     Random,
     TugOFWar,
     Shooting,
-    //SingToJump,
+    SingToJump,
     Memory,
     Dressing,
     Dancing,
@@ -195,9 +195,9 @@ public class GameManager : MonoBehaviour
                 SceneName = MINIGAME_SHOOTING;
                 break;
 
-            // case TypOfMinigame.SingToJump:
-            //     SceneName = MINIGAME_SING_TO_JUMP;
-            //     break;
+            case TypOfMinigame.SingToJump:
+                SceneName = MINIGAME_SING_TO_JUMP;
+                break;
 
             case TypOfMinigame.Memory:
                 SceneName = MINIGAME_MEMORY;
