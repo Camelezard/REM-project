@@ -66,6 +66,8 @@ public class CharacterCustomizer : MonoBehaviour
 
     private CharacterData currentData;
 
+    private int lCurrentSlot = -1;
+
     private int normalOrderInLayer = 23;
     private int coverOrderInLayer = 14;
 
@@ -142,11 +144,16 @@ public class CharacterCustomizer : MonoBehaviour
 
     public void SaveCharacter()
     {
-        CharacterDatabase.instance.AddCharacter(currentData);
+        if (lCurrentSlot < 0)
+        {
+            Debug.LogWarning("Aucun slot sélectionné");
+            return;
+        }
+
+        CharacterDatabase.instance.SaveCharacter(lCurrentSlot, currentData);
 
         poseControler?.SetFaceExpressionOneShot(ExpresionEnum.Joy, ReactionTime);
         poseControler?.PlayOneShotPose(PoseEnum.Joy, ReactionTime);
-
     }
 
 
@@ -192,6 +199,22 @@ public class CharacterCustomizer : MonoBehaviour
         else
         {
             legSprite.sortingOrder = normalOrderInLayer;
+        }
+    }
+
+    public void SelectSlot(int pSlotIndex)
+    {
+        lCurrentSlot = pSlotIndex;
+
+        CharacterData lData = CharacterDatabase.instance.LoadCharacter(pSlotIndex);
+
+        if (lData != null)
+        {
+            LoadCharacter(lData);
+        }
+        else
+        {
+            currentData = new CharacterData(); // nouveau perso vide
         }
     }
 }

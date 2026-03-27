@@ -5,53 +5,92 @@ public class CharacterDatabase : MonoBehaviour
 {
     public static CharacterDatabase instance;
 
-    public List<CharacterData> characters = new List<CharacterData>();
+    [SerializeField] private int maxSlots = 3;
 
-    private const string SAVE_KEY = "CHARACTERS";
+    public List<CharacterData> characters = new List<CharacterData>();
 
     private void Awake()
     {
-        if (instance == null)
+        instance = this;
+
+        LoadFromDisk();
+
+        if (characters == null)
+            characters = new List<CharacterData>();
+
+        while (characters.Count < maxSlots)
         {
-            instance = this;
-            //DontDestroyOnLoad(gameObject);
-            Load();
-        }
-        else
-        {
-            Destroy(gameObject);
+            characters.Add(null);
         }
     }
 
-    public void AddCharacter(CharacterData data)
+    public void SaveCharacter(int pSlotIndex, CharacterData pData)
     {
-        characters.Add(data);
-        Save();
+        if (pSlotIndex < 0 || pSlotIndex >= characters.Count)
+        {
+            Debug.LogError("Slot invalide");
+            return;
+        }
+
+        characters[pSlotIndex] = pData;
+
+        SaveToDisk();
     }
 
-    public void Save()
+    public void SaveToDisk()
     {
-        string json = JsonUtility.ToJson(new Wrapper { list = characters });
-        PlayerPrefs.SetString(SAVE_KEY, json);
+        CharacterDataListWrapper lWrapper = new CharacterDataListWrapper();
+        lWrapper.list = characters;
+
+        string lJson = JsonUtility.ToJson(lWrapper);
+
+        PlayerPrefs.SetString("CHARACTERS", lJson);
         PlayerPrefs.Save();
     }
 
-    public void Load()
-    {
-        if (!PlayerPrefs.HasKey(SAVE_KEY)) return;
 
-        string json = PlayerPrefs.GetString(SAVE_KEY);
-        characters = JsonUtility.FromJson<Wrapper>(json).list;
+
+    public CharacterData LoadCharacter(int pSlotIndex)
+    {
+        if (pSlotIndex < 0 || pSlotIndex >= characters.Count)
+        {
+            Debug.LogError($"Slot invalide: {pSlotIndex} / {characters.Count}");
+            return null;
+        }
+
+        return characters[pSlotIndex];
     }
 
-    public CharacterData GetCharacter(int index)
+    public void LoadFromDisk()
     {
-        return characters[index];
+        if (!PlayerPrefs.HasKey("CHARACTERS"))
+            return;
+
+        string lJson = PlayerPrefs.GetString("CHARACTERS");
+
+        CharacterDataListWrapper lWrapper = JsonUtility.FromJson<CharacterDataListWrapper>(lJson);
+
+        characters = lWrapper.list;
+
+        if (characters == null)
+            characters = new List<CharacterData>();
+
+        while (characters.Count < maxSlots)
+        {
+            characters.Add(null);
+        }
     }
 
-    [System.Serializable]
-    private class Wrapper
+
+
+
+    public bool HasCharacter(int pSlotIndex)
     {
-        public List<CharacterData> list;
+        return characters[pSlotIndex] != null;
+    }
+
+    public int GetMaxSlots()
+    {
+        return maxSlots;
     }
 }
