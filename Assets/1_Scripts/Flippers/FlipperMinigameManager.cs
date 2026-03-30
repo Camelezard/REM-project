@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -8,11 +10,11 @@ public class FlipperMinigameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] _ScoresTexts = new TextMeshProUGUI[2];
     [SerializeField] private GameObject _BallPrefab;
 
-    private int[] _PlayerPoints;
-    void Start()
+    private List<int> _PlayerPoints = new List<int>();
+    void OnEnable()
     {
         //_PlayerPoints = new int[GameManager.GetInstance().GetPlayersCount()];
-        _PlayerPoints = new int[2];
+        _PlayerPoints = new List<int> { 0, 0 };
 
         DeathZone.OnBallPass += AddPointTo;
 
@@ -22,6 +24,7 @@ public class FlipperMinigameManager : MonoBehaviour
     private void AddPointTo(int pPLayer)
     {
         _PlayerPoints[pPLayer]++;
+        Debug.Log(_PlayerPoints[pPLayer])   ;
         _ScoresTexts[pPLayer].text = _PlayerPoints[pPLayer].ToString();
 
         CheckIfWin(pPLayer);
@@ -32,13 +35,19 @@ public class FlipperMinigameManager : MonoBehaviour
     { 
         if (_PlayerPoints[pPlayer] >= _PointToWin)
         {
+            Debug.Log("hfhhfjskhjf");
             GameManager.GetInstance().WinGame(GameManager.GetInstance().GetPlayerInList(pPlayer));
         }
     }
 
     private void SpawnBall()
     {
-        Vector2 lRandPos = new Vector2(Random.value, Random.value);
+        Vector2 lRandPos = new Vector2(Random.value*1.5f, Random.value*1.5f);
         Instantiate(_BallPrefab, lRandPos, Quaternion.identity);
+    }
+
+    private void OnDisable()
+    {
+        DeathZone.OnBallPass -= AddPointTo;
     }
 }

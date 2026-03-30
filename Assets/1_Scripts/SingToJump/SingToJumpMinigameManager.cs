@@ -3,6 +3,7 @@ using UnityEngine;
 public class SingToJumpMinigameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _PlatformObject;
+    [SerializeField] private GameObject _FinishLineObject;
     [SerializeField] private Transform _LevelContainer;
 
     [SerializeField] private int _PlatformNumber = 10;
@@ -32,7 +33,7 @@ public class SingToJumpMinigameManager : MonoBehaviour
     {
         float lCurrentDistance = _DistanceOffset;
         float lCurrentHeight = 0;
-        for (int i = 0; i < _PlatformNumber; i++)
+        for (int i = 0; i < _PlatformNumber - 1; i++)
         {
             lCurrentHeight = Random.Range(_MinPlatformHeight, _MaxPlatformHeight);
 
@@ -40,6 +41,11 @@ public class SingToJumpMinigameManager : MonoBehaviour
 
             lCurrentDistance += _PlatformDistance;
         }
+
+        lCurrentHeight = _MinPlatformHeight;
+        SpawnPlatform(new Vector3(lCurrentDistance, lCurrentHeight, 0));
+        Instantiate(_FinishLineObject, new Vector3(lCurrentDistance, 0, 0), Quaternion.identity, _LevelContainer);
+
     }
 
     private void SpawnPlatform(Vector3 pPos)
