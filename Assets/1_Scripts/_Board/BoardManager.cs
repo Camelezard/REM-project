@@ -24,6 +24,8 @@ public class BoardManager : MonoBehaviour
     [SerializeField] private float _PlayerTransitionTime = 2f;
 
     [SerializeField] private Transform _BoardCenter;
+    [SerializeField] private GameObject  _BoardRoot;
+
 
     public List<Pawn> pawnList { get; private set; } = new List<Pawn>();
 
@@ -84,14 +86,23 @@ public class BoardManager : MonoBehaviour
     public IEnumerator SpawnPawns()
     {
         ClearPawns();
+
         Pawn lPawn;
         List<Player> lPlayers = GameManager.GetInstance()._PlayersList;
         float lWaitTime = _SpawnTime / lPlayers.Count;
 
-        foreach (Player pPlayer in GameManager.GetInstance()._PlayersList)
+        for (int i = 0; i < lPlayers.Count; i++)
         {
+            Player lPlayer = lPlayers[i];
+
             CreateAPawn(out lPawn);
+
             lPawn._SplineContainer = _SplineContainer;
+
+            lPawn.Init(lPlayer);
+
+            lPlayer.playerId = i;
+
             pawnList.Add(lPawn);
 
             yield return new WaitForSeconds(lWaitTime);
@@ -167,12 +178,24 @@ public class BoardManager : MonoBehaviour
 
         isTransitioning = false;
     }
-    
+
     public void OnFirstLoadStartTransition()
     {
         StartCoroutine(SpawnPawns());
 
         Debug.Log("StartTransition");
 
+    }
+
+    public void HideBoard()
+    {
+        if (_BoardRoot != null)
+            _BoardRoot.SetActive(false);
+    }
+
+    public void ShowBoard()
+    {
+        if (_BoardRoot != null)
+            _BoardRoot.SetActive(true);
     }
 }

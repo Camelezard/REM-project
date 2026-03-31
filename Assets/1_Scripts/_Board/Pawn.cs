@@ -11,7 +11,9 @@ public class Pawn : MonoBehaviour
     [SerializeField] private float _Spacing = 1.1f;
     [SerializeField] private float _OfsetSpeed = 0.2f;
     [SerializeField] private LayerMask _TileLayermask;
+    [SerializeField] private CharacterCustomizer _Customizer;
 
+    public Player owner;
     private Vector3 offset;
     private Vector3 basePos;
 
@@ -43,6 +45,11 @@ public class Pawn : MonoBehaviour
         transform.position = basePos + offset;
 
         _BoardGround = GameObject.FindGameObjectWithTag("Board");
+
+        if (owner != null && owner.characterData != null)
+        {
+            _Customizer.LoadCharacter(owner.characterData);
+        }
     }
 
     private void OnDisable()
@@ -281,5 +288,19 @@ public class Pawn : MonoBehaviour
         }
 
         transform.rotation = lTargetRot;
+    }
+
+
+    public void Init(Player pOwner)
+    {
+        owner = pOwner;
+
+        if (_Customizer == null)
+            _Customizer = GetComponent<CharacterCustomizer>();
+
+        if (owner != null && owner.characterData != null)
+        {
+            _Customizer.LoadCharacter(owner.characterData);
+        }
     }
 }

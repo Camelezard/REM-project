@@ -6,13 +6,23 @@ public class MenuUiManager : MonoBehaviour
     [SerializeField] private GameObject ReadyCanvas;
     [SerializeField] private GameObject PlayerselectorCanvas;
     [SerializeField] private GameObject PlayerCreatorCanvas;
+    [SerializeField] private GameObject PlayerCanvas;
 
+    private int SaveId = 1;
+
+
+    void Start()
+    {
+        GoToMainMenuCanvas();
+        
+    }
     public void GoToMainMenuCanvas()
     {
-        MainMenuCanvas.SetActive(false);
-        ReadyCanvas.SetActive(true);
+        MainMenuCanvas.SetActive(true);
+        ReadyCanvas.SetActive(false);
         PlayerselectorCanvas.SetActive(false);
         PlayerCreatorCanvas.SetActive(false);
+        PlayerCanvas.SetActive(false);
     }
 
     public void GoToReadyCanvas()
@@ -20,6 +30,7 @@ public class MenuUiManager : MonoBehaviour
         MainMenuCanvas.SetActive(false);
         ReadyCanvas.SetActive(true);
         PlayerselectorCanvas.SetActive(false);
+        PlayerCreatorCanvas.SetActive(false);
         PlayerCreatorCanvas.SetActive(false);
     }
 
@@ -29,6 +40,7 @@ public class MenuUiManager : MonoBehaviour
         ReadyCanvas.SetActive(false);
         PlayerselectorCanvas.SetActive(false);
         PlayerCreatorCanvas.SetActive(true);
+        PlayerCanvas.SetActive(true);
     }
 
     public void GoToCharacterSelectorCanvas()
@@ -37,5 +49,6 @@ public class MenuUiManager : MonoBehaviour
         ReadyCanvas.SetActive(false);
         PlayerselectorCanvas.SetActive(true);
         PlayerCreatorCanvas.SetActive(false);
+        PlayerCanvas.SetActive(true);
     }
 }

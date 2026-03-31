@@ -6,7 +6,7 @@ public class PlayerSelectManger : MonoBehaviour
     private List<Player> _PlayersRedy = new List<Player>();
     void Start()
     {
-
+        
     }
 
     public void StartGame()
