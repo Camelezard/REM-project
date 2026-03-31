@@ -160,6 +160,7 @@ public class GameManager : MonoBehaviour
 
         SceneManager.UnloadSceneAsync(CurrentMinigameName);
         CurrentMinigameName = null;
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
 
         Scene board = SceneManager.GetSceneByName(MAIN_BOARD_SCENE_NAME);
         SceneManager.SetActiveScene(board);
