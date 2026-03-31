@@ -214,7 +214,7 @@ public class CharacterCustomizer : MonoBehaviour
         }
         else
         {
-            currentData = new CharacterData(); // nouveau perso vide
+            currentData = new CharacterData(); 
         }
     }
 }

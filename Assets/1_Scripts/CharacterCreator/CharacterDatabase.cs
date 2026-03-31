@@ -5,7 +5,7 @@ public class CharacterDatabase : MonoBehaviour
 {
     public static CharacterDatabase instance;
 
-    [SerializeField] private int maxSlots = 3;
+    [SerializeField] public int maxSlots = 3;
 
     public List<CharacterData> characters = new List<CharacterData>();
 
@@ -92,5 +92,20 @@ public class CharacterDatabase : MonoBehaviour
     public int GetMaxSlots()
     {
         return maxSlots;
+    }
+
+    public List<CharacterData> GetAllSavedCharacters()
+    {
+        List<CharacterData> list = new List<CharacterData>();
+
+        for (int i = 0; i < maxSlots; i++)
+        {
+            if (characters[i] != null)
+            {
+                list.Add(characters[i]);
+            }
+        }
+
+        return list;
     }
 }

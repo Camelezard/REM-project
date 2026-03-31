@@ -602,6 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PlayerManager: {fileID: 0}
+  _SelectedSlot: -1
 --- !u!1 &7173534337899407545
 GameObject:
   m_ObjectHideFlags: 0
