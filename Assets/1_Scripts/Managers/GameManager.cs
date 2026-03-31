@@ -118,6 +118,8 @@ public class GameManager : MonoBehaviour
     public void StartMinigame(TypOfMinigame pType)
     {
         StartCoroutine(LoadMinigameCoroutine(pType));
+
+        BoardManager.Instance.HideBoard();
     }
 
     private IEnumerator LoadMinigameCoroutine(TypOfMinigame pType)
@@ -134,6 +136,7 @@ public class GameManager : MonoBehaviour
         yield return op;
 
         Scene minigame = SceneManager.GetSceneByName(CurrentMinigameName);
+        
 
         if (minigame.isLoaded)
         {
@@ -172,6 +175,8 @@ public class GameManager : MonoBehaviour
         {
             NextPlayerTurn();
         }
+
+        BoardManager.Instance.ShowBoard();
     }
 
     // private void ResetGameState()

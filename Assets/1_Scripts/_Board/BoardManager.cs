@@ -24,6 +24,8 @@ public class BoardManager : MonoBehaviour
     [SerializeField] private float _PlayerTransitionTime = 2f;
 
     [SerializeField] private Transform _BoardCenter;
+    [SerializeField] private GameObject  _BoardRoot;
+
 
     public List<Pawn> pawnList { get; private set; } = new List<Pawn>();
 
@@ -183,5 +185,17 @@ public class BoardManager : MonoBehaviour
 
         Debug.Log("StartTransition");
 
+    }
+
+    public void HideBoard()
+    {
+        if (_BoardRoot != null)
+            _BoardRoot.SetActive(false);
+    }
+
+    public void ShowBoard()
+    {
+        if (_BoardRoot != null)
+            _BoardRoot.SetActive(true);
     }
 }
