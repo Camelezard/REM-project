@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     private const string MINIGAME_FLIPPER = "Flipper";
 
     private string CurrentMinigameName;
+    private ScreenOrientation _MinigameOrientation;
 
     public static GameManager instance { get; private set; }
     public List<Player> _PlayersList { get; private set; }
@@ -53,7 +54,7 @@ public class GameManager : MonoBehaviour
                 instance = lGameObject.AddComponent<GameManager>();
             }
         }
-
+        
         return instance;
     }
 
@@ -128,6 +129,7 @@ public class GameManager : MonoBehaviour
         }
 
         CurrentMinigameName = GetSceneNamWithEnum(pType);
+        Screen.orientation = _MinigameOrientation;
 
         AsyncOperation op = SceneManager.LoadSceneAsync(CurrentMinigameName, LoadSceneMode.Additive);
 
@@ -189,31 +191,38 @@ public class GameManager : MonoBehaviour
         {
             case TypOfMinigame.TugOFWar:
                 SceneName = MINIGAME_TEST;
+                _MinigameOrientation = ScreenOrientation.LandscapeLeft;
                 break;
 
             case TypOfMinigame.Shooting:
                 SceneName = MINIGAME_SHOOTING;
+                _MinigameOrientation = ScreenOrientation.Portrait;
                 break;
 
             case TypOfMinigame.SingToJump:
                 SceneName = MINIGAME_SING_TO_JUMP;
+                _MinigameOrientation = ScreenOrientation.LandscapeLeft;
                 break;
 
             case TypOfMinigame.Memory:
                 SceneName = MINIGAME_MEMORY;
+                _MinigameOrientation = ScreenOrientation.LandscapeLeft;
                 break;
 
             case TypOfMinigame.Dressing:
                 SceneName = MINIGAME_DRESSING;
+                _MinigameOrientation = ScreenOrientation.LandscapeLeft;
                 break;
 
 
             case TypOfMinigame.Dancing:
                 SceneName = MINIGAME_DANSING;
+                _MinigameOrientation = ScreenOrientation.LandscapeLeft;
                 break;
 
             case TypOfMinigame.Flipper:
                 SceneName = MINIGAME_FLIPPER;
+                _MinigameOrientation = ScreenOrientation.Portrait;
                 break;
 
 
