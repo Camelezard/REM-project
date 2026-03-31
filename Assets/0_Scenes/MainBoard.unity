@@ -9014,7 +9014,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704975173}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9026,7 +9026,7 @@ Transform:
   - {fileID: 1907472073}
   - {fileID: 1231504510}
   - {fileID: 710055837}
-  m_Father: {fileID: 2068921649}
+  m_Father: {fileID: 840020567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &710055835
 GameObject:
@@ -10946,6 +10946,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &840020566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 840020567}
+  m_Layer: 0
+  m_Name: BoardRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &840020567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840020566}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1241058259}
+  - {fileID: 704975174}
+  - {fileID: 1256004986}
+  - {fileID: 1348003984}
+  - {fileID: 1946612443}
+  m_Father: {fileID: 2068921649}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &846920345
 GameObject:
   m_ObjectHideFlags: 0
@@ -17842,7 +17878,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241058258}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.36, y: 0, z: 0.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17887,7 +17923,7 @@ Transform:
   - {fileID: 265990228}
   - {fileID: 113373890}
   - {fileID: 1516802246}
-  m_Father: {fileID: 2068921649}
+  m_Father: {fileID: 840020567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1241058260
 MonoBehaviour:
@@ -18098,7 +18134,7 @@ Transform:
   - {fileID: 2122618530}
   - {fileID: 2145103339}
   - {fileID: 828572914}
-  m_Father: {fileID: 2068921649}
+  m_Father: {fileID: 840020567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1256189247
 GameObject:
@@ -19428,7 +19464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348003983}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19437,7 +19473,7 @@ Transform:
   - {fileID: 458491658}
   - {fileID: 644367286}
   - {fileID: 1716906844}
-  m_Father: {fileID: 2068921649}
+  m_Father: {fileID: 840020567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1350328605
 GameObject:
@@ -27420,12 +27456,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946612442}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2068921649}
+  m_Father: {fileID: 840020567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1961508272
 GameObject:
@@ -28700,11 +28736,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1241058259}
-  - {fileID: 704975174}
-  - {fileID: 1256004986}
-  - {fileID: 1348003984}
-  - {fileID: 1946612443}
+  - {fileID: 840020567}
   m_Father: {fileID: 1256189248}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2068921650
@@ -28724,6 +28756,7 @@ MonoBehaviour:
   _SpawnTime: 1.5
   _PlayerTransitionTime: 2
   _BoardCenter: {fileID: 1946612443}
+  _BoardRoot: {fileID: 840020566}
 --- !u!1 &2072064397
 GameObject:
   m_ObjectHideFlags: 0
