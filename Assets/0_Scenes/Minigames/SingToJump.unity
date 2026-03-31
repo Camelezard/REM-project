@@ -1212,6 +1212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PlatformObject: {fileID: 2467310965479005470, guid: c0aade0bc2296e74dbe2492b09544c98, type: 3}
+  _FinishLineObject: {fileID: 3313426758854805131, guid: 1fa4ab81869ead94bb0cf7aa4ff086be, type: 3}
   _LevelContainer: {fileID: 22127071}
   _PlatformNumber: 10
   _PlatformDistance: 10

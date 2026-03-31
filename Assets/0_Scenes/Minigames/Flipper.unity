@@ -2307,6 +2307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flippers
       objectReference: {fileID: 0}
+    - target: {fileID: 7790561675685512846, guid: 2fbe9eed7a15300428d4edb8c81e79e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9130096371111361022, guid: 2fbe9eed7a15300428d4edb8c81e79e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2317,7 +2321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9130096371111361022, guid: 2fbe9eed7a15300428d4edb8c81e79e5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 9130096371111361022, guid: 2fbe9eed7a15300428d4edb8c81e79e5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2717,6 +2721,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flippers Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5327309103636961538, guid: e793ac28df42ede46a57e52adb577b6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6577326593877829234, guid: e793ac28df42ede46a57e52adb577b6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2727,7 +2735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6577326593877829234, guid: e793ac28df42ede46a57e52adb577b6f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6577326593877829234, guid: e793ac28df42ede46a57e52adb577b6f, type: 3}
       propertyPath: m_LocalRotation.w
