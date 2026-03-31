@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+        Screen.orientation = ScreenOrientation.LandscapeRight;
     }
 
 
