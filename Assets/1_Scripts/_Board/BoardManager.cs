@@ -84,14 +84,23 @@ public class BoardManager : MonoBehaviour
     public IEnumerator SpawnPawns()
     {
         ClearPawns();
+
         Pawn lPawn;
         List<Player> lPlayers = GameManager.GetInstance()._PlayersList;
         float lWaitTime = _SpawnTime / lPlayers.Count;
 
-        foreach (Player pPlayer in GameManager.GetInstance()._PlayersList)
+        for (int i = 0; i < lPlayers.Count; i++)
         {
+            Player lPlayer = lPlayers[i];
+
             CreateAPawn(out lPawn);
+
             lPawn._SplineContainer = _SplineContainer;
+
+            lPawn.Init(lPlayer);
+
+            lPlayer.playerId = i;
+
             pawnList.Add(lPawn);
 
             yield return new WaitForSeconds(lWaitTime);
@@ -167,7 +176,7 @@ public class BoardManager : MonoBehaviour
 
         isTransitioning = false;
     }
-    
+
     public void OnFirstLoadStartTransition()
     {
         StartCoroutine(SpawnPawns());
