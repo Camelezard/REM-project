@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour
 
         SceneManager.UnloadSceneAsync(CurrentMinigameName);
         CurrentMinigameName = null;
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
+        Screen.orientation = ScreenOrientation.LandscapeRight;
 
         Scene board = SceneManager.GetSceneByName(MAIN_BOARD_SCENE_NAME);
         SceneManager.SetActiveScene(board);
@@ -192,7 +192,7 @@ public class GameManager : MonoBehaviour
         {
             case TypOfMinigame.TugOFWar:
                 SceneName = MINIGAME_TEST;
-                _MinigameOrientation = ScreenOrientation.LandscapeLeft;
+                _MinigameOrientation = ScreenOrientation.LandscapeRight;
                 break;
 
             case TypOfMinigame.Shooting:
@@ -202,23 +202,23 @@ public class GameManager : MonoBehaviour
 
             case TypOfMinigame.SingToJump:
                 SceneName = MINIGAME_SING_TO_JUMP;
-                _MinigameOrientation = ScreenOrientation.LandscapeLeft;
+                _MinigameOrientation = ScreenOrientation.LandscapeRight;
                 break;
 
             case TypOfMinigame.Memory:
                 SceneName = MINIGAME_MEMORY;
-                _MinigameOrientation = ScreenOrientation.LandscapeLeft;
+                _MinigameOrientation = ScreenOrientation.LandscapeRight;
                 break;
 
             case TypOfMinigame.Dressing:
                 SceneName = MINIGAME_DRESSING;
-                _MinigameOrientation = ScreenOrientation.LandscapeLeft;
+                _MinigameOrientation = ScreenOrientation.LandscapeRight;
                 break;
 
 
             case TypOfMinigame.Dancing:
                 SceneName = MINIGAME_DANSING;
-                _MinigameOrientation = ScreenOrientation.LandscapeLeft;
+                _MinigameOrientation = ScreenOrientation.LandscapeRight;
                 break;
 
             case TypOfMinigame.Flipper:
