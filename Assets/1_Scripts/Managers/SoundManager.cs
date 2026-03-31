@@ -43,6 +43,8 @@ public class SoundManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
+        PlayMusic(Musics.TVMusic);
+
     }
 
     public void PlayMusic(Musics pMusic)
