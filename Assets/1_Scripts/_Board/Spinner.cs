@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 public class Spinner : MonoBehaviour
 {
@@ -36,6 +38,7 @@ public class Spinner : MonoBehaviour
     {
         instance = this;
         GenerateNumberOnWheel();
+        EnhancedTouchSupport.Enable();
         //SpinWheel();
     }
 
@@ -128,7 +131,7 @@ public class Spinner : MonoBehaviour
 
         while (!lStopWheelRequested)
         {
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            if (DetectSingleTouch())
             {
                 lStopWheelRequested = true;
                 break;
@@ -170,5 +173,18 @@ public class Spinner : MonoBehaviour
         OnSpinnerStopAtNumber?.Invoke(pValueToStopAt);
 
         yield return null;
+    }
+
+    private bool DetectSingleTouch()
+    {
+        foreach (Touch touch in Touch.activeTouches)
+        {
+            if (touch.phase == UnityEngine.InputSystem.TouchPhase.Began)
+            {
+                return true;
+            }
+            //else return false;
+        }
+        return false;
     }
 }
