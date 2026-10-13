@@ -2708,6 +2708,7 @@ GameObject:
   - component: {fileID: 674355021}
   - component: {fileID: 674355024}
   - component: {fileID: 674355022}
+  - component: {fileID: 674355025}
   m_Layer: 0
   m_Name: MainCam
   m_TagString: Untagged
